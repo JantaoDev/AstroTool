@@ -28,7 +28,6 @@ int main(void) {
     display.PutChar(12, 0, 12);
     display.PutChar(13, 0, 13);
     display.PutChar(14, 0, 14);
-    display.PutChar(15, 0, 15);
 
     display.PutChar(0, 1, 16, 1);
     display.PutChar(1, 1, 17, 1);
@@ -44,8 +43,7 @@ int main(void) {
     display.PutChar(11, 1, 27);
     display.PutChar(12, 1, 0);
     display.PutChar(13, 1, 1);
-    display.PutChar(14, 1, 2, 1);
-    display.PutChar(15, 1, 3, 1);
+    display.PutChar(14, 1, 15, 1);
 
     while (1) {
     }
