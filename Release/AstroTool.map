@@ -1,21 +1,39 @@
 Archive member included because of file (symbol)
 
+/usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+                              ./class.interval.o (__udivmodhi4)
 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
                               /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o (exit)
 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
                               ./class.display.o (__do_copy_data)
 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
-                              ./class.display.o (__do_clear_bss)
+                              ./class.interval.o (__do_clear_bss)
 
 Discarded input sections
 
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
+ .group         0x0000000000000000        0x8 ./class.display.o
  .text          0x0000000000000000        0x0 ./class.display.o
  .bss           0x0000000000000000        0x0 ./class.display.o
  .text._ZN7Display6WakeUpEv
                 0x0000000000000000        0xc ./class.display.o
+ .text          0x0000000000000000        0x0 ./class.interval.o
+ .bss           0x0000000000000000        0x0 ./class.interval.o
  .text          0x0000000000000000        0x0 ./main.o
  .bss           0x0000000000000000        0x0 ./main.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  .text.libgcc.mul
@@ -78,6 +96,7 @@ Linker script and memory map
 
 LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 LOAD ./class.display.o
+LOAD ./class.interval.o
 LOAD ./main.o
 LOAD /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a
 LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/libm.a
@@ -177,7 +196,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x516
+.text           0x0000000000000000      0x608
  *(.vectors)
  .vectors       0x0000000000000000       0x26 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
                 0x0000000000000000                __vectors
@@ -253,42 +272,55 @@ END GROUP
                 0x000000000000005c                __vector_18
                 0x000000000000005e                . = ALIGN (0x2)
  *(.text.*)
- .text._ZN7Display16InterruptHandlerEv
-                0x000000000000005e       0x28 ./class.display.o
-                0x000000000000005e                _ZN7Display16InterruptHandlerEv
+ .text._ZN7Display15IntervalHandlerEv
+                0x000000000000005e       0x24 ./class.display.o
+                0x000000000000005e                _ZN7Display15IntervalHandlerEv
  .text._ZN7Display11SendCommandEhh
-                0x0000000000000086       0x22 ./class.display.o
-                0x0000000000000086                _ZN7Display11SendCommandEhh
+                0x0000000000000082       0x22 ./class.display.o
+                0x0000000000000082                _ZN7Display11SendCommandEhh
  .text._ZN7Display8SendDataEhh
-                0x00000000000000a8       0x22 ./class.display.o
-                0x00000000000000a8                _ZN7Display8SendDataEhh
+                0x00000000000000a4       0x22 ./class.display.o
+                0x00000000000000a4                _ZN7Display8SendDataEhh
  .text._ZN7Display9PutColumnEhhhh
-                0x00000000000000ca       0x96 ./class.display.o
-                0x00000000000000ca                _ZN7Display9PutColumnEhhhh
+                0x00000000000000c6       0x96 ./class.display.o
+                0x00000000000000c6                _ZN7Display9PutColumnEhhhh
  .text._ZN7Display11ClearScreenEv
-                0x0000000000000160       0x4c ./class.display.o
-                0x0000000000000160                _ZN7Display11ClearScreenEv
- .text._ZN7Display4InitEv
-                0x00000000000001ac       0x64 ./class.display.o
-                0x00000000000001ac                _ZN7Display4InitEv
- .text._ZN7DisplayC2Ev
-                0x0000000000000210        0xa ./class.display.o
-                0x0000000000000210                _ZN7DisplayC1Ev
-                0x0000000000000210                _ZN7DisplayC2Ev
+                0x000000000000015c       0x4c ./class.display.o
+                0x000000000000015c                _ZN7Display11ClearScreenEv
+ .text._ZN7Display12InitHardwareEv
+                0x00000000000001a8       0x50 ./class.display.o
+                0x00000000000001a8                _ZN7Display12InitHardwareEv
+ .text._ZN7DisplayC2EP8Interval
+                0x00000000000001f8       0x24 ./class.display.o
+                0x00000000000001f8                _ZN7DisplayC1EP8Interval
+                0x00000000000001f8                _ZN7DisplayC2EP8Interval
  .text._ZN7Display7PutCharEhhhh
-                0x000000000000021a      0x106 ./class.display.o
-                0x000000000000021a                _ZN7Display7PutCharEhhhh
+                0x000000000000021c      0x106 ./class.display.o
+                0x000000000000021c                _ZN7Display7PutCharEhhhh
+ .text._ZN8IntervalC2Ev
+                0x0000000000000322       0x28 ./class.interval.o
+                0x0000000000000322                _ZN8IntervalC2Ev
+                0x0000000000000322                _ZN8IntervalC1Ev
+ .text._ZN8Interval16InterruptHandlerEv
+                0x000000000000034a       0x4e ./class.interval.o
+                0x000000000000034a                _ZN8Interval16InterruptHandlerEv
+ .text._ZN8Interval11addListenerEP16IntervalListenerj
+                0x0000000000000398       0x56 ./class.interval.o
+                0x0000000000000398                _ZN8Interval11addListenerEP16IntervalListenerj
  .text.__vector_4
-                0x0000000000000320       0x4e ./class.display.o
-                0x0000000000000320                __vector_4
+                0x00000000000003ee       0x4e ./class.interval.o
+                0x00000000000003ee                __vector_4
  .text.startup.main
-                0x000000000000036e      0x1a4 ./main.o
-                0x000000000000036e                main
-                0x0000000000000512                . = ALIGN (0x2)
+                0x000000000000043c      0x1a0 ./main.o
+                0x000000000000043c                main
+ .text.libgcc.div
+                0x00000000000005dc       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+                0x00000000000005dc                __udivmodhi4
+                0x0000000000000604                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000512        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
-                0x0000000000000512                exit
-                0x0000000000000512                _exit
+ .fini9         0x0000000000000604        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
+                0x0000000000000604                exit
+                0x0000000000000604                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -307,48 +339,53 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000512        0x4 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
+ .fini0         0x0000000000000604        0x4 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000516                _etext = .
+                0x0000000000000608                _etext = .
 
-.data           0x0000000000800060      0x188 load address 0x0000000000000516
+.data           0x0000000000800060      0x18e load address 0x0000000000000608
                 0x0000000000800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
  .data          0x0000000000800060        0x0 ./class.display.o
+ .data          0x0000000000800060        0x0 ./class.interval.o
  .data          0x0000000000800060        0x0 ./main.o
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
+ .rodata._ZTV7Display
+                0x0000000000800060        0x6 ./class.display.o
+                0x0000000000800060                _ZTV7Display
  .rodata._ZN7Display12chartersDataE
-                0x0000000000800060      0x188 ./class.display.o
-                0x0000000000800060                _ZN7Display12chartersDataE
+                0x0000000000800066      0x188 ./class.display.o
+                0x0000000000800066                _ZN7Display12chartersDataE
  *(.gnu.linkonce.d*)
-                0x00000000008001e8                . = ALIGN (0x2)
-                0x00000000008001e8                _edata = .
-                0x00000000008001e8                PROVIDE (__data_end, .)
+                0x00000000008001ee                . = ALIGN (0x2)
+                0x00000000008001ee                _edata = .
+                0x00000000008001ee                PROVIDE (__data_end, .)
 
-.bss            0x00000000008001e8        0x2
-                0x00000000008001e8                PROVIDE (__bss_start, .)
+.bss            0x00000000008001ee        0x2
+                0x00000000008001ee                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss._ZN7Display8pDisplayE
-                0x00000000008001e8        0x2 ./class.display.o
-                0x00000000008001e8                _ZN7Display8pDisplayE
+ .bss._ZN8Interval8instanceE
+                0x00000000008001ee        0x2 ./class.interval.o
+                0x00000000008001ee                _ZN8Interval8instanceE
  *(COMMON)
-                0x00000000008001ea                PROVIDE (__bss_end, .)
-                0x0000000000000516                __data_load_start = LOADADDR (.data)
-                0x000000000000069e                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000008001f0                PROVIDE (__bss_end, .)
+                0x0000000000000608                __data_load_start = LOADADDR (.data)
+                0x0000000000000796                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00000000008001ea        0x0
-                0x00000000008001ea                PROVIDE (__noinit_start, .)
+.noinit         0x00000000008001f0        0x0
+                0x00000000008001f0                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00000000008001ea                PROVIDE (__noinit_end, .)
-                0x00000000008001ea                _end = .
-                0x00000000008001ea                PROVIDE (__heap_start, .)
+                0x00000000008001f0                PROVIDE (__noinit_end, .)
+                0x00000000008001f0                _end = .
+                0x00000000008001f0                PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
@@ -393,6 +430,7 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x11 ./class.display.o
                                          0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 ./class.interval.o
  .comment       0x0000000000000000       0x12 ./main.o
 
 .debug
@@ -450,11 +488,11 @@ Cross Reference Table
 
 Symbol                                            File
 Display::ClearScreen()                            ./class.display.o
-Display::Display()                                ./class.display.o
+Display::Display(Interval*)                       ./class.display.o
                                                   ./main.o
-Display::Display()                                ./class.display.o
-Display::Init()                                   ./class.display.o
-Display::InterruptHandler()                       ./class.display.o
+Display::Display(Interval*)                       ./class.display.o
+Display::InitHardware()                           ./class.display.o
+Display::IntervalHandler()                        ./class.display.o
 Display::PutChar(unsigned char, unsigned char, unsigned char, unsigned char) ./class.display.o
                                                   ./main.o
 Display::PutColumn(unsigned char, unsigned char, unsigned char, unsigned char) ./class.display.o
@@ -462,7 +500,13 @@ Display::SendCommand(unsigned char, unsigned char) ./class.display.o
 Display::SendData(unsigned char, unsigned char)   ./class.display.o
 Display::WakeUp()                                 ./class.display.o
 Display::chartersData                             ./class.display.o
-Display::pDisplay                                 ./class.display.o
+Interval::InterruptHandler()                      ./class.interval.o
+Interval::Interval()                              ./class.interval.o
+Interval::Interval()                              ./class.interval.o
+                                                  ./main.o
+Interval::addListener(IntervalListener*, unsigned int) ./class.interval.o
+                                                  ./class.display.o
+Interval::instance                                ./class.interval.o
 __bad_interrupt                                   /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __bss_end                                         /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
 __bss_start                                       /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
@@ -470,12 +514,14 @@ __data_end                                        /usr/lib/gcc/avr/4.8.2/avr4/li
 __data_load_start                                 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
 __data_start                                      /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
 __do_clear_bss                                    /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
-                                                  ./class.display.o
+                                                  ./class.interval.o
 __do_copy_data                                    /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
                                                   ./class.display.o
 __heap_end                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __init                                            /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __stack                                           /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
+__udivmodhi4                                      /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+                                                  ./class.interval.o
 __vector_1                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_10                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_11                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
@@ -488,7 +534,7 @@ __vector_17                                       /usr/lib/gcc/avr/4.8.2/../../.
 __vector_18                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_2                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_3                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
-__vector_4                                        ./class.display.o
+__vector_4                                        ./class.interval.o
                                                   /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_5                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_6                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
@@ -502,3 +548,4 @@ exit                                              /usr/lib/gcc/avr/4.8.2/avr4/li
                                                   /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 main                                              ./main.o
                                                   /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
+vtable for Display                                ./class.display.o

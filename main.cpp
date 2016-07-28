@@ -11,7 +11,8 @@
 
 
 int main(void) {
-    Display display;
+	Interval interval;
+    Display display(&interval);
 
     display.PutChar(0, 0, 0);
     display.PutChar(1, 0, 1);

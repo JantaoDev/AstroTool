@@ -9,8 +9,8 @@
 
 #include "class.display.h"
 
-#define	DISPLAY_TCNT	((256 - (F_CPU / DISPLAY_OSC_FREQ / 64)) & 0xFF)
-#define DISPLAY_LIGHT_CNT	(DISPLAY_LIGHT_TIME * DISPLAY_OSC_FREQ / 1000)
+#define DISPLAY_OSC_FREQ2	(DISPLAY_OSC_FREQ * 2)
+#define DISPLAY_LIGHT_CNT	(DISPLAY_LIGHT_TIME * DISPLAY_OSC_FREQ2 / 1000)
 
 #define	DISPLAY_CMD_ENABLE	0xAF
 #define	DISPLAY_CMD_DISABLE	0xAE
@@ -27,8 +27,6 @@
 #define	DISPLAY_CMD_RESET	0xE2
 
 #define DISPLAY_CHIP_BOTH   3
-
-Display * Display::pDisplay;
 
 const uint8_t Display::chartersData[28][14]=
 {{0xF8,0xFC,0x06,0x02,0x06,0xFC,0xF8,0x1F,0x3F,0x60,0x40,0x60,0x3F,0x1F},{0x00,0x08,0x0C,0xFE,0xFE,0x00,
@@ -52,19 +50,13 @@ const uint8_t Display::chartersData[28][14]=
 0x0F,0x0F,0x0F,0x0F},{0xE0,0xE0,0xC0,0xC0,0x80,0x80,0x00,0x0F,0x0F,0x07,0x07,0x03,0x03,0x01},{0x00,0x00,
 0x00,0x00,0x00,0x00,0x00,0x01,0x01,0x01,0x01,0x01,0x01,0x01}};
 
-void Display::Init(void) {
+void Display::InitHardware(void) {
 	DDRB = 0xFF;
 	PORTB = 0xFF;
 	DDRC |= 0x0F;
 	PORTC &= ~0x0F;
 	DDRD |= (1 << 4);
 	PORTD |= (1 << 4);
-
-	TCCR2 = 0x04;
-	TCNT2 = DISPLAY_TCNT;
-	TIMSK |= 1 << 6;
-	lightCounter = 0;
-    sei();
 
 	_delay_ms(50);
 	SendCommand(DISPLAY_CMD_ENABLE, DISPLAY_CHIP_BOTH);
@@ -74,8 +66,7 @@ void Display::Init(void) {
 	WakeUp();
 }
 
-void Display::InterruptHandler(void) {
-	TCNT2 = DISPLAY_TCNT;
+void Display::IntervalHandler(void) {
 	PORTC ^= 1;
 	if (lightCounter > 0) {
 		lightCounter--;
@@ -135,9 +126,10 @@ void Display::PutColumn(uint8_t x, uint8_t y, uint8_t column, uint8_t mode) {
     cursorCol++;
 }
 
-Display::Display(void) {
-    pDisplay = this;
-    Init();
+Display::Display(Interval * interval) {
+	lightCounter = 0;
+	interval->addListener(this, DISPLAY_OSC_FREQ2);
+    InitHardware();
 }
 
 void Display::ClearScreen(void) {
@@ -183,10 +175,3 @@ void Display::PutChar(uint8_t x, uint8_t y, uint8_t charter, uint8_t mode) {
 void Display::WakeUp(void) {
 	lightCounter = DISPLAY_LIGHT_CNT;
 }
-
-
-
-ISR(TIMER2_OVF_vect) {
-	Display::pDisplay->InterruptHandler();
-}
-

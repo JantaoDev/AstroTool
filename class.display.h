@@ -28,20 +28,18 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#include "class.interval.h"
 #include "configuration.h"
 
-extern "C" void TIMER2_OVF_vect(void) __attribute__ ((signal));
-
-class Display {
+class Display: public IntervalListener {
 
 	private:
-		static Display * pDisplay;
 		static const uint8_t chartersData[28][14];
 		volatile uint16_t lightCounter;
         uint8_t cursorCol;
         uint8_t cursorPage;
-		void Init(void);
-		void InterruptHandler(void);
+		void InitHardware(void);
+		void IntervalHandler(void);
 		void SendCommand(uint8_t cmd, uint8_t chip);
 		void SendData(uint8_t data, uint8_t chip);
         void PutColumn(uint8_t x, uint8_t y, uint8_t column, uint8_t mode = 0);
@@ -51,7 +49,7 @@ class Display {
         /*
          * Constructor
          */
-		Display(void);
+		Display(Interval * interval);
 
 		/*
 		 * Clear screen
@@ -72,8 +70,6 @@ class Display {
 		 * Turn on display LED backlight (it`s will turn off automatic after time)
 		 */
 		void WakeUp(void);
-
-		friend void TIMER2_OVF_vect(void);
 
 };
 

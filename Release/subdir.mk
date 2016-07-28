@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../class.display.cpp \
+../class.interval.cpp \
 ../main.cpp 
 
 OBJS += \
 ./class.display.o \
+./class.interval.o \
 ./main.o 
 
 CPP_DEPS += \
 ./class.display.d \
+./class.interval.d \
 ./main.d 
 
 
