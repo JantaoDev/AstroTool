@@ -13,7 +13,6 @@
 #include <stdint.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <util/delay.h>
 #include "configuration.h"
 
 extern "C" void TIMER2_OVF_vect(void) __attribute__ ((signal));
@@ -29,7 +28,9 @@ class Interval {
 		static Interval * instance;
 		IntervalListener * listeners[INTERVAL_LISTENERS_COUNT];
 		uint16_t listenerCounter[INTERVAL_LISTENERS_COUNT];
-		uint16_t	listenerInterval[INTERVAL_LISTENERS_COUNT];
+		uint16_t listenerInterval[INTERVAL_LISTENERS_COUNT];
+		uint16_t tickCounter;
+
 		void InterruptHandler(void);
 
 	public:
@@ -45,6 +46,11 @@ class Interval {
 		 * uint16_t	frequency	Interval frequency (Hz)
 		 */
 		void addListener(IntervalListener * listener, uint16_t frequency);
+
+		/*
+		 * Get milliseconds counter value
+		 */
+		uint16_t getMsCounter(void);
 
 		friend void TIMER2_OVF_vect(void);
 

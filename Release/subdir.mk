@@ -6,16 +6,19 @@
 CPP_SRCS += \
 ../class.display.cpp \
 ../class.interval.cpp \
+../class.keyboard.cpp \
 ../main.cpp 
 
 OBJS += \
 ./class.display.o \
 ./class.interval.o \
+./class.keyboard.o \
 ./main.o 
 
 CPP_DEPS += \
 ./class.display.d \
 ./class.interval.d \
+./class.keyboard.d \
 ./main.d 
 
 

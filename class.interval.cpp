@@ -15,6 +15,7 @@ Interval * Interval::instance;
 
 Interval::Interval(void) {
 	instance = this;
+	tickCounter = 0;
 	for (uint8_t i = 0; i < INTERVAL_LISTENERS_COUNT; i++) {
 		listenerInterval[i] = 0;
 	}
@@ -25,6 +26,7 @@ Interval::Interval(void) {
 }
 
 void Interval::InterruptHandler(void) {
+	tickCounter++;
 	TCNT2 = INTERVAL_TCNT;
 	for (uint8_t i = 0; i < INTERVAL_LISTENERS_COUNT; i++) {
 		if (listenerInterval[i] == 0) {
@@ -51,6 +53,10 @@ void Interval::addListener(IntervalListener * listener, uint16_t frequency) {
 	if (listenerInterval[i] < 1) {
 		listenerInterval[i] = 1;
 	}
+}
+
+uint16_t Interval::getMsCounter(void) {
+	return (uint32_t)tickCounter * 1000 / INTERVAL_FREQ;
 }
 
 

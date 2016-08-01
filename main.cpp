@@ -7,12 +7,41 @@
  * Author: SergSXM (sergsxm@embedded.by)
  */
 
+#include "class.interval.h"
 #include "class.display.h"
+#include "class.keyboard.h"
+
+
 
 
 int main(void) {
 	Interval interval;
     Display display(&interval);
+    Keyboard keyboard(&interval);
+	uint8_t event, pos = 0;
+    while (1) {
+    	event = keyboard.GetEvent();
+    	if (event & 0xf0) {
+    		display.PutChar(pos % 15, pos / 15, (event >> 4) & 0x0F);
+    		pos++;
+    		if (pos >= 30) {
+    			pos = 0;
+    		}
+    		display.PutChar(pos % 15, pos / 15, event & 0x0F);
+    		pos++;
+    		if (pos >= 30) {
+    			pos = 0;
+    		}
+    	}
+    }
+
+
+
+
+
+
+
+
 
     display.PutChar(0, 0, 0);
     display.PutChar(1, 0, 1);

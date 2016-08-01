@@ -1,7 +1,13 @@
 Archive member included because of file (symbol)
 
+/usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+                              ./class.interval.o (__umulhisi3)
+/usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+                              ./main.o (__udivmodqi4)
 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
                               ./class.interval.o (__udivmodhi4)
+/usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+                              ./class.interval.o (__udivmodsi4)
 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
                               /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o (exit)
 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
@@ -19,8 +25,36 @@ Discarded input sections
                 0x0000000000000000        0xc ./class.display.o
  .text          0x0000000000000000        0x0 ./class.interval.o
  .bss           0x0000000000000000        0x0 ./class.interval.o
+ .text          0x0000000000000000        0x0 ./class.keyboard.o
+ .bss           0x0000000000000000        0x0 ./class.keyboard.o
  .text          0x0000000000000000        0x0 ./main.o
  .bss           0x0000000000000000        0x0 ./main.o
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
  .text.libgcc.mul
@@ -34,6 +68,19 @@ Discarded input sections
                 0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
  .text          0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  .text.libgcc.mul
@@ -97,6 +144,7 @@ Linker script and memory map
 LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 LOAD ./class.display.o
 LOAD ./class.interval.o
+LOAD ./class.keyboard.o
 LOAD ./main.o
 LOAD /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a
 LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/libm.a
@@ -196,7 +244,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0x608
+.text           0x0000000000000000      0x63c
  *(.vectors)
  .vectors       0x0000000000000000       0x26 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
                 0x0000000000000000                __vectors
@@ -298,29 +346,51 @@ END GROUP
                 0x000000000000021c      0x106 ./class.display.o
                 0x000000000000021c                _ZN7Display7PutCharEhhhh
  .text._ZN8IntervalC2Ev
-                0x0000000000000322       0x28 ./class.interval.o
+                0x0000000000000322       0x2c ./class.interval.o
                 0x0000000000000322                _ZN8IntervalC2Ev
                 0x0000000000000322                _ZN8IntervalC1Ev
  .text._ZN8Interval16InterruptHandlerEv
-                0x000000000000034a       0x4e ./class.interval.o
-                0x000000000000034a                _ZN8Interval16InterruptHandlerEv
+                0x000000000000034e       0x58 ./class.interval.o
+                0x000000000000034e                _ZN8Interval16InterruptHandlerEv
  .text._ZN8Interval11addListenerEP16IntervalListenerj
-                0x0000000000000398       0x56 ./class.interval.o
-                0x0000000000000398                _ZN8Interval11addListenerEP16IntervalListenerj
+                0x00000000000003a6       0x56 ./class.interval.o
+                0x00000000000003a6                _ZN8Interval11addListenerEP16IntervalListenerj
+ .text._ZN8Interval12getMsCounterEv
+                0x00000000000003fc       0x1a ./class.interval.o
+                0x00000000000003fc                _ZN8Interval12getMsCounterEv
  .text.__vector_4
-                0x00000000000003ee       0x4e ./class.interval.o
-                0x00000000000003ee                __vector_4
+                0x0000000000000416       0x4e ./class.interval.o
+                0x0000000000000416                __vector_4
+ .text._ZN8KeyboardC2EP8Interval
+                0x0000000000000464       0x1c ./class.keyboard.o
+                0x0000000000000464                _ZN8KeyboardC1EP8Interval
+                0x0000000000000464                _ZN8KeyboardC2EP8Interval
+ .text._ZN8Keyboard18GetDebouncedButtonEv
+                0x0000000000000480       0x2c ./class.keyboard.o
+                0x0000000000000480                _ZN8Keyboard18GetDebouncedButtonEv
+ .text._ZN8Keyboard8GetEventEv
+                0x00000000000004ac       0x68 ./class.keyboard.o
+                0x00000000000004ac                _ZN8Keyboard8GetEventEv
  .text.startup.main
-                0x000000000000043c      0x1a0 ./main.o
-                0x000000000000043c                main
+                0x0000000000000514       0x88 ./main.o
+                0x0000000000000514                main
+ .text.libgcc.mul
+                0x000000000000059c       0x18 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+                0x000000000000059c                __umulhisi3
  .text.libgcc.div
-                0x00000000000005dc       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
-                0x00000000000005dc                __udivmodhi4
-                0x0000000000000604                . = ALIGN (0x2)
+                0x00000000000005b4       0x18 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+                0x00000000000005b4                __udivmodqi4
+ .text.libgcc.div
+                0x00000000000005cc       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+                0x00000000000005cc                __udivmodhi4
+ .text.libgcc.div
+                0x00000000000005f4       0x44 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+                0x00000000000005f4                __udivmodsi4
+                0x0000000000000638                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000604        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
-                0x0000000000000604                exit
-                0x0000000000000604                _exit
+ .fini9         0x0000000000000638        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
+                0x0000000000000638                exit
+                0x0000000000000638                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -339,18 +409,22 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000604        0x4 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
+ .fini0         0x0000000000000638        0x4 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000608                _etext = .
+                0x000000000000063c                _etext = .
 
-.data           0x0000000000800060      0x18e load address 0x0000000000000608
+.data           0x0000000000800060      0x18e load address 0x000000000000063c
                 0x0000000000800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
  .data          0x0000000000800060        0x0 ./class.display.o
  .data          0x0000000000800060        0x0 ./class.interval.o
+ .data          0x0000000000800060        0x0 ./class.keyboard.o
  .data          0x0000000000800060        0x0 ./main.o
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_copy_data.o)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
@@ -377,8 +451,8 @@ END GROUP
                 0x00000000008001ee                _ZN8Interval8instanceE
  *(COMMON)
                 0x00000000008001f0                PROVIDE (__bss_end, .)
-                0x0000000000000608                __data_load_start = LOADADDR (.data)
-                0x0000000000000796                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000000000000063c                __data_load_start = LOADADDR (.data)
+                0x00000000000007ca                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00000000008001f0        0x0
                 0x00000000008001f0                PROVIDE (__noinit_start, .)
@@ -431,6 +505,7 @@ END GROUP
  .comment       0x0000000000000000       0x11 ./class.display.o
                                          0x12 (size before relaxing)
  .comment       0x0000000000000000       0x12 ./class.interval.o
+ .comment       0x0000000000000000       0x12 ./class.keyboard.o
  .comment       0x0000000000000000       0x12 ./main.o
 
 .debug
@@ -506,7 +581,15 @@ Interval::Interval()                              ./class.interval.o
                                                   ./main.o
 Interval::addListener(IntervalListener*, unsigned int) ./class.interval.o
                                                   ./class.display.o
+Interval::getMsCounter()                          ./class.interval.o
+                                                  ./class.keyboard.o
 Interval::instance                                ./class.interval.o
+Keyboard::GetDebouncedButton()                    ./class.keyboard.o
+Keyboard::GetEvent()                              ./class.keyboard.o
+                                                  ./main.o
+Keyboard::Keyboard(Interval*)                     ./class.keyboard.o
+                                                  ./main.o
+Keyboard::Keyboard(Interval*)                     ./class.keyboard.o
 __bad_interrupt                                   /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __bss_end                                         /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
 __bss_start                                       /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_clear_bss.o)
@@ -521,6 +604,12 @@ __heap_end                                        /usr/lib/gcc/avr/4.8.2/../../.
 __init                                            /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __stack                                           /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __udivmodhi4                                      /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+                                                  ./class.interval.o
+__udivmodqi4                                      /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodqi4.o)
+                                                  ./main.o
+__udivmodsi4                                      /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+                                                  ./class.interval.o
+__umulhisi3                                       /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
                                                   ./class.interval.o
 __vector_1                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
 __vector_10                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o

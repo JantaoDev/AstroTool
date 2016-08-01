@@ -15,6 +15,11 @@
 // Interval timer frequency (Hz)
 #define	INTERVAL_FREQ	4000UL
 
+// Keyboard bounce filter value
+#define	KEYBOARD_BOUNCE_FILTER	32
+// Keyboard long pressed time (ms)
+#define	KEYBOARD_LONG_TIME	3000
+
 // Display oscilator frequency (Hz)
 #define	DISPLAY_OSC_FREQ	2000UL
 // Display backlight time (ms)
