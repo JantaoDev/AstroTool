@@ -9,8 +9,8 @@
 
 #include "class.drive.h"
 
-#define	DRIVE_1X_SPEED	(int16_t)((F_CPU * 86400) / (64 * DRIVE_REDUCTION))
-#define DRIVE_MAX_SPEED	(int16_t)(F_CPU / (64 * DRIVE_MAXSPEED))
+#define	DRIVE_1X_SPEED	(int16_t)((86400.0 * F_CPU) / (64 * DRIVE_REDUCTION))
+#define DRIVE_MAX_SPEED	(int16_t)(1.0 * F_CPU / (64 * DRIVE_MAXSPEED))
 
 Drive * Drive::instance;
 
@@ -49,7 +49,7 @@ void Drive::SetSpeedFactor(int8_t factor) {
 	if (factor == 0) {
 		Stop();
 	}
-	int16_t spd = DRIVE_1X_SPEED * 10 / factor;
+	int32_t spd = DRIVE_1X_SPEED * 10 / factor;
 	SetSpeed(spd);
 }
 

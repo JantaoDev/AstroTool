@@ -31,12 +31,12 @@
 // Drive default direction
 #define	DRIVE_DIRECTION	1
 // Drive mechanic reduction (steps per full cycle)
-#define DRIVE_REDUCTION	(12.5f * 2048 * 100)
+#define DRIVE_REDUCTION	(12.5 * 2048 * 100)
 // Drive max speed (steps per second)
 #define DRIVE_MAXSPEED	200
 
 // Enabled application debug tests
-#define	APPLICATION_DEBUG
+//#define	APPLICATION_DEBUG
 
 
 #endif /* CONFIGURATION_H_ */
