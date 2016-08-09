@@ -4,21 +4,33 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../class.application.cpp \
+../class.battery.cpp \
 ../class.display.cpp \
+../class.drive.cpp \
 ../class.interval.cpp \
 ../class.keyboard.cpp \
+../class.shutter.cpp \
 ../main.cpp 
 
 OBJS += \
+./class.application.o \
+./class.battery.o \
 ./class.display.o \
+./class.drive.o \
 ./class.interval.o \
 ./class.keyboard.o \
+./class.shutter.o \
 ./main.o 
 
 CPP_DEPS += \
+./class.application.d \
+./class.battery.d \
 ./class.display.d \
+./class.drive.d \
 ./class.interval.d \
 ./class.keyboard.d \
+./class.shutter.d \
 ./main.d 
 
 

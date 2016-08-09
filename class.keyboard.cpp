@@ -17,6 +17,7 @@ Keyboard::Keyboard(Interval * interval) {
 	currentButton = 0;
 	pressStartMs = 0;
 	longPressFlag = 0;
+	lastEvent = 0;
 	DDRC &= ~(1 << 5);
 	PORTC |= (1 << 5);
 	DDRD &= ~(1 << 7);
@@ -42,7 +43,7 @@ uint8_t Keyboard::GetDebouncedButton(void) {
 	return btn;
 }
 
-uint8_t Keyboard::GetEvent(void) {
+uint8_t Keyboard::UpdateEvent(void) {
 	uint8_t btn, event;
 	btn = GetDebouncedButton();
 
@@ -62,6 +63,6 @@ uint8_t Keyboard::GetEvent(void) {
 		event = btn;
 	}
 	currentButton = btn;
+	lastEvent = event;
 	return event;
 }
-

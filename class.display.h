@@ -48,6 +48,8 @@ class Display: public IntervalListener {
 
         /*
          * Constructor
+         *
+         * Interval*	interval	Interval object
          */
 		Display(Interval * interval);
 
@@ -65,6 +67,39 @@ class Display: public IntervalListener {
 		 * uint8_t	mode	0 - normal, 1 - inversed
 		 */
 		void PutChar(uint8_t x, uint8_t y, uint8_t charter, uint8_t mode = 0);
+
+		/*
+		 * Put number
+		 *
+		 * uint8_t	x	X position (0..14)
+		 * uint8_t	y	Y position (0..1)
+		 * uint8_t	digits	Count of digits (charters)
+		 * int16_t	value	Number value
+		 * uint8_t	mode	0 - normal, 1 - inversed
+		 */
+		void PutNumber(uint8_t x, uint8_t y, uint8_t digits, int16_t value, uint8_t mode = 0);
+
+		/*
+		 * Put number with fixed point (1 digit after point)
+		 *
+		 * uint8_t	x	X position (0..14)
+		 * uint8_t	y	Y position (0..1)
+		 * uint8_t	digits	Count of digits (charters)
+		 * int16_t	value	Number value
+		 * uint8_t	mode	0 - normal, 1 - inversed
+		 */
+		void PutPointNumber(uint8_t x, uint8_t y, uint8_t digits, int16_t value, uint8_t mode = 0);
+
+		/*
+		 * Put hex number
+		 *
+		 * uint8_t	x	X position (0..14)
+		 * uint8_t	y	Y position (0..1)
+		 * uint8_t	digits	Count of digits (charters)
+		 * int16_t	value	Number value
+		 * uint8_t	mode	0 - normal, 1 - inversed
+		 */
+		void PutHexNumber(uint8_t x, uint8_t y, uint8_t digits, uint16_t value, uint8_t mode = 0);
 
 		/*
 		 * Turn on display LED backlight (it`s will turn off automatic after time)

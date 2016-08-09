@@ -32,14 +32,55 @@ class Keyboard {
 		uint8_t currentButton;
 		uint16_t pressStartMs;
 		uint8_t longPressFlag;
+		uint8_t lastEvent;
 
 		uint8_t GetDebouncedButton(void);
 
 	public:
 
+        /*
+         * Constructor
+         *
+         * Interval*	interval	Interval object
+         */
 		Keyboard(Interval * interval);
-		uint8_t GetEvent(void);
 
+		/*
+		 * Update event
+		 *
+		 * uint8_t	return	Current event
+		 */
+		uint8_t UpdateEvent(void);
+
+		/*
+		 * Get current event
+		 *
+		 * uint8_t	return	Current event
+		 */
+		uint8_t GetEvent(void) {return lastEvent;}
+
+		/*
+		 * Check current condition on flag and key
+		 *
+		 * uint8_t	flag	Checking flag
+		 * uint8_t	key	Checking key
+		 * uint8_t	return	Result
+		 */
+		uint8_t CheckCondition(uint8_t flag, uint8_t key) {return ((lastEvent & flag) && ((lastEvent & 0x0F) == key));}
+
+		/*
+		 * Check current condition is empty
+		 *
+		 * uint8_t	return	Result
+		 */
+		uint8_t CheckEmptyCondition(void) {return (lastEvent == KEYBOARD_EMPTY);}
+
+		/*
+		 * Check current condition on any flag
+		 *
+		 * uint8_t	return	Result
+		 */
+		uint8_t CheckAnyFlagCondition(void) {return (lastEvent & 0xF0);}
 };
 
 

@@ -172,6 +172,69 @@ void Display::PutChar(uint8_t x, uint8_t y, uint8_t charter, uint8_t mode) {
     PutColumn(rx++, ry, 0, mode);
 }
 
+void Display::PutNumber(uint8_t x, uint8_t y, uint8_t digits, int16_t value, uint8_t mode) {
+	if (value < 0) {
+		PutChar(x++, y, DISPLAY_CHAR_MINUS, mode);
+		digits--;
+		value = 0 - value;
+	}
+	x = x + digits;
+	for (uint8_t i = 0; i < digits; i++) {
+		if ((i == 0) || (value != 0)) {
+			PutChar(--x, y, value % 10, mode);
+			value /= 10;
+		} else {
+			PutChar(--x, y, DISPLAY_CHAR_SPACE, mode);
+		}
+	}
+}
+
+void Display::PutPointNumber(uint8_t x, uint8_t y, uint8_t digits, int16_t value, uint8_t mode) {
+	if (value < 0) {
+		PutChar(x++, y, DISPLAY_CHAR_MINUS, mode);
+		digits--;
+		value = 0 - value;
+	}
+	int16_t max = 1;
+	for (uint8_t i = 1; i < digits; i++) {
+		max *= 10;
+	}
+	if (value < max) {
+		x = x + digits;
+		digits--;
+		for (uint8_t i = 0; i < digits; i++) {
+			if ((i < 2) || (value != 0)) {
+				PutChar(--x, y, value % 10, mode);
+				value /= 10;
+			} else {
+				PutChar(--x, y, DISPLAY_CHAR_SPACE, mode);
+			}
+			if (i == 0) {
+				PutChar(--x, y, DISPLAY_CHAR_DOT, mode);
+			}
+		}
+	} else {
+		x = x + digits;
+		for (uint8_t i = 0; i < digits; i++) {
+			if ((i == 0) || (value != 0)) {
+				PutChar(--x, y, value % 10, mode);
+				value /= 10;
+			} else {
+				PutChar(--x, y, DISPLAY_CHAR_SPACE, mode);
+			}
+		}
+	}
+}
+
+void Display::PutHexNumber(uint8_t x, uint8_t y, uint8_t digits, uint16_t value, uint8_t mode) {
+	x = x + digits;
+	for (uint8_t i = 0; i < digits; i++) {
+		PutChar(--x, y, value & 0x0F, mode);
+		value >>= 4;
+	}
+}
+
+
 void Display::WakeUp(void) {
 	lightCounter = DISPLAY_LIGHT_CNT;
 }
