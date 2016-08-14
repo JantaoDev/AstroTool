@@ -86,6 +86,10 @@ void Shutter::SetFramesCount(uint8_t frames) {
 }
 
 void Shutter::SetStatus(uint8_t stat) {
+	if ((status == SHUTTER_STATUS_STOP) && (stat != SHUTTER_STATUS_STOP)) {
+		currentFrame = 0;
+		currentTime = 0;
+	}
 	status = stat;
 	if (stat == SHUTTER_STATUS_STOP) {
 		currentFrame = 0;

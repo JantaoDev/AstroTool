@@ -49,7 +49,13 @@ void Drive::SetSpeedFactor(int8_t factor) {
 	if (factor == 0) {
 		Stop();
 	}
-	int32_t spd = DRIVE_1X_SPEED * 10 / factor;
+	int32_t spd = (int32_t)DRIVE_1X_SPEED * 10 / factor;
+	if (spd > 0x7FFF) {
+		spd = 0x7FFF;
+	}
+	if (spd < -0x8000) {
+		spd = 0x8000;
+	}
 	SetSpeed(spd);
 }
 
@@ -61,8 +67,8 @@ void Drive::SetSpeed(int16_t speed) {
 	} else {
 		direction = DRIVE_DIRECTION;
 	}
-	if (speed < 1) {
-		speed = 1;
+	if (speed < DRIVE_MAX_SPEED) {
+		speed = DRIVE_MAX_SPEED;
 	}
 	timerValue = (0xFFFF - speed) + 1;
 	mode = DRIVE_MODE_NORMAL;
@@ -86,7 +92,7 @@ void Drive::SetMode(uint8_t md) {
 
 int8_t Drive::GetSpeedFactor(void) {
 	int32_t spd = GetSpeed();
-	spd = DRIVE_1X_SPEED * 10 / spd;
+	spd = (int32_t)DRIVE_1X_SPEED * 10 / spd;
 	if (spd > 127) {
 		spd = 127;
 	}
