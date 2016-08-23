@@ -9,7 +9,8 @@
 
 #include "class.drive.h"
 
-#define	DRIVE_1X_SPEED	(int16_t)((86400.0 * F_CPU) / (64 * DRIVE_REDUCTION))
+//define	DRIVE_1X_SPEED	(int16_t)((86400.0 / DRIVE_REDUCTION) * (F_CPU / 64))
+#define	DRIVE_1X_SPEED	(int32_t)((86400.0 * F_CPU) / (64 * DRIVE_REDUCTION))
 #define DRIVE_MAX_SPEED	(int16_t)(1.0 * F_CPU / (64 * DRIVE_MAXSPEED))
 
 Drive * Drive::instance;
@@ -38,7 +39,7 @@ Drive::Drive(void) {
 	DDRD |= 0x0F;
 	PORTD &= ~0x0F;
 	TCCR1A = 0x00;
-	TCCR1B = 0x03; //div 64
+	TCCR1B = 0x03;
 	TCNT1H = (timerValue >> 8) & 0xFF;
 	TCNT1L = timerValue & 0xFF;
 	TIMSK |= 1 << 2;
@@ -48,13 +49,14 @@ Drive::Drive(void) {
 void Drive::SetSpeedFactor(int8_t factor) {
 	if (factor == 0) {
 		Stop();
+		return;
 	}
-	int32_t spd = (int32_t)DRIVE_1X_SPEED * 10 / factor;
-	if (spd > 0x7FFF) {
-		spd = 0x7FFF;
+	int32_t spd = DRIVE_1X_SPEED * 10 / factor;
+	if (spd > 0x7FFFL) {
+		spd = 0x7FFFL;
 	}
-	if (spd < -0x8000) {
-		spd = 0x8000;
+	if (spd < -0x8000L) {
+		spd = -0x8000L;
 	}
 	SetSpeed(spd);
 }
@@ -92,7 +94,7 @@ void Drive::SetMode(uint8_t md) {
 
 int8_t Drive::GetSpeedFactor(void) {
 	int32_t spd = GetSpeed();
-	spd = (int32_t)DRIVE_1X_SPEED * 10 / spd;
+	spd = DRIVE_1X_SPEED * 10 / spd;
 	if (spd > 127) {
 		spd = 127;
 	}

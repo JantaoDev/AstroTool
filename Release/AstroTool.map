@@ -285,7 +285,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x105a
+.text           0x0000000000000000     0x10ac
  *(.vectors)
  .vectors       0x0000000000000000       0x26 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
                 0x0000000000000000                __vectors
@@ -384,146 +384,146 @@ END GROUP
                 0x0000000000000558        0x2 ./class.application.o
                 0x0000000000000558                _ZN11Application3RunEv
  .text._ZN7BatteryC2Ev
-                0x000000000000055a        0xa ./class.battery.o
+                0x000000000000055a        0xc ./class.battery.o
                 0x000000000000055a                _ZN7BatteryC1Ev
                 0x000000000000055a                _ZN7BatteryC2Ev
  .text._ZN7Battery10getVoltageEv
-                0x0000000000000564       0x20 ./class.battery.o
-                0x0000000000000564                _ZN7Battery10getVoltageEv
+                0x0000000000000566       0x20 ./class.battery.o
+                0x0000000000000566                _ZN7Battery10getVoltageEv
  .text._ZN7Display15IntervalHandlerEv
-                0x0000000000000584       0x24 ./class.display.o
-                0x0000000000000584                _ZN7Display15IntervalHandlerEv
+                0x0000000000000586       0x24 ./class.display.o
+                0x0000000000000586                _ZN7Display15IntervalHandlerEv
  .text._ZN7Display11SendCommandEhh
-                0x00000000000005a8       0x22 ./class.display.o
-                0x00000000000005a8                _ZN7Display11SendCommandEhh
+                0x00000000000005aa       0x22 ./class.display.o
+                0x00000000000005aa                _ZN7Display11SendCommandEhh
  .text._ZN7Display8SendDataEhh
-                0x00000000000005ca       0x22 ./class.display.o
-                0x00000000000005ca                _ZN7Display8SendDataEhh
+                0x00000000000005cc       0x22 ./class.display.o
+                0x00000000000005cc                _ZN7Display8SendDataEhh
  .text._ZN7Display9PutColumnEhhhh
-                0x00000000000005ec       0x96 ./class.display.o
-                0x00000000000005ec                _ZN7Display9PutColumnEhhhh
+                0x00000000000005ee       0x96 ./class.display.o
+                0x00000000000005ee                _ZN7Display9PutColumnEhhhh
  .text._ZN7Display11ClearScreenEv
-                0x0000000000000682       0x4c ./class.display.o
-                0x0000000000000682                _ZN7Display11ClearScreenEv
+                0x0000000000000684       0x4c ./class.display.o
+                0x0000000000000684                _ZN7Display11ClearScreenEv
  .text._ZN7Display12InitHardwareEv
-                0x00000000000006ce       0x50 ./class.display.o
-                0x00000000000006ce                _ZN7Display12InitHardwareEv
+                0x00000000000006d0       0x50 ./class.display.o
+                0x00000000000006d0                _ZN7Display12InitHardwareEv
  .text._ZN7DisplayC2EP8Interval
-                0x000000000000071e       0x24 ./class.display.o
-                0x000000000000071e                _ZN7DisplayC1EP8Interval
-                0x000000000000071e                _ZN7DisplayC2EP8Interval
+                0x0000000000000720       0x24 ./class.display.o
+                0x0000000000000720                _ZN7DisplayC1EP8Interval
+                0x0000000000000720                _ZN7DisplayC2EP8Interval
  .text._ZN7Display7PutCharEhhhh
-                0x0000000000000742      0x106 ./class.display.o
-                0x0000000000000742                _ZN7Display7PutCharEhhhh
+                0x0000000000000744      0x106 ./class.display.o
+                0x0000000000000744                _ZN7Display7PutCharEhhhh
  .text._ZN7Display9PutNumberEhhhih
-                0x0000000000000848       0xb2 ./class.display.o
-                0x0000000000000848                _ZN7Display9PutNumberEhhhih
+                0x000000000000084a       0xb2 ./class.display.o
+                0x000000000000084a                _ZN7Display9PutNumberEhhhih
  .text._ZN7Display14PutPointNumberEhhhih
-                0x00000000000008fa      0x136 ./class.display.o
-                0x00000000000008fa                _ZN7Display14PutPointNumberEhhhih
+                0x00000000000008fc      0x136 ./class.display.o
+                0x00000000000008fc                _ZN7Display14PutPointNumberEhhhih
  .text._ZN7Display12PutHexNumberEhhhjh
-                0x0000000000000a30       0x56 ./class.display.o
-                0x0000000000000a30                _ZN7Display12PutHexNumberEhhhjh
+                0x0000000000000a32       0x56 ./class.display.o
+                0x0000000000000a32                _ZN7Display12PutHexNumberEhhhjh
  .text._ZN7Display6WakeUpEv
-                0x0000000000000a86        0xc ./class.display.o
-                0x0000000000000a86                _ZN7Display6WakeUpEv
+                0x0000000000000a88        0xc ./class.display.o
+                0x0000000000000a88                _ZN7Display6WakeUpEv
  .text._ZN5Drive16InterruptHandlerEv
-                0x0000000000000a92       0x3a ./class.drive.o
-                0x0000000000000a92                _ZN5Drive16InterruptHandlerEv
+                0x0000000000000a94       0x3a ./class.drive.o
+                0x0000000000000a94                _ZN5Drive16InterruptHandlerEv
  .text._ZN5Drive8SetSpeedEi
-                0x0000000000000acc       0x34 ./class.drive.o
-                0x0000000000000acc                _ZN5Drive8SetSpeedEi
+                0x0000000000000ace       0x34 ./class.drive.o
+                0x0000000000000ace                _ZN5Drive8SetSpeedEi
  .text._ZN5Drive14SetSpeedFactorEa
-                0x0000000000000b00        0xe ./class.drive.o
-                0x0000000000000b00                _ZN5Drive14SetSpeedFactorEa
+                0x0000000000000b02       0x5e ./class.drive.o
+                0x0000000000000b02                _ZN5Drive14SetSpeedFactorEa
  .text._ZN5DriveC2Ev
-                0x0000000000000b0e       0x3e ./class.drive.o
-                0x0000000000000b0e                _ZN5DriveC2Ev
-                0x0000000000000b0e                _ZN5DriveC1Ev
+                0x0000000000000b60       0x3e ./class.drive.o
+                0x0000000000000b60                _ZN5DriveC2Ev
+                0x0000000000000b60                _ZN5DriveC1Ev
  .text._ZN5Drive7SetModeEh
-                0x0000000000000b4c       0x30 ./class.drive.o
-                0x0000000000000b4c                _ZN5Drive7SetModeEh
+                0x0000000000000b9e       0x30 ./class.drive.o
+                0x0000000000000b9e                _ZN5Drive7SetModeEh
  .text._ZN5Drive8GetSpeedEv
-                0x0000000000000b7c       0x28 ./class.drive.o
-                0x0000000000000b7c                _ZN5Drive8GetSpeedEv
+                0x0000000000000bce       0x28 ./class.drive.o
+                0x0000000000000bce                _ZN5Drive8GetSpeedEv
  .text._ZN5Drive14GetSpeedFactorEv
-                0x0000000000000ba4       0x42 ./class.drive.o
-                0x0000000000000ba4                _ZN5Drive14GetSpeedFactorEv
+                0x0000000000000bf6       0x42 ./class.drive.o
+                0x0000000000000bf6                _ZN5Drive14GetSpeedFactorEv
  .text.__vector_8
-                0x0000000000000be6       0x4e ./class.drive.o
-                0x0000000000000be6                __vector_8
+                0x0000000000000c38       0x4e ./class.drive.o
+                0x0000000000000c38                __vector_8
  .text._ZN8IntervalC2Ev
-                0x0000000000000c34       0x2c ./class.interval.o
-                0x0000000000000c34                _ZN8IntervalC2Ev
-                0x0000000000000c34                _ZN8IntervalC1Ev
+                0x0000000000000c86       0x2c ./class.interval.o
+                0x0000000000000c86                _ZN8IntervalC2Ev
+                0x0000000000000c86                _ZN8IntervalC1Ev
  .text._ZN8Interval16InterruptHandlerEv
-                0x0000000000000c60       0x58 ./class.interval.o
-                0x0000000000000c60                _ZN8Interval16InterruptHandlerEv
+                0x0000000000000cb2       0x58 ./class.interval.o
+                0x0000000000000cb2                _ZN8Interval16InterruptHandlerEv
  .text._ZN8Interval11addListenerEP16IntervalListenerj
-                0x0000000000000cb8       0x56 ./class.interval.o
-                0x0000000000000cb8                _ZN8Interval11addListenerEP16IntervalListenerj
+                0x0000000000000d0a       0x56 ./class.interval.o
+                0x0000000000000d0a                _ZN8Interval11addListenerEP16IntervalListenerj
  .text._ZN8Interval12getMsCounterEv
-                0x0000000000000d0e       0x1a ./class.interval.o
-                0x0000000000000d0e                _ZN8Interval12getMsCounterEv
+                0x0000000000000d60       0x1a ./class.interval.o
+                0x0000000000000d60                _ZN8Interval12getMsCounterEv
  .text.__vector_4
-                0x0000000000000d28       0x4e ./class.interval.o
-                0x0000000000000d28                __vector_4
+                0x0000000000000d7a       0x4e ./class.interval.o
+                0x0000000000000d7a                __vector_4
  .text._ZN8KeyboardC2EP8Interval
-                0x0000000000000d76       0x1e ./class.keyboard.o
-                0x0000000000000d76                _ZN8KeyboardC1EP8Interval
-                0x0000000000000d76                _ZN8KeyboardC2EP8Interval
+                0x0000000000000dc8       0x1e ./class.keyboard.o
+                0x0000000000000dc8                _ZN8KeyboardC1EP8Interval
+                0x0000000000000dc8                _ZN8KeyboardC2EP8Interval
  .text._ZN8Keyboard18GetDebouncedButtonEv
-                0x0000000000000d94       0x2c ./class.keyboard.o
-                0x0000000000000d94                _ZN8Keyboard18GetDebouncedButtonEv
+                0x0000000000000de6       0x2c ./class.keyboard.o
+                0x0000000000000de6                _ZN8Keyboard18GetDebouncedButtonEv
  .text._ZN8Keyboard11UpdateEventEv
-                0x0000000000000dc0       0x6a ./class.keyboard.o
-                0x0000000000000dc0                _ZN8Keyboard11UpdateEventEv
+                0x0000000000000e12       0x6a ./class.keyboard.o
+                0x0000000000000e12                _ZN8Keyboard11UpdateEventEv
  .text._ZN7Shutter15IntervalHandlerEv
-                0x0000000000000e2a       0x50 ./class.shutter.o
-                0x0000000000000e2a                _ZN7Shutter15IntervalHandlerEv
+                0x0000000000000e7c       0x50 ./class.shutter.o
+                0x0000000000000e7c                _ZN7Shutter15IntervalHandlerEv
  .text._ZN7ShutterC2EP8Interval
-                0x0000000000000e7a       0x32 ./class.shutter.o
-                0x0000000000000e7a                _ZN7ShutterC1EP8Interval
-                0x0000000000000e7a                _ZN7ShutterC2EP8Interval
+                0x0000000000000ecc       0x32 ./class.shutter.o
+                0x0000000000000ecc                _ZN7ShutterC1EP8Interval
+                0x0000000000000ecc                _ZN7ShutterC2EP8Interval
  .text._ZN7Shutter9SetStatusEh
-                0x0000000000000eac       0x1c ./class.shutter.o
-                0x0000000000000eac                _ZN7Shutter9SetStatusEh
+                0x0000000000000efe       0x1c ./class.shutter.o
+                0x0000000000000efe                _ZN7Shutter9SetStatusEh
  .text._ZN7Shutter14SetShutterTimeEh
-                0x0000000000000ec8       0x2c ./class.shutter.o
-                0x0000000000000ec8                _ZN7Shutter14SetShutterTimeEh
+                0x0000000000000f1a       0x2c ./class.shutter.o
+                0x0000000000000f1a                _ZN7Shutter14SetShutterTimeEh
  .text._ZN7Shutter12SetPauseTimeEh
-                0x0000000000000ef4       0x36 ./class.shutter.o
-                0x0000000000000ef4                _ZN7Shutter12SetPauseTimeEh
+                0x0000000000000f46       0x36 ./class.shutter.o
+                0x0000000000000f46                _ZN7Shutter12SetPauseTimeEh
  .text._ZN7Shutter14SetFramesCountEh
-                0x0000000000000f2a       0x28 ./class.shutter.o
-                0x0000000000000f2a                _ZN7Shutter14SetFramesCountEh
+                0x0000000000000f7c       0x28 ./class.shutter.o
+                0x0000000000000f7c                _ZN7Shutter14SetFramesCountEh
  .text.startup.main
-                0x0000000000000f52       0x22 ./main.o
-                0x0000000000000f52                main
+                0x0000000000000fa4       0x22 ./main.o
+                0x0000000000000fa4                main
  .text.libgcc.mul
-                0x0000000000000f74       0x18 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
-                0x0000000000000f74                __umulhisi3
+                0x0000000000000fc6       0x18 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_umulhisi3.o)
+                0x0000000000000fc6                __umulhisi3
  .text.libgcc.div
-                0x0000000000000f8c       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
-                0x0000000000000f8c                __udivmodhi4
+                0x0000000000000fde       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodhi4.o)
+                0x0000000000000fde                __udivmodhi4
  .text.libgcc.div
-                0x0000000000000fb4       0x26 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_divmodhi4.o)
-                0x0000000000000fb4                __divmodhi4
-                0x0000000000000fb4                _div
+                0x0000000000001006       0x26 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_divmodhi4.o)
+                0x0000000000001006                __divmodhi4
+                0x0000000000001006                _div
  .text.libgcc.div
-                0x0000000000000fda       0x44 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
-                0x0000000000000fda                __udivmodsi4
+                0x000000000000102c       0x44 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_udivmodsi4.o)
+                0x000000000000102c                __udivmodsi4
  .text.libgcc.div
-                0x000000000000101e       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_divmodsi4.o)
-                0x000000000000101e                __divmodsi4
+                0x0000000000001070       0x28 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_divmodsi4.o)
+                0x0000000000001070                __divmodsi4
  .text.libgcc.div
-                0x0000000000001046       0x10 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_negsi2.o)
-                0x0000000000001046                __negsi2
-                0x0000000000001056                . = ALIGN (0x2)
+                0x0000000000001098       0x10 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_negsi2.o)
+                0x0000000000001098                __negsi2
+                0x00000000000010a8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000001056        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
-                0x0000000000001056                exit
-                0x0000000000001056                _exit
+ .fini9         0x00000000000010a8        0x0 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
+                0x00000000000010a8                exit
+                0x00000000000010a8                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -542,11 +542,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000001056        0x4 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
+ .fini0         0x00000000000010a8        0x4 /usr/lib/gcc/avr/4.8.2/avr4/libgcc.a(_exit.o)
  *(.fini0)
-                0x000000000000105a                _etext = .
+                0x00000000000010ac                _etext = .
 
-.data           0x0000000000800060      0x198 load address 0x000000000000105a
+.data           0x0000000000800060      0x198 load address 0x00000000000010ac
                 0x0000000000800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr4/crtm8.o
@@ -599,8 +599,8 @@ END GROUP
                 0x00000000008001fa                _ZN8Interval8instanceE
  *(COMMON)
                 0x00000000008001fc                PROVIDE (__bss_end, .)
-                0x000000000000105a                __data_load_start = LOADADDR (.data)
-                0x00000000000011f2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000000000010ac                __data_load_start = LOADADDR (.data)
+                0x0000000000001244                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00000000008001fc        0x0
                 0x00000000008001fc                PROVIDE (__noinit_start, .)

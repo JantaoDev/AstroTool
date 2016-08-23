@@ -14,6 +14,7 @@
 Battery::Battery(void) {
 	ADMUX = 0xC4;
 	ADCSRA = 0xA7;
+	ADCSRA |= (1 << 6);
 }
 
 uint8_t Battery::getVoltage(void) {
