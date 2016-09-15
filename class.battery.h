@@ -16,6 +16,9 @@
 
 class Battery {
 
+	private:
+		uint8_t value;
+
 	public:
 
 		Battery(void);

@@ -26,7 +26,7 @@
 #define DISPLAY_LIGHT_TIME	2000UL
 
 // Battery voltage devider value
-#define BATTERY_DEVIDER	5
+#define BATTERY_DEVIDER	5.7
 
 // Drive default direction
 #define	DRIVE_DIRECTION	1
