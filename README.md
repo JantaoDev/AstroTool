@@ -8,7 +8,7 @@ Also, the device can control the DSLR camera equipped with an external shutter c
 
 The device uses the following elements:
 
-- Stepper motor 28BYJ48-5 (2048 steps per turn, the engine power is weak, so the gear unit 1:12.5 was used to connect it to the mount EQ1)
+- Stepper motor 28BYJ48-5 (2048 steps per turn, the motor power is weak, so the gear unit 1:12.5 was used to connect it to the mount EQ1)
 - Monochrome display 122*32 WG12232E
 
 The other elements shown in the circuit diagram.
@@ -42,9 +42,8 @@ Object `Shutter` controls the DSLR camera shutter.
 
 Basic program configuration located in configuration.h file
 
-|-----------------------------|-------------------------------------------------------------------------|
 | Parameter                   | Description                                                             |
-|-----------------------------|-------------------------------------------------------------------------|
+| --------------------------- | ----------------------------------------------------------------------- |
 | INTERVAL_LISTENERS_COUNT *  | The maximum number of listeners for `Interval` class                    |
 | INTERVAL_FREQ *             | The operating frequency of the hardware timer for `Interval` class (Hz) |
 | KEYBOARD_BOUNCE_FILTER **   | Keyboard bounce filter                                                  |
@@ -55,7 +54,6 @@ Basic program configuration located in configuration.h file
 | DRIVE_DIRECTION             | Stepper motor direction (either 0 or 1)                                 |
 | DRIVE_REDUCTION             | Motor steps count per axis RA turn                                      |
 | DRIVE_MAXSPEED **           | The maximum speed of the stepper motor (pps)                            |
-|-----------------------------|-------------------------------------------------------------------------|
 
 When the APPLICATION_DEBUG is defined, you can test the screen and keyboard. Exit is carried by four long-pressing the S3 button (Enter).
 
