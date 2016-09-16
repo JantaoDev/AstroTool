@@ -58,6 +58,7 @@ Basic program configuration located in configuration.h file
 When the APPLICATION_DEBUG is defined, you can test the screen and keyboard. Exit is carried by four long-pressing the S3 button (Enter).
 
 \* For correct operation of the program, these settings are not recommended to change
+
 \*\* These parameters are matched to the current hardware (stepping motor, mount, display)
 
 ## User instruction
@@ -66,7 +67,7 @@ The main screen is as follows:
 
 ```
  1.0x = 107A 8.3v
-\> 0 / 20x10s + 2s
+> 0 / 20x10s + 2s
 ```
 
 The first line displays:
