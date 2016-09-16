@@ -24,6 +24,8 @@ Circuit diagram and PCB located in the Misc folder:
 
 ## Program source description
 
+Target MCU - Atmega8, system clock - internal RC oscilator 8 MHz. Fuse bits - 0xD9 (high), 0xE4 (low).
+
 Object `Interval` allows one hardware timer call several listeners (introduced because of the lack of hardware timers).
 
 `Keyboard` object is responsible for reading the keyboard data.
