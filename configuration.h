@@ -4,7 +4,7 @@
  *
  * Project: AstroTool
  * Created on: 24.07.2016
- * Author: SergSXM (sergsxm@embedded.by)
+ * Author: Sergey Hayevoy (jantao.dev@gmail.com)
  */
 
 #ifndef CONFIGURATION_H_

@@ -4,7 +4,7 @@
  *
  * Project: AstroTool
  * Created on: 09.08.2016
- * Author: SergSXM (sergsxm@embedded.by)
+ * Author: Sergey Hayevoy (jantao.dev@gmail.com)
  */
 
 #include "class.application.h"

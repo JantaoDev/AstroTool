@@ -4,7 +4,7 @@
  *
  * Project: AstroTool
  * Created on: 08.08.2016
- * Author: SergSXM (sergsxm@embedded.by)
+ * Author: Sergey Hayevoy (jantao.dev@gmail.com)
  */
 
 #ifndef CLASS_DRIVE_H_

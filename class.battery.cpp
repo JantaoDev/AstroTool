@@ -4,7 +4,7 @@
  *
  * Project: AstroTool
  * Created on: 02.08.2016
- * Author: SergSXM (sergsxm@embedded.by)
+ * Author: Sergey Hayevoy (jantao.dev@gmail.com)
  */
 
 #include "class.battery.h"
