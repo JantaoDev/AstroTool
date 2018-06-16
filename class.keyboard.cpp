@@ -14,6 +14,7 @@ Keyboard::Keyboard(Interval * interval) {
 	this->interval = interval;
 	bounceCounter = 0;
 	bounceOldButton = 0;
+	bounceState = 0;
 	currentButton = 0;
 	pressStartMs = 0;
 	longPressFlag = 0;
@@ -33,14 +34,16 @@ uint8_t Keyboard::GetDebouncedButton(void) {
 		btn |= 2;
 	}
 	if (btn != bounceOldButton) {
+		bounceCounter = 0;
+	} else {
 		if (bounceCounter < KEYBOARD_BOUNCE_FILTER) {
 			bounceCounter++;
-			return bounceOldButton;
+		} else {
+			bounceState = btn;
 		}
-		bounceOldButton = btn;
 	}
-	bounceCounter = 0;
-	return btn;
+	bounceOldButton = btn;
+	return bounceState;
 }
 
 uint8_t Keyboard::UpdateEvent(void) {

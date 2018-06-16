@@ -23,7 +23,7 @@
 // Display oscilator frequency (Hz)
 #define	DISPLAY_OSC_FREQ	2000UL
 // Display backlight time (ms)
-#define DISPLAY_LIGHT_TIME	2000UL
+#define DISPLAY_LIGHT_TIME	10000UL
 
 // Battery voltage devider value
 #define BATTERY_DEVIDER	5.7

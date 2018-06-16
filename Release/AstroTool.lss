@@ -3,17 +3,15 @@ AstroTool.elf:     формат файла elf32-avr
 
 Разделы:
 Инд Имя           Размер    VMA       LMA       Файл      Вырав
-  0 .text         000010ba  00000000  00000000  00000094  2**1
+  0 .text         000010ce  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000198  00800060  000010ba  0000114e  2**0
+  1 .data         00000198  00800060  000010ce  00001162  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000004  008001f8  008001f8  000012e6  2**0
+  2 .bss          00000004  008001f8  008001f8  000012fa  2**0
                   ALLOC
-  3 .stab         000006cc  00000000  00000000  000012e8  2**2
-                  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000054  00000000  00000000  000019b4  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  5 .comment      00000011  00000000  00000000  00001a08  2**0
+  3 .comment      00000011  00000000  00000000  000012fa  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000130c  2**2
                   CONTENTS, READONLY
 
 Дизассемблирование раздела .text:
@@ -23,11 +21,11 @@ AstroTool.elf:     формат файла elf32-avr
        2:	33 c0       	rjmp	.+102    	; 0x6a <__bad_interrupt>
        4:	32 c0       	rjmp	.+100    	; 0x6a <__bad_interrupt>
        6:	31 c0       	rjmp	.+98     	; 0x6a <__bad_interrupt>
-       8:	bf c6       	rjmp	.+3454   	; 0xd88 <__vector_4>
+       8:	c3 c6       	rjmp	.+3462   	; 0xd90 <__vector_4>
        a:	2f c0       	rjmp	.+94     	; 0x6a <__bad_interrupt>
        c:	2e c0       	rjmp	.+92     	; 0x6a <__bad_interrupt>
        e:	2d c0       	rjmp	.+90     	; 0x6a <__bad_interrupt>
-      10:	1a c6       	rjmp	.+3124   	; 0xc46 <__vector_8>
+      10:	19 c6       	rjmp	.+3122   	; 0xc44 <__vector_8>
       12:	2b c0       	rjmp	.+86     	; 0x6a <__bad_interrupt>
       14:	2a c0       	rjmp	.+84     	; 0x6a <__bad_interrupt>
       16:	29 c0       	rjmp	.+82     	; 0x6a <__bad_interrupt>
@@ -38,13 +36,13 @@ AstroTool.elf:     формат файла elf32-avr
       20:	24 c0       	rjmp	.+72     	; 0x6a <__bad_interrupt>
       22:	23 c0       	rjmp	.+70     	; 0x6a <__bad_interrupt>
       24:	22 c0       	rjmp	.+68     	; 0x6a <__bad_interrupt>
-      26:	5d c2       	rjmp	.+1210   	; 0x4e2 <__stack+0x83>
-      28:	1e c2       	rjmp	.+1084   	; 0x466 <__stack+0x7>
-      2a:	c2 c1       	rjmp	.+900    	; 0x3b0 <_ZN11Application8MainMenuEv+0xaa>
-      2c:	be c1       	rjmp	.+892    	; 0x3aa <_ZN11Application8MainMenuEv+0xa4>
-      2e:	c3 c1       	rjmp	.+902    	; 0x3b6 <_ZN11Application8MainMenuEv+0xb0>
-      30:	c5 c1       	rjmp	.+906    	; 0x3bc <_ZN11Application8MainMenuEv+0xb6>
-      32:	f4 c1       	rjmp	.+1000   	; 0x41c <_ZN11Application8MainMenuEv+0x116>
+      26:	c1 c1       	rjmp	.+898    	; 0x3aa <_ZN11Application8MainMenuEv+0xa8>
+      28:	3b c2       	rjmp	.+1142   	; 0x4a0 <__stack+0x41>
+      2a:	c1 c1       	rjmp	.+898    	; 0x3ae <_ZN11Application8MainMenuEv+0xac>
+      2c:	ec c1       	rjmp	.+984    	; 0x406 <_ZN11Application8MainMenuEv+0x104>
+      2e:	c1 c1       	rjmp	.+898    	; 0x3b2 <_ZN11Application8MainMenuEv+0xb0>
+      30:	c2 c1       	rjmp	.+900    	; 0x3b6 <_ZN11Application8MainMenuEv+0xb4>
+      32:	15 c2       	rjmp	.+1066   	; 0x45e <_ZN11Application8MainMenuEv+0x15c>
 
 00000034 <__ctors_end>:
       34:	11 24       	eor	r1, r1
@@ -58,7 +56,7 @@ AstroTool.elf:     формат файла elf32-avr
       40:	11 e0       	ldi	r17, 0x01	; 1
       42:	a0 e6       	ldi	r26, 0x60	; 96
       44:	b0 e0       	ldi	r27, 0x00	; 0
-      46:	ea eb       	ldi	r30, 0xBA	; 186
+      46:	ee ec       	ldi	r30, 0xCE	; 206
       48:	f0 e1       	ldi	r31, 0x10	; 16
       4a:	02 c0       	rjmp	.+4      	; 0x50 <__do_copy_data+0x10>
       4c:	05 90       	lpm	r0, Z+
@@ -68,7 +66,7 @@ AstroTool.elf:     формат файла elf32-avr
       54:	d9 f7       	brne	.-10     	; 0x4c <__do_copy_data+0xc>
 
 00000056 <__do_clear_bss>:
-      56:	11 e0       	ldi	r17, 0x01	; 1
+      56:	21 e0       	ldi	r18, 0x01	; 1
       58:	a8 ef       	ldi	r26, 0xF8	; 248
       5a:	b1 e0       	ldi	r27, 0x01	; 1
       5c:	01 c0       	rjmp	.+2      	; 0x60 <.do_clear_bss_start>
@@ -78,10 +76,10 @@ AstroTool.elf:     формат файла elf32-avr
 
 00000060 <.do_clear_bss_start>:
       60:	ac 3f       	cpi	r26, 0xFC	; 252
-      62:	b1 07       	cpc	r27, r17
+      62:	b2 07       	cpc	r27, r18
       64:	e1 f7       	brne	.-8      	; 0x5e <.do_clear_bss_loop>
-      66:	a5 d7       	rcall	.+3914   	; 0xfb2 <main>
-      68:	26 c8       	rjmp	.-4020   	; 0xfffff0b6 <__eeprom_end+0xff7ef0b6>
+      66:	af d7       	rcall	.+3934   	; 0xfc6 <main>
+      68:	30 c8       	rjmp	.-4000   	; 0xfffff0ca <__eeprom_end+0xff7ef0ca>
 
 0000006a <__bad_interrupt>:
       6a:	ca cf       	rjmp	.-108    	; 0x0 <__vectors>
@@ -104,1265 +102,1265 @@ AstroTool.elf:     формат файла elf32-avr
       84:	cf 93       	push	r28
       86:	df 93       	push	r29
       88:	ec 01       	movw	r28, r24
-      8a:	04 d6       	rcall	.+3080   	; 0xc94 <_ZN8IntervalC1Ev>
+      8a:	03 d6       	rcall	.+3078   	; 0xc92 <_ZN8IntervalC1Ev>
       8c:	be 01       	movw	r22, r28
       8e:	ce 01       	movw	r24, r28
       90:	44 96       	adiw	r24, 0x14	; 20
-      92:	4d d3       	rcall	.+1690   	; 0x72e <_ZN7DisplayC1EP8Interval>
+      92:	4c d3       	rcall	.+1688   	; 0x72c <_ZN7DisplayC1EP8Interval>
       94:	be 01       	movw	r22, r28
       96:	ce 01       	movw	r24, r28
       98:	4a 96       	adiw	r24, 0x1a	; 26
-      9a:	9d d6       	rcall	.+3386   	; 0xdd6 <_ZN8KeyboardC1EP8Interval>
+      9a:	a1 d6       	rcall	.+3394   	; 0xdde <_ZN8KeyboardC1EP8Interval>
       9c:	ce 01       	movw	r24, r28
-      9e:	83 96       	adiw	r24, 0x23	; 35
-      a0:	5c d2       	rcall	.+1208   	; 0x55a <_ZN7BatteryC1Ev>
+      9e:	84 96       	adiw	r24, 0x24	; 36
+      a0:	56 d2       	rcall	.+1196   	; 0x54e <_ZN7BatteryC1Ev>
       a2:	be 01       	movw	r22, r28
       a4:	ce 01       	movw	r24, r28
-      a6:	84 96       	adiw	r24, 0x24	; 36
-      a8:	18 d7       	rcall	.+3632   	; 0xeda <_ZN7ShutterC1EP8Interval>
+      a6:	85 96       	adiw	r24, 0x25	; 37
+      a8:	1f d7       	rcall	.+3646   	; 0xee8 <_ZN7ShutterC1EP8Interval>
       aa:	ce 01       	movw	r24, r28
-      ac:	8d 96       	adiw	r24, 0x2d	; 45
+      ac:	8e 96       	adiw	r24, 0x2e	; 46
       ae:	df 91       	pop	r29
       b0:	cf 91       	pop	r28
       b2:	5d c5       	rjmp	.+2746   	; 0xb6e <_ZN5DriveC1Ev>
 
 000000b4 <_ZN11Application13DrawDriveLineEh>:
-      b4:	af 92       	push	r10
-      b6:	bf 92       	push	r11
-      b8:	cf 92       	push	r12
-      ba:	df 92       	push	r13
-      bc:	ef 92       	push	r14
-      be:	ff 92       	push	r15
-      c0:	0f 93       	push	r16
-      c2:	1f 93       	push	r17
-      c4:	cf 93       	push	r28
-      c6:	df 93       	push	r29
-      c8:	5c 01       	movw	r10, r24
-      ca:	f6 2e       	mov	r15, r22
-      cc:	66 23       	and	r22, r22
-      ce:	31 f0       	breq	.+12     	; 0xdc <_ZN11Application13DrawDriveLineEh+0x28>
-      d0:	81 e0       	ldi	r24, 0x01	; 1
-      d2:	92 e0       	ldi	r25, 0x02	; 2
-      d4:	69 13       	cpse	r22, r25
-      d6:	80 e0       	ldi	r24, 0x00	; 0
-      d8:	e8 2e       	mov	r14, r24
-      da:	02 c0       	rjmp	.+4      	; 0xe0 <_ZN11Application13DrawDriveLineEh+0x2c>
-      dc:	ee 24       	eor	r14, r14
-      de:	e3 94       	inc	r14
-      e0:	65 01       	movw	r12, r10
-      e2:	8d e2       	ldi	r24, 0x2D	; 45
-      e4:	c8 0e       	add	r12, r24
-      e6:	d1 1c       	adc	r13, r1
-      e8:	c6 01       	movw	r24, r12
-      ea:	8c d5       	rcall	.+2840   	; 0xc04 <_ZN5Drive14GetSpeedFactorEv>
-      ec:	e5 01       	movw	r28, r10
-      ee:	64 96       	adiw	r28, 0x14	; 20
-      f0:	08 2f       	mov	r16, r24
-      f2:	11 27       	eor	r17, r17
-      f4:	07 fd       	sbrc	r16, 7
-      f6:	10 95       	com	r17
-      f8:	24 e0       	ldi	r18, 0x04	; 4
-      fa:	40 e0       	ldi	r20, 0x00	; 0
-      fc:	60 e0       	ldi	r22, 0x00	; 0
-      fe:	ce 01       	movw	r24, r28
-     100:	04 d4       	rcall	.+2056   	; 0x90a <_ZN7Display14PutPointNumberEhhhih>
-     102:	11 e0       	ldi	r17, 0x01	; 1
-     104:	f1 10       	cpse	r15, r1
-     106:	10 e0       	ldi	r17, 0x00	; 0
-     108:	01 2f       	mov	r16, r17
-     10a:	23 e1       	ldi	r18, 0x13	; 19
-     10c:	40 e0       	ldi	r20, 0x00	; 0
-     10e:	64 e0       	ldi	r22, 0x04	; 4
-     110:	ce 01       	movw	r24, r28
-     112:	1f d3       	rcall	.+1598   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     114:	22 e1       	ldi	r18, 0x12	; 18
-     116:	40 e0       	ldi	r20, 0x00	; 0
-     118:	65 e0       	ldi	r22, 0x05	; 5
-     11a:	ce 01       	movw	r24, r28
-     11c:	1a d3       	rcall	.+1588   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     11e:	11 11       	cpse	r17, r1
-     120:	06 c0       	rjmp	.+12     	; 0x12e <_ZN11Application13DrawDriveLineEh+0x7a>
-     122:	81 e0       	ldi	r24, 0x01	; 1
-     124:	93 e0       	ldi	r25, 0x03	; 3
-     126:	f9 12       	cpse	r15, r25
-     128:	80 e0       	ldi	r24, 0x00	; 0
-     12a:	e8 2e       	mov	r14, r24
-     12c:	02 c0       	rjmp	.+4      	; 0x132 <_ZN11Application13DrawDriveLineEh+0x7e>
-     12e:	ee 24       	eor	r14, r14
-     130:	e3 94       	inc	r14
-     132:	c6 01       	movw	r24, r12
-     134:	53 d5       	rcall	.+2726   	; 0xbdc <_ZN5Drive8GetSpeedEv>
-     136:	97 fd       	sbrc	r25, 7
-     138:	03 c0       	rjmp	.+6      	; 0x140 <_ZN11Application13DrawDriveLineEh+0x8c>
-     13a:	c6 01       	movw	r24, r12
-     13c:	4f d5       	rcall	.+2718   	; 0xbdc <_ZN5Drive8GetSpeedEv>
-     13e:	05 c0       	rjmp	.+10     	; 0x14a <_ZN11Application13DrawDriveLineEh+0x96>
-     140:	c6 01       	movw	r24, r12
-     142:	4c d5       	rcall	.+2712   	; 0xbdc <_ZN5Drive8GetSpeedEv>
-     144:	91 95       	neg	r25
-     146:	81 95       	neg	r24
-     148:	91 09       	sbc	r25, r1
-     14a:	8c 01       	movw	r16, r24
-     14c:	24 e0       	ldi	r18, 0x04	; 4
-     14e:	40 e0       	ldi	r20, 0x00	; 0
-     150:	66 e0       	ldi	r22, 0x06	; 6
-     152:	ce 01       	movw	r24, r28
-     154:	75 d4       	rcall	.+2282   	; 0xa40 <_ZN7Display12PutHexNumberEhhhjh>
-     156:	c5 01       	movw	r24, r10
-     158:	83 96       	adiw	r24, 0x23	; 35
-     15a:	07 d2       	rcall	.+1038   	; 0x56a <_ZN7Battery10getVoltageEv>
-     15c:	08 2f       	mov	r16, r24
-     15e:	10 e0       	ldi	r17, 0x00	; 0
-     160:	e1 2c       	mov	r14, r1
-     162:	23 e0       	ldi	r18, 0x03	; 3
-     164:	40 e0       	ldi	r20, 0x00	; 0
-     166:	6b e0       	ldi	r22, 0x0B	; 11
-     168:	ce 01       	movw	r24, r28
-     16a:	cf d3       	rcall	.+1950   	; 0x90a <_ZN7Display14PutPointNumberEhhhih>
-     16c:	00 e0       	ldi	r16, 0x00	; 0
-     16e:	24 e1       	ldi	r18, 0x14	; 20
-     170:	40 e0       	ldi	r20, 0x00	; 0
-     172:	6e e0       	ldi	r22, 0x0E	; 14
-     174:	ce 01       	movw	r24, r28
-     176:	ed d2       	rcall	.+1498   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     178:	df 91       	pop	r29
-     17a:	cf 91       	pop	r28
-     17c:	1f 91       	pop	r17
-     17e:	0f 91       	pop	r16
-     180:	ff 90       	pop	r15
-     182:	ef 90       	pop	r14
-     184:	df 90       	pop	r13
-     186:	cf 90       	pop	r12
-     188:	bf 90       	pop	r11
-     18a:	af 90       	pop	r10
-     18c:	08 95       	ret
+      b4:	8f 92       	push	r8
+      b6:	9f 92       	push	r9
+      b8:	af 92       	push	r10
+      ba:	bf 92       	push	r11
+      bc:	cf 92       	push	r12
+      be:	df 92       	push	r13
+      c0:	ef 92       	push	r14
+      c2:	0f 93       	push	r16
+      c4:	1f 93       	push	r17
+      c6:	cf 93       	push	r28
+      c8:	df 93       	push	r29
+      ca:	4c 01       	movw	r8, r24
+      cc:	d6 2f       	mov	r29, r22
+      ce:	c1 e0       	ldi	r28, 0x01	; 1
+      d0:	66 23       	and	r22, r22
+      d2:	19 f0       	breq	.+6      	; 0xda <_ZN11Application13DrawDriveLineEh+0x26>
+      d4:	62 30       	cpi	r22, 0x02	; 2
+      d6:	09 f0       	breq	.+2      	; 0xda <_ZN11Application13DrawDriveLineEh+0x26>
+      d8:	c0 e0       	ldi	r28, 0x00	; 0
+      da:	54 01       	movw	r10, r8
+      dc:	8e e2       	ldi	r24, 0x2E	; 46
+      de:	a8 0e       	add	r10, r24
+      e0:	b1 1c       	adc	r11, r1
+      e2:	c5 01       	movw	r24, r10
+      e4:	8f d5       	rcall	.+2846   	; 0xc04 <_ZN5Drive14GetSpeedFactorEv>
+      e6:	64 01       	movw	r12, r8
+      e8:	94 e1       	ldi	r25, 0x14	; 20
+      ea:	c9 0e       	add	r12, r25
+      ec:	d1 1c       	adc	r13, r1
+      ee:	08 2f       	mov	r16, r24
+      f0:	88 0f       	add	r24, r24
+      f2:	11 0b       	sbc	r17, r17
+      f4:	ec 2e       	mov	r14, r28
+      f6:	24 e0       	ldi	r18, 0x04	; 4
+      f8:	40 e0       	ldi	r20, 0x00	; 0
+      fa:	60 e0       	ldi	r22, 0x00	; 0
+      fc:	c6 01       	movw	r24, r12
+      fe:	01 d4       	rcall	.+2050   	; 0x902 <_ZN7Display14PutPointNumberEhhhih>
+     100:	c1 e0       	ldi	r28, 0x01	; 1
+     102:	d1 11       	cpse	r29, r1
+     104:	c0 e0       	ldi	r28, 0x00	; 0
+     106:	0c 2f       	mov	r16, r28
+     108:	23 e1       	ldi	r18, 0x13	; 19
+     10a:	40 e0       	ldi	r20, 0x00	; 0
+     10c:	64 e0       	ldi	r22, 0x04	; 4
+     10e:	c6 01       	movw	r24, r12
+     110:	1f d3       	rcall	.+1598   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     112:	22 e1       	ldi	r18, 0x12	; 18
+     114:	40 e0       	ldi	r20, 0x00	; 0
+     116:	65 e0       	ldi	r22, 0x05	; 5
+     118:	c6 01       	movw	r24, r12
+     11a:	1a d3       	rcall	.+1588   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     11c:	c1 11       	cpse	r28, r1
+     11e:	04 c0       	rjmp	.+8      	; 0x128 <_ZN11Application13DrawDriveLineEh+0x74>
+     120:	c1 e0       	ldi	r28, 0x01	; 1
+     122:	d3 30       	cpi	r29, 0x03	; 3
+     124:	09 f0       	breq	.+2      	; 0x128 <_ZN11Application13DrawDriveLineEh+0x74>
+     126:	c0 e0       	ldi	r28, 0x00	; 0
+     128:	c5 01       	movw	r24, r10
+     12a:	58 d5       	rcall	.+2736   	; 0xbdc <_ZN5Drive8GetSpeedEv>
+     12c:	97 fd       	sbrc	r25, 7
+     12e:	03 c0       	rjmp	.+6      	; 0x136 <_ZN11Application13DrawDriveLineEh+0x82>
+     130:	c5 01       	movw	r24, r10
+     132:	54 d5       	rcall	.+2728   	; 0xbdc <_ZN5Drive8GetSpeedEv>
+     134:	05 c0       	rjmp	.+10     	; 0x140 <_ZN11Application13DrawDriveLineEh+0x8c>
+     136:	c5 01       	movw	r24, r10
+     138:	51 d5       	rcall	.+2722   	; 0xbdc <_ZN5Drive8GetSpeedEv>
+     13a:	91 95       	neg	r25
+     13c:	81 95       	neg	r24
+     13e:	91 09       	sbc	r25, r1
+     140:	ec 2e       	mov	r14, r28
+     142:	8c 01       	movw	r16, r24
+     144:	24 e0       	ldi	r18, 0x04	; 4
+     146:	40 e0       	ldi	r20, 0x00	; 0
+     148:	66 e0       	ldi	r22, 0x06	; 6
+     14a:	c6 01       	movw	r24, r12
+     14c:	79 d4       	rcall	.+2290   	; 0xa40 <_ZN7Display12PutHexNumberEhhhjh>
+     14e:	c4 01       	movw	r24, r8
+     150:	84 96       	adiw	r24, 0x24	; 36
+     152:	05 d2       	rcall	.+1034   	; 0x55e <_ZN7Battery10getVoltageEv>
+     154:	08 2f       	mov	r16, r24
+     156:	10 e0       	ldi	r17, 0x00	; 0
+     158:	e1 2c       	mov	r14, r1
+     15a:	23 e0       	ldi	r18, 0x03	; 3
+     15c:	40 e0       	ldi	r20, 0x00	; 0
+     15e:	6b e0       	ldi	r22, 0x0B	; 11
+     160:	c6 01       	movw	r24, r12
+     162:	cf d3       	rcall	.+1950   	; 0x902 <_ZN7Display14PutPointNumberEhhhih>
+     164:	00 e0       	ldi	r16, 0x00	; 0
+     166:	24 e1       	ldi	r18, 0x14	; 20
+     168:	40 e0       	ldi	r20, 0x00	; 0
+     16a:	6e e0       	ldi	r22, 0x0E	; 14
+     16c:	c6 01       	movw	r24, r12
+     16e:	f0 d2       	rcall	.+1504   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     170:	df 91       	pop	r29
+     172:	cf 91       	pop	r28
+     174:	1f 91       	pop	r17
+     176:	0f 91       	pop	r16
+     178:	ef 90       	pop	r14
+     17a:	df 90       	pop	r13
+     17c:	cf 90       	pop	r12
+     17e:	bf 90       	pop	r11
+     180:	af 90       	pop	r10
+     182:	9f 90       	pop	r9
+     184:	8f 90       	pop	r8
+     186:	08 95       	ret
 
-0000018e <_ZN11Application15DrawShutterLineEh>:
-     18e:	bf 92       	push	r11
-     190:	cf 92       	push	r12
-     192:	df 92       	push	r13
-     194:	ef 92       	push	r14
-     196:	ff 92       	push	r15
-     198:	0f 93       	push	r16
-     19a:	1f 93       	push	r17
-     19c:	cf 93       	push	r28
-     19e:	df 93       	push	r29
-     1a0:	6c 01       	movw	r12, r24
-     1a2:	b6 2e       	mov	r11, r22
-     1a4:	fc 01       	movw	r30, r24
-     1a6:	84 a5       	ldd	r24, Z+44	; 0x2c
-     1a8:	e6 01       	movw	r28, r12
-     1aa:	64 96       	adiw	r28, 0x14	; 20
+00000188 <_ZN11Application15DrawShutterLineEh>:
+     188:	af 92       	push	r10
+     18a:	bf 92       	push	r11
+     18c:	cf 92       	push	r12
+     18e:	df 92       	push	r13
+     190:	ef 92       	push	r14
+     192:	ff 92       	push	r15
+     194:	0f 93       	push	r16
+     196:	1f 93       	push	r17
+     198:	cf 93       	push	r28
+     19a:	df 93       	push	r29
+     19c:	5c 01       	movw	r10, r24
+     19e:	d6 2f       	mov	r29, r22
+     1a0:	fc 01       	movw	r30, r24
+     1a2:	85 a5       	ldd	r24, Z+45	; 0x2d
+     1a4:	95 01       	movw	r18, r10
+     1a6:	2c 5e       	subi	r18, 0xEC	; 236
+     1a8:	3f 4f       	sbci	r19, 0xFF	; 255
+     1aa:	69 01       	movw	r12, r18
      1ac:	81 30       	cpi	r24, 0x01	; 1
-     1ae:	41 f0       	breq	.+16     	; 0x1c0 <_ZN11Application15DrawShutterLineEh+0x32>
-     1b0:	60 f0       	brcs	.+24     	; 0x1ca <_ZN11Application15DrawShutterLineEh+0x3c>
+     1ae:	49 f0       	breq	.+18     	; 0x1c2 <_ZN11Application15DrawShutterLineEh+0x3a>
+     1b0:	70 f0       	brcs	.+28     	; 0x1ce <_ZN11Application15DrawShutterLineEh+0x46>
      1b2:	82 30       	cpi	r24, 0x02	; 2
-     1b4:	91 f4       	brne	.+36     	; 0x1da <_ZN11Application15DrawShutterLineEh+0x4c>
+     1b4:	a9 f4       	brne	.+42     	; 0x1e0 <_ZN11Application15DrawShutterLineEh+0x58>
      1b6:	01 e0       	ldi	r16, 0x01	; 1
-     1b8:	60 13       	cpse	r22, r16
-     1ba:	00 e0       	ldi	r16, 0x00	; 0
-     1bc:	2a e1       	ldi	r18, 0x1A	; 26
-     1be:	09 c0       	rjmp	.+18     	; 0x1d2 <_ZN11Application15DrawShutterLineEh+0x44>
-     1c0:	01 e0       	ldi	r16, 0x01	; 1
-     1c2:	60 13       	cpse	r22, r16
-     1c4:	00 e0       	ldi	r16, 0x00	; 0
-     1c6:	28 e1       	ldi	r18, 0x18	; 24
-     1c8:	04 c0       	rjmp	.+8      	; 0x1d2 <_ZN11Application15DrawShutterLineEh+0x44>
-     1ca:	01 e0       	ldi	r16, 0x01	; 1
-     1cc:	60 13       	cpse	r22, r16
-     1ce:	00 e0       	ldi	r16, 0x00	; 0
-     1d0:	29 e1       	ldi	r18, 0x19	; 25
-     1d2:	41 e0       	ldi	r20, 0x01	; 1
-     1d4:	60 e0       	ldi	r22, 0x00	; 0
-     1d6:	ce 01       	movw	r24, r28
-     1d8:	bc d2       	rcall	.+1400   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     1da:	ff 24       	eor	r15, r15
-     1dc:	f3 94       	inc	r15
-     1de:	bf 10       	cpse	r11, r15
-     1e0:	f1 2c       	mov	r15, r1
-     1e2:	0f 2d       	mov	r16, r15
-     1e4:	20 e1       	ldi	r18, 0x10	; 16
-     1e6:	41 e0       	ldi	r20, 0x01	; 1
-     1e8:	61 e0       	ldi	r22, 0x01	; 1
-     1ea:	ce 01       	movw	r24, r28
-     1ec:	b2 d2       	rcall	.+1380   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     1ee:	f6 01       	movw	r30, r12
-     1f0:	82 a5       	ldd	r24, Z+42	; 0x2a
-     1f2:	08 2f       	mov	r16, r24
-     1f4:	10 e0       	ldi	r17, 0x00	; 0
-     1f6:	ef 2c       	mov	r14, r15
-     1f8:	22 e0       	ldi	r18, 0x02	; 2
-     1fa:	41 e0       	ldi	r20, 0x01	; 1
-     1fc:	62 e0       	ldi	r22, 0x02	; 2
-     1fe:	ce 01       	movw	r24, r28
-     200:	2b d3       	rcall	.+1622   	; 0x858 <_ZN7Display9PutNumberEhhhih>
-     202:	0f 2d       	mov	r16, r15
-     204:	26 e1       	ldi	r18, 0x16	; 22
-     206:	41 e0       	ldi	r20, 0x01	; 1
-     208:	64 e0       	ldi	r22, 0x04	; 4
-     20a:	ce 01       	movw	r24, r28
-     20c:	a2 d2       	rcall	.+1348   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     20e:	f1 10       	cpse	r15, r1
-     210:	06 c0       	rjmp	.+12     	; 0x21e <_ZN11Application15DrawShutterLineEh+0x90>
-     212:	81 e0       	ldi	r24, 0x01	; 1
-     214:	f4 e0       	ldi	r31, 0x04	; 4
-     216:	bf 12       	cpse	r11, r31
-     218:	80 e0       	ldi	r24, 0x00	; 0
-     21a:	e8 2e       	mov	r14, r24
-     21c:	02 c0       	rjmp	.+4      	; 0x222 <_ZN11Application15DrawShutterLineEh+0x94>
-     21e:	ee 24       	eor	r14, r14
-     220:	e3 94       	inc	r14
-     222:	f6 01       	movw	r30, r12
-     224:	83 a5       	ldd	r24, Z+43	; 0x2b
-     226:	08 2f       	mov	r16, r24
-     228:	10 e0       	ldi	r17, 0x00	; 0
-     22a:	22 e0       	ldi	r18, 0x02	; 2
-     22c:	41 e0       	ldi	r20, 0x01	; 1
-     22e:	65 e0       	ldi	r22, 0x05	; 5
-     230:	ce 01       	movw	r24, r28
-     232:	12 d3       	rcall	.+1572   	; 0x858 <_ZN7Display9PutNumberEhhhih>
-     234:	0f 2d       	mov	r16, r15
-     236:	23 e1       	ldi	r18, 0x13	; 19
-     238:	41 e0       	ldi	r20, 0x01	; 1
-     23a:	67 e0       	ldi	r22, 0x07	; 7
-     23c:	ce 01       	movw	r24, r28
-     23e:	89 d2       	rcall	.+1298   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     240:	f1 10       	cpse	r15, r1
-     242:	06 c0       	rjmp	.+12     	; 0x250 <_ZN11Application15DrawShutterLineEh+0xc2>
-     244:	81 e0       	ldi	r24, 0x01	; 1
-     246:	f5 e0       	ldi	r31, 0x05	; 5
-     248:	bf 12       	cpse	r11, r31
-     24a:	80 e0       	ldi	r24, 0x00	; 0
-     24c:	e8 2e       	mov	r14, r24
-     24e:	02 c0       	rjmp	.+4      	; 0x254 <_ZN11Application15DrawShutterLineEh+0xc6>
-     250:	ee 24       	eor	r14, r14
-     252:	e3 94       	inc	r14
-     254:	f6 01       	movw	r30, r12
-     256:	81 a5       	ldd	r24, Z+41	; 0x29
-     258:	90 a5       	ldd	r25, Z+40	; 0x28
+     1b8:	61 30       	cpi	r22, 0x01	; 1
+     1ba:	09 f0       	breq	.+2      	; 0x1be <_ZN11Application15DrawShutterLineEh+0x36>
+     1bc:	00 e0       	ldi	r16, 0x00	; 0
+     1be:	2a e1       	ldi	r18, 0x1A	; 26
+     1c0:	0b c0       	rjmp	.+22     	; 0x1d8 <_ZN11Application15DrawShutterLineEh+0x50>
+     1c2:	01 e0       	ldi	r16, 0x01	; 1
+     1c4:	61 30       	cpi	r22, 0x01	; 1
+     1c6:	09 f0       	breq	.+2      	; 0x1ca <_ZN11Application15DrawShutterLineEh+0x42>
+     1c8:	00 e0       	ldi	r16, 0x00	; 0
+     1ca:	28 e1       	ldi	r18, 0x18	; 24
+     1cc:	05 c0       	rjmp	.+10     	; 0x1d8 <_ZN11Application15DrawShutterLineEh+0x50>
+     1ce:	01 e0       	ldi	r16, 0x01	; 1
+     1d0:	61 30       	cpi	r22, 0x01	; 1
+     1d2:	09 f0       	breq	.+2      	; 0x1d6 <_ZN11Application15DrawShutterLineEh+0x4e>
+     1d4:	00 e0       	ldi	r16, 0x00	; 0
+     1d6:	29 e1       	ldi	r18, 0x19	; 25
+     1d8:	41 e0       	ldi	r20, 0x01	; 1
+     1da:	60 e0       	ldi	r22, 0x00	; 0
+     1dc:	c6 01       	movw	r24, r12
+     1de:	b8 d2       	rcall	.+1392   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     1e0:	c1 e0       	ldi	r28, 0x01	; 1
+     1e2:	d1 30       	cpi	r29, 0x01	; 1
+     1e4:	09 f0       	breq	.+2      	; 0x1e8 <_ZN11Application15DrawShutterLineEh+0x60>
+     1e6:	c0 e0       	ldi	r28, 0x00	; 0
+     1e8:	fc 2e       	mov	r15, r28
+     1ea:	0c 2f       	mov	r16, r28
+     1ec:	20 e1       	ldi	r18, 0x10	; 16
+     1ee:	41 e0       	ldi	r20, 0x01	; 1
+     1f0:	61 e0       	ldi	r22, 0x01	; 1
+     1f2:	c6 01       	movw	r24, r12
+     1f4:	ad d2       	rcall	.+1370   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     1f6:	f5 01       	movw	r30, r10
+     1f8:	03 a5       	ldd	r16, Z+43	; 0x2b
+     1fa:	10 e0       	ldi	r17, 0x00	; 0
+     1fc:	ec 2e       	mov	r14, r28
+     1fe:	22 e0       	ldi	r18, 0x02	; 2
+     200:	41 e0       	ldi	r20, 0x01	; 1
+     202:	62 e0       	ldi	r22, 0x02	; 2
+     204:	c6 01       	movw	r24, r12
+     206:	23 d3       	rcall	.+1606   	; 0x84e <_ZN7Display9PutNumberEhhhih>
+     208:	0c 2f       	mov	r16, r28
+     20a:	26 e1       	ldi	r18, 0x16	; 22
+     20c:	41 e0       	ldi	r20, 0x01	; 1
+     20e:	64 e0       	ldi	r22, 0x04	; 4
+     210:	c6 01       	movw	r24, r12
+     212:	9e d2       	rcall	.+1340   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     214:	c1 11       	cpse	r28, r1
+     216:	06 c0       	rjmp	.+12     	; 0x224 <_ZN11Application15DrawShutterLineEh+0x9c>
+     218:	ee 24       	eor	r14, r14
+     21a:	e3 94       	inc	r14
+     21c:	d4 30       	cpi	r29, 0x04	; 4
+     21e:	19 f0       	breq	.+6      	; 0x226 <_ZN11Application15DrawShutterLineEh+0x9e>
+     220:	e1 2c       	mov	r14, r1
+     222:	01 c0       	rjmp	.+2      	; 0x226 <_ZN11Application15DrawShutterLineEh+0x9e>
+     224:	ec 2e       	mov	r14, r28
+     226:	f5 01       	movw	r30, r10
+     228:	04 a5       	ldd	r16, Z+44	; 0x2c
+     22a:	10 e0       	ldi	r17, 0x00	; 0
+     22c:	22 e0       	ldi	r18, 0x02	; 2
+     22e:	41 e0       	ldi	r20, 0x01	; 1
+     230:	65 e0       	ldi	r22, 0x05	; 5
+     232:	c6 01       	movw	r24, r12
+     234:	0c d3       	rcall	.+1560   	; 0x84e <_ZN7Display9PutNumberEhhhih>
+     236:	0c 2f       	mov	r16, r28
+     238:	23 e1       	ldi	r18, 0x13	; 19
+     23a:	41 e0       	ldi	r20, 0x01	; 1
+     23c:	67 e0       	ldi	r22, 0x07	; 7
+     23e:	c6 01       	movw	r24, r12
+     240:	87 d2       	rcall	.+1294   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     242:	c1 11       	cpse	r28, r1
+     244:	06 c0       	rjmp	.+12     	; 0x252 <_ZN11Application15DrawShutterLineEh+0xca>
+     246:	ee 24       	eor	r14, r14
+     248:	e3 94       	inc	r14
+     24a:	d5 30       	cpi	r29, 0x05	; 5
+     24c:	19 f0       	breq	.+6      	; 0x254 <_ZN11Application15DrawShutterLineEh+0xcc>
+     24e:	e1 2c       	mov	r14, r1
+     250:	01 c0       	rjmp	.+2      	; 0x254 <_ZN11Application15DrawShutterLineEh+0xcc>
+     252:	ec 2e       	mov	r14, r28
+     254:	f5 01       	movw	r30, r10
+     256:	82 a5       	ldd	r24, Z+42	; 0x2a
+     258:	91 a5       	ldd	r25, Z+41	; 0x29
      25a:	89 1b       	sub	r24, r25
      25c:	08 2f       	mov	r16, r24
      25e:	10 e0       	ldi	r17, 0x00	; 0
      260:	22 e0       	ldi	r18, 0x02	; 2
      262:	41 e0       	ldi	r20, 0x01	; 1
      264:	68 e0       	ldi	r22, 0x08	; 8
-     266:	ce 01       	movw	r24, r28
-     268:	f7 d2       	rcall	.+1518   	; 0x858 <_ZN7Display9PutNumberEhhhih>
-     26a:	0f 2d       	mov	r16, r15
+     266:	c6 01       	movw	r24, r12
+     268:	f2 d2       	rcall	.+1508   	; 0x84e <_ZN7Display9PutNumberEhhhih>
+     26a:	0c 2f       	mov	r16, r28
      26c:	25 e1       	ldi	r18, 0x15	; 21
      26e:	41 e0       	ldi	r20, 0x01	; 1
      270:	6a e0       	ldi	r22, 0x0A	; 10
-     272:	ce 01       	movw	r24, r28
-     274:	6e d2       	rcall	.+1244   	; 0x752 <_ZN7Display7PutCharEhhhh>
+     272:	c6 01       	movw	r24, r12
+     274:	6d d2       	rcall	.+1242   	; 0x750 <_ZN7Display7PutCharEhhhh>
      276:	27 e1       	ldi	r18, 0x17	; 23
      278:	41 e0       	ldi	r20, 0x01	; 1
      27a:	6b e0       	ldi	r22, 0x0B	; 11
-     27c:	ce 01       	movw	r24, r28
-     27e:	69 d2       	rcall	.+1234   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     280:	f1 10       	cpse	r15, r1
-     282:	06 c0       	rjmp	.+12     	; 0x290 <_ZN11Application15DrawShutterLineEh+0x102>
-     284:	81 e0       	ldi	r24, 0x01	; 1
-     286:	f6 e0       	ldi	r31, 0x06	; 6
-     288:	bf 12       	cpse	r11, r31
-     28a:	80 e0       	ldi	r24, 0x00	; 0
-     28c:	e8 2e       	mov	r14, r24
-     28e:	02 c0       	rjmp	.+4      	; 0x294 <_ZN11Application15DrawShutterLineEh+0x106>
-     290:	ee 24       	eor	r14, r14
-     292:	e3 94       	inc	r14
-     294:	f6 01       	movw	r30, r12
-     296:	80 a5       	ldd	r24, Z+40	; 0x28
-     298:	08 2f       	mov	r16, r24
-     29a:	10 e0       	ldi	r17, 0x00	; 0
-     29c:	22 e0       	ldi	r18, 0x02	; 2
-     29e:	41 e0       	ldi	r20, 0x01	; 1
-     2a0:	6c e0       	ldi	r22, 0x0C	; 12
-     2a2:	ce 01       	movw	r24, r28
-     2a4:	d9 d2       	rcall	.+1458   	; 0x858 <_ZN7Display9PutNumberEhhhih>
-     2a6:	0f 2d       	mov	r16, r15
-     2a8:	25 e1       	ldi	r18, 0x15	; 21
-     2aa:	41 e0       	ldi	r20, 0x01	; 1
-     2ac:	6e e0       	ldi	r22, 0x0E	; 14
-     2ae:	ce 01       	movw	r24, r28
-     2b0:	50 d2       	rcall	.+1184   	; 0x752 <_ZN7Display7PutCharEhhhh>
-     2b2:	df 91       	pop	r29
-     2b4:	cf 91       	pop	r28
-     2b6:	1f 91       	pop	r17
-     2b8:	0f 91       	pop	r16
-     2ba:	ff 90       	pop	r15
-     2bc:	ef 90       	pop	r14
-     2be:	df 90       	pop	r13
-     2c0:	cf 90       	pop	r12
-     2c2:	bf 90       	pop	r11
-     2c4:	08 95       	ret
+     27c:	c6 01       	movw	r24, r12
+     27e:	68 d2       	rcall	.+1232   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     280:	c1 11       	cpse	r28, r1
+     282:	04 c0       	rjmp	.+8      	; 0x28c <_ZN11Application15DrawShutterLineEh+0x104>
+     284:	c1 e0       	ldi	r28, 0x01	; 1
+     286:	d6 30       	cpi	r29, 0x06	; 6
+     288:	09 f0       	breq	.+2      	; 0x28c <_ZN11Application15DrawShutterLineEh+0x104>
+     28a:	c0 e0       	ldi	r28, 0x00	; 0
+     28c:	f5 01       	movw	r30, r10
+     28e:	81 a5       	ldd	r24, Z+41	; 0x29
+     290:	08 2f       	mov	r16, r24
+     292:	10 e0       	ldi	r17, 0x00	; 0
+     294:	ec 2e       	mov	r14, r28
+     296:	22 e0       	ldi	r18, 0x02	; 2
+     298:	41 e0       	ldi	r20, 0x01	; 1
+     29a:	6c e0       	ldi	r22, 0x0C	; 12
+     29c:	c6 01       	movw	r24, r12
+     29e:	d7 d2       	rcall	.+1454   	; 0x84e <_ZN7Display9PutNumberEhhhih>
+     2a0:	0f 2d       	mov	r16, r15
+     2a2:	25 e1       	ldi	r18, 0x15	; 21
+     2a4:	41 e0       	ldi	r20, 0x01	; 1
+     2a6:	6e e0       	ldi	r22, 0x0E	; 14
+     2a8:	c6 01       	movw	r24, r12
+     2aa:	52 d2       	rcall	.+1188   	; 0x750 <_ZN7Display7PutCharEhhhh>
+     2ac:	df 91       	pop	r29
+     2ae:	cf 91       	pop	r28
+     2b0:	1f 91       	pop	r17
+     2b2:	0f 91       	pop	r16
+     2b4:	ff 90       	pop	r15
+     2b6:	ef 90       	pop	r14
+     2b8:	df 90       	pop	r13
+     2ba:	cf 90       	pop	r12
+     2bc:	bf 90       	pop	r11
+     2be:	af 90       	pop	r10
+     2c0:	08 95       	ret
 
-000002c6 <_ZN11Application12WaitForEventEv>:
-     2c6:	ef 92       	push	r14
-     2c8:	ff 92       	push	r15
-     2ca:	0f 93       	push	r16
-     2cc:	1f 93       	push	r17
-     2ce:	cf 93       	push	r28
-     2d0:	df 93       	push	r29
-     2d2:	ec 01       	movw	r28, r24
-     2d4:	4c d5       	rcall	.+2712   	; 0xd6e <_ZN8Interval12getMsCounterEv>
-     2d6:	8c 01       	movw	r16, r24
-     2d8:	7e 01       	movw	r14, r28
-     2da:	2a e1       	ldi	r18, 0x1A	; 26
-     2dc:	e2 0e       	add	r14, r18
-     2de:	f1 1c       	adc	r15, r1
-     2e0:	c7 01       	movw	r24, r14
-     2e2:	9e d5       	rcall	.+2876   	; 0xe20 <_ZN8Keyboard11UpdateEventEv>
-     2e4:	8a a1       	ldd	r24, Y+34	; 0x22
-     2e6:	80 7f       	andi	r24, 0xF0	; 240
-     2e8:	39 f4       	brne	.+14     	; 0x2f8 <_ZN11Application12WaitForEventEv+0x32>
-     2ea:	ce 01       	movw	r24, r28
-     2ec:	40 d5       	rcall	.+2688   	; 0xd6e <_ZN8Interval12getMsCounterEv>
-     2ee:	80 1b       	sub	r24, r16
-     2f0:	91 0b       	sbc	r25, r17
-     2f2:	8c 32       	cpi	r24, 0x2C	; 44
-     2f4:	91 40       	sbci	r25, 0x01	; 1
-     2f6:	a0 f3       	brcs	.-24     	; 0x2e0 <_ZN11Application12WaitForEventEv+0x1a>
-     2f8:	df 91       	pop	r29
-     2fa:	cf 91       	pop	r28
-     2fc:	1f 91       	pop	r17
-     2fe:	0f 91       	pop	r16
-     300:	ff 90       	pop	r15
-     302:	ef 90       	pop	r14
-     304:	08 95       	ret
+000002c2 <_ZN11Application12WaitForEventEv>:
+     2c2:	ef 92       	push	r14
+     2c4:	ff 92       	push	r15
+     2c6:	0f 93       	push	r16
+     2c8:	1f 93       	push	r17
+     2ca:	cf 93       	push	r28
+     2cc:	df 93       	push	r29
+     2ce:	ec 01       	movw	r28, r24
+     2d0:	52 d5       	rcall	.+2724   	; 0xd76 <_ZN8Interval12getMsCounterEv>
+     2d2:	8c 01       	movw	r16, r24
+     2d4:	7e 01       	movw	r14, r28
+     2d6:	2a e1       	ldi	r18, 0x1A	; 26
+     2d8:	e2 0e       	add	r14, r18
+     2da:	f1 1c       	adc	r15, r1
+     2dc:	c7 01       	movw	r24, r14
+     2de:	a7 d5       	rcall	.+2894   	; 0xe2e <_ZN8Keyboard11UpdateEventEv>
+     2e0:	9b a1       	ldd	r25, Y+35	; 0x23
+     2e2:	90 7f       	andi	r25, 0xF0	; 240
+     2e4:	39 f4       	brne	.+14     	; 0x2f4 <_ZN11Application12WaitForEventEv+0x32>
+     2e6:	ce 01       	movw	r24, r28
+     2e8:	46 d5       	rcall	.+2700   	; 0xd76 <_ZN8Interval12getMsCounterEv>
+     2ea:	80 1b       	sub	r24, r16
+     2ec:	91 0b       	sbc	r25, r17
+     2ee:	8c 32       	cpi	r24, 0x2C	; 44
+     2f0:	91 40       	sbci	r25, 0x01	; 1
+     2f2:	a0 f3       	brcs	.-24     	; 0x2dc <_ZN11Application12WaitForEventEv+0x1a>
+     2f4:	df 91       	pop	r29
+     2f6:	cf 91       	pop	r28
+     2f8:	1f 91       	pop	r17
+     2fa:	0f 91       	pop	r16
+     2fc:	ff 90       	pop	r15
+     2fe:	ef 90       	pop	r14
+     300:	08 95       	ret
 
-00000306 <_ZN11Application8MainMenuEv>:
-     306:	ec 01       	movw	r28, r24
-     308:	b1 2c       	mov	r11, r1
-     30a:	6c 01       	movw	r12, r24
-     30c:	84 e1       	ldi	r24, 0x14	; 20
-     30e:	c8 0e       	add	r12, r24
-     310:	d1 1c       	adc	r13, r1
-     312:	7e 01       	movw	r14, r28
-     314:	84 e2       	ldi	r24, 0x24	; 36
-     316:	e8 0e       	add	r14, r24
-     318:	f1 1c       	adc	r15, r1
-     31a:	8e 01       	movw	r16, r28
-     31c:	03 5d       	subi	r16, 0xD3	; 211
-     31e:	1f 4f       	sbci	r17, 0xFF	; 255
-     320:	6b 2d       	mov	r22, r11
-     322:	ce 01       	movw	r24, r28
-     324:	c7 de       	rcall	.-626    	; 0xb4 <_ZN11Application13DrawDriveLineEh>
-     326:	6b 2d       	mov	r22, r11
-     328:	ce 01       	movw	r24, r28
-     32a:	31 df       	rcall	.-414    	; 0x18e <_ZN11Application15DrawShutterLineEh>
-     32c:	ce 01       	movw	r24, r28
-     32e:	cb df       	rcall	.-106    	; 0x2c6 <_ZN11Application12WaitForEventEv>
-     330:	8a a1       	ldd	r24, Y+34	; 0x22
-     332:	88 23       	and	r24, r24
-     334:	11 f0       	breq	.+4      	; 0x33a <_ZN11Application8MainMenuEv+0x34>
-     336:	c6 01       	movw	r24, r12
-     338:	ae d3       	rcall	.+1884   	; 0xa96 <_ZN7Display6WakeUpEv>
-     33a:	aa a0       	ldd	r10, Y+34	; 0x22
-     33c:	43 e0       	ldi	r20, 0x03	; 3
-     33e:	60 e4       	ldi	r22, 0x40	; 64
-     340:	8a 2d       	mov	r24, r10
-     342:	94 de       	rcall	.-728    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     344:	88 23       	and	r24, r24
-     346:	49 f0       	breq	.+18     	; 0x35a <_ZN11Application8MainMenuEv+0x54>
-     348:	8b 2d       	mov	r24, r11
-     34a:	90 e0       	ldi	r25, 0x00	; 0
-     34c:	87 30       	cpi	r24, 0x07	; 7
-     34e:	91 05       	cpc	r25, r1
-     350:	38 f7       	brcc	.-50     	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     352:	fc 01       	movw	r30, r24
-     354:	ed 5e       	subi	r30, 0xED	; 237
-     356:	ff 4f       	sbci	r31, 0xFF	; 255
-     358:	09 94       	ijmp
-     35a:	b1 10       	cpse	r11, r1
-     35c:	32 c0       	rjmp	.+100    	; 0x3c2 <_ZN11Application8MainMenuEv+0xbc>
-     35e:	41 e0       	ldi	r20, 0x01	; 1
-     360:	60 e1       	ldi	r22, 0x10	; 16
-     362:	8a 2d       	mov	r24, r10
-     364:	83 de       	rcall	.-762    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     366:	88 23       	and	r24, r24
-     368:	19 f0       	breq	.+6      	; 0x370 <_ZN11Application8MainMenuEv+0x6a>
-     36a:	63 e0       	ldi	r22, 0x03	; 3
-     36c:	c8 01       	movw	r24, r16
-     36e:	1e d4       	rcall	.+2108   	; 0xbac <_ZN5Drive7SetModeEh>
-     370:	42 e0       	ldi	r20, 0x02	; 2
-     372:	60 e1       	ldi	r22, 0x10	; 16
-     374:	8a a1       	ldd	r24, Y+34	; 0x22
-     376:	7a de       	rcall	.-780    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     378:	88 23       	and	r24, r24
-     37a:	19 f0       	breq	.+6      	; 0x382 <_ZN11Application8MainMenuEv+0x7c>
-     37c:	62 e0       	ldi	r22, 0x02	; 2
-     37e:	c8 01       	movw	r24, r16
-     380:	15 d4       	rcall	.+2090   	; 0xbac <_ZN5Drive7SetModeEh>
-     382:	aa a0       	ldd	r10, Y+34	; 0x22
-     384:	41 e0       	ldi	r20, 0x01	; 1
-     386:	60 e2       	ldi	r22, 0x20	; 32
-     388:	8a 2d       	mov	r24, r10
-     38a:	70 de       	rcall	.-800    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     38c:	81 11       	cpse	r24, r1
-     38e:	e0 c0       	rjmp	.+448    	; 0x550 <__stack+0xf1>
-     390:	42 e0       	ldi	r20, 0x02	; 2
-     392:	60 e2       	ldi	r22, 0x20	; 32
-     394:	8a 2d       	mov	r24, r10
-     396:	6a de       	rcall	.-812    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     398:	81 11       	cpse	r24, r1
-     39a:	da c0       	rjmp	.+436    	; 0x550 <__stack+0xf1>
+00000302 <_ZN11Application8MainMenuEv>:
+     302:	ec 01       	movw	r28, r24
+     304:	10 e0       	ldi	r17, 0x00	; 0
+     306:	5c 01       	movw	r10, r24
+     308:	84 e1       	ldi	r24, 0x14	; 20
+     30a:	a8 0e       	add	r10, r24
+     30c:	b1 1c       	adc	r11, r1
+     30e:	6e 01       	movw	r12, r28
+     310:	85 e2       	ldi	r24, 0x25	; 37
+     312:	c8 0e       	add	r12, r24
+     314:	d1 1c       	adc	r13, r1
+     316:	7e 01       	movw	r14, r28
+     318:	8e e2       	ldi	r24, 0x2E	; 46
+     31a:	e8 0e       	add	r14, r24
+     31c:	f1 1c       	adc	r15, r1
+     31e:	61 2f       	mov	r22, r17
+     320:	ce 01       	movw	r24, r28
+     322:	c8 de       	rcall	.-624    	; 0xb4 <_ZN11Application13DrawDriveLineEh>
+     324:	61 2f       	mov	r22, r17
+     326:	ce 01       	movw	r24, r28
+     328:	2f df       	rcall	.-418    	; 0x188 <_ZN11Application15DrawShutterLineEh>
+     32a:	ce 01       	movw	r24, r28
+     32c:	ca df       	rcall	.-108    	; 0x2c2 <_ZN11Application12WaitForEventEv>
+     32e:	8b a1       	ldd	r24, Y+35	; 0x23
+     330:	88 23       	and	r24, r24
+     332:	11 f0       	breq	.+4      	; 0x338 <_ZN11Application8MainMenuEv+0x36>
+     334:	c5 01       	movw	r24, r10
+     336:	af d3       	rcall	.+1886   	; 0xa96 <_ZN7Display6WakeUpEv>
+     338:	0b a1       	ldd	r16, Y+35	; 0x23
+     33a:	43 e0       	ldi	r20, 0x03	; 3
+     33c:	60 e4       	ldi	r22, 0x40	; 64
+     33e:	80 2f       	mov	r24, r16
+     340:	95 de       	rcall	.-726    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     342:	88 23       	and	r24, r24
+     344:	49 f0       	breq	.+18     	; 0x358 <_ZN11Application8MainMenuEv+0x56>
+     346:	81 2f       	mov	r24, r17
+     348:	90 e0       	ldi	r25, 0x00	; 0
+     34a:	87 30       	cpi	r24, 0x07	; 7
+     34c:	91 05       	cpc	r25, r1
+     34e:	38 f7       	brcc	.-50     	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     350:	fc 01       	movw	r30, r24
+     352:	ed 5e       	subi	r30, 0xED	; 237
+     354:	ff 4f       	sbci	r31, 0xFF	; 255
+     356:	09 94       	ijmp
+     358:	11 23       	and	r17, r17
+     35a:	79 f1       	breq	.+94     	; 0x3ba <_ZN11Application8MainMenuEv+0xb8>
+     35c:	11 30       	cpi	r17, 0x01	; 1
+     35e:	09 f4       	brne	.+2      	; 0x362 <_ZN11Application8MainMenuEv+0x60>
+     360:	54 c0       	rjmp	.+168    	; 0x40a <_ZN11Application8MainMenuEv+0x108>
+     362:	12 30       	cpi	r17, 0x02	; 2
+     364:	09 f4       	brne	.+2      	; 0x368 <_ZN11Application8MainMenuEv+0x66>
+     366:	7d c0       	rjmp	.+250    	; 0x462 <__stack+0x3>
+     368:	13 30       	cpi	r17, 0x03	; 3
+     36a:	09 f4       	brne	.+2      	; 0x36e <_ZN11Application8MainMenuEv+0x6c>
+     36c:	9b c0       	rjmp	.+310    	; 0x4a4 <__stack+0x45>
+     36e:	14 30       	cpi	r17, 0x04	; 4
+     370:	09 f0       	breq	.+2      	; 0x374 <_ZN11Application8MainMenuEv+0x72>
+     372:	b3 c0       	rjmp	.+358    	; 0x4da <__stack+0x7b>
+     374:	41 e0       	ldi	r20, 0x01	; 1
+     376:	60 e4       	ldi	r22, 0x40	; 64
+     378:	80 2f       	mov	r24, r16
+     37a:	78 de       	rcall	.-784    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     37c:	88 23       	and	r24, r24
+     37e:	21 f0       	breq	.+8      	; 0x388 <_ZN11Application8MainMenuEv+0x86>
+     380:	6c a5       	ldd	r22, Y+44	; 0x2c
+     382:	61 50       	subi	r22, 0x01	; 1
+     384:	c6 01       	movw	r24, r12
+     386:	0a d6       	rcall	.+3092   	; 0xf9c <_ZN7Shutter14SetFramesCountEh>
+     388:	42 e0       	ldi	r20, 0x02	; 2
+     38a:	60 e4       	ldi	r22, 0x40	; 64
+     38c:	8b a1       	ldd	r24, Y+35	; 0x23
+     38e:	6e de       	rcall	.-804    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     390:	88 23       	and	r24, r24
+     392:	21 f0       	breq	.+8      	; 0x39c <_ZN11Application8MainMenuEv+0x9a>
+     394:	6c a5       	ldd	r22, Y+44	; 0x2c
+     396:	6f 5f       	subi	r22, 0xFF	; 255
+     398:	c6 01       	movw	r24, r12
+     39a:	00 d6       	rcall	.+3072   	; 0xf9c <_ZN7Shutter14SetFramesCountEh>
      39c:	43 e0       	ldi	r20, 0x03	; 3
      39e:	60 e8       	ldi	r22, 0x80	; 128
-     3a0:	8a a1       	ldd	r24, Y+34	; 0x22
+     3a0:	8b a1       	ldd	r24, Y+35	; 0x23
      3a2:	64 de       	rcall	.-824    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
      3a4:	88 23       	and	r24, r24
-     3a6:	09 f4       	brne	.+2      	; 0x3aa <_ZN11Application8MainMenuEv+0xa4>
-     3a8:	bb cf       	rjmp	.-138    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     3aa:	42 e0       	ldi	r20, 0x02	; 2
-     3ac:	b4 2e       	mov	r11, r20
-     3ae:	b8 cf       	rjmp	.-144    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     3b0:	33 e0       	ldi	r19, 0x03	; 3
-     3b2:	b3 2e       	mov	r11, r19
-     3b4:	b5 cf       	rjmp	.-150    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     3b6:	25 e0       	ldi	r18, 0x05	; 5
-     3b8:	b2 2e       	mov	r11, r18
-     3ba:	b2 cf       	rjmp	.-156    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     3bc:	96 e0       	ldi	r25, 0x06	; 6
-     3be:	b9 2e       	mov	r11, r25
-     3c0:	af cf       	rjmp	.-162    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     3c2:	81 e0       	ldi	r24, 0x01	; 1
-     3c4:	b8 12       	cpse	r11, r24
-     3c6:	2d c0       	rjmp	.+90     	; 0x422 <_ZN11Application8MainMenuEv+0x11c>
-     3c8:	41 e0       	ldi	r20, 0x01	; 1
-     3ca:	60 e4       	ldi	r22, 0x40	; 64
-     3cc:	8a 2d       	mov	r24, r10
-     3ce:	4e de       	rcall	.-868    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     3d0:	88 23       	and	r24, r24
-     3d2:	51 f0       	breq	.+20     	; 0x3e8 <_ZN11Application8MainMenuEv+0xe2>
-     3d4:	8c a5       	ldd	r24, Y+44	; 0x2c
-     3d6:	81 30       	cpi	r24, 0x01	; 1
-     3d8:	21 f0       	breq	.+8      	; 0x3e2 <_ZN11Application8MainMenuEv+0xdc>
-     3da:	82 30       	cpi	r24, 0x02	; 2
-     3dc:	29 f4       	brne	.+10     	; 0x3e8 <_ZN11Application8MainMenuEv+0xe2>
-     3de:	61 e0       	ldi	r22, 0x01	; 1
-     3e0:	01 c0       	rjmp	.+2      	; 0x3e4 <_ZN11Application8MainMenuEv+0xde>
-     3e2:	60 e0       	ldi	r22, 0x00	; 0
-     3e4:	c7 01       	movw	r24, r14
-     3e6:	92 d5       	rcall	.+2852   	; 0xf0c <_ZN7Shutter9SetStatusEh>
-     3e8:	42 e0       	ldi	r20, 0x02	; 2
-     3ea:	60 e4       	ldi	r22, 0x40	; 64
-     3ec:	8a a1       	ldd	r24, Y+34	; 0x22
-     3ee:	3e de       	rcall	.-900    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     3f0:	88 23       	and	r24, r24
-     3f2:	51 f0       	breq	.+20     	; 0x408 <_ZN11Application8MainMenuEv+0x102>
-     3f4:	8c a5       	ldd	r24, Y+44	; 0x2c
-     3f6:	88 23       	and	r24, r24
-     3f8:	21 f0       	breq	.+8      	; 0x402 <_ZN11Application8MainMenuEv+0xfc>
-     3fa:	81 30       	cpi	r24, 0x01	; 1
-     3fc:	29 f4       	brne	.+10     	; 0x408 <_ZN11Application8MainMenuEv+0x102>
-     3fe:	62 e0       	ldi	r22, 0x02	; 2
-     400:	01 c0       	rjmp	.+2      	; 0x404 <_ZN11Application8MainMenuEv+0xfe>
-     402:	61 e0       	ldi	r22, 0x01	; 1
-     404:	c7 01       	movw	r24, r14
-     406:	82 d5       	rcall	.+2820   	; 0xf0c <_ZN7Shutter9SetStatusEh>
-     408:	43 e0       	ldi	r20, 0x03	; 3
-     40a:	60 e8       	ldi	r22, 0x80	; 128
-     40c:	8a a1       	ldd	r24, Y+34	; 0x22
-     40e:	2e de       	rcall	.-932    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     410:	88 23       	and	r24, r24
-     412:	09 f4       	brne	.+2      	; 0x416 <_ZN11Application8MainMenuEv+0x110>
-     414:	85 cf       	rjmp	.-246    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     416:	60 e0       	ldi	r22, 0x00	; 0
-     418:	c7 01       	movw	r24, r14
-     41a:	78 d5       	rcall	.+2800   	; 0xf0c <_ZN7Shutter9SetStatusEh>
-     41c:	84 e0       	ldi	r24, 0x04	; 4
-     41e:	b8 2e       	mov	r11, r24
-     420:	7f cf       	rjmp	.-258    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     422:	82 e0       	ldi	r24, 0x02	; 2
-     424:	b8 12       	cpse	r11, r24
-     426:	21 c0       	rjmp	.+66     	; 0x46a <__stack+0xb>
-     428:	41 e0       	ldi	r20, 0x01	; 1
-     42a:	60 e4       	ldi	r22, 0x40	; 64
-     42c:	8a 2d       	mov	r24, r10
-     42e:	1e de       	rcall	.-964    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     430:	88 23       	and	r24, r24
-     432:	31 f0       	breq	.+12     	; 0x440 <_ZN11Application8MainMenuEv+0x13a>
-     434:	c8 01       	movw	r24, r16
-     436:	e6 d3       	rcall	.+1996   	; 0xc04 <_ZN5Drive14GetSpeedFactorEv>
-     438:	6f ef       	ldi	r22, 0xFF	; 255
-     43a:	68 0f       	add	r22, r24
-     43c:	c8 01       	movw	r24, r16
-     43e:	68 d3       	rcall	.+1744   	; 0xb10 <_ZN5Drive14SetSpeedFactorEa>
-     440:	42 e0       	ldi	r20, 0x02	; 2
-     442:	60 e4       	ldi	r22, 0x40	; 64
-     444:	8a a1       	ldd	r24, Y+34	; 0x22
-     446:	12 de       	rcall	.-988    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     448:	88 23       	and	r24, r24
-     44a:	31 f0       	breq	.+12     	; 0x458 <_ZN11Application8MainMenuEv+0x152>
-     44c:	c8 01       	movw	r24, r16
-     44e:	da d3       	rcall	.+1972   	; 0xc04 <_ZN5Drive14GetSpeedFactorEv>
-     450:	61 e0       	ldi	r22, 0x01	; 1
-     452:	68 0f       	add	r22, r24
-     454:	c8 01       	movw	r24, r16
-     456:	5c d3       	rcall	.+1720   	; 0xb10 <_ZN5Drive14SetSpeedFactorEa>
-     458:	43 e0       	ldi	r20, 0x03	; 3
-     45a:	60 e8       	ldi	r22, 0x80	; 128
-     45c:	8a a1       	ldd	r24, Y+34	; 0x22
-     45e:	06 de       	rcall	.-1012   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     460:	88 23       	and	r24, r24
-     462:	09 f4       	brne	.+2      	; 0x466 <__stack+0x7>
-     464:	5d cf       	rjmp	.-326    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     466:	b1 2c       	mov	r11, r1
-     468:	5b cf       	rjmp	.-330    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     46a:	83 e0       	ldi	r24, 0x03	; 3
-     46c:	b8 12       	cpse	r11, r24
-     46e:	1b c0       	rjmp	.+54     	; 0x4a6 <__stack+0x47>
-     470:	41 e0       	ldi	r20, 0x01	; 1
-     472:	60 e4       	ldi	r22, 0x40	; 64
-     474:	8a 2d       	mov	r24, r10
-     476:	fa dd       	rcall	.-1036   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     478:	88 23       	and	r24, r24
-     47a:	39 f0       	breq	.+14     	; 0x48a <__stack+0x2b>
-     47c:	c8 01       	movw	r24, r16
-     47e:	ae d3       	rcall	.+1884   	; 0xbdc <_ZN5Drive8GetSpeedEv>
-     480:	bc 01       	movw	r22, r24
-     482:	61 50       	subi	r22, 0x01	; 1
-     484:	71 09       	sbc	r23, r1
-     486:	c8 01       	movw	r24, r16
-     488:	29 d3       	rcall	.+1618   	; 0xadc <_ZN5Drive8SetSpeedEi>
-     48a:	42 e0       	ldi	r20, 0x02	; 2
-     48c:	60 e4       	ldi	r22, 0x40	; 64
-     48e:	8a a1       	ldd	r24, Y+34	; 0x22
-     490:	ed dd       	rcall	.-1062   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     492:	88 23       	and	r24, r24
-     494:	09 f3       	breq	.-62     	; 0x458 <_ZN11Application8MainMenuEv+0x152>
-     496:	c8 01       	movw	r24, r16
-     498:	a1 d3       	rcall	.+1858   	; 0xbdc <_ZN5Drive8GetSpeedEv>
-     49a:	bc 01       	movw	r22, r24
-     49c:	6f 5f       	subi	r22, 0xFF	; 255
-     49e:	7f 4f       	sbci	r23, 0xFF	; 255
-     4a0:	c8 01       	movw	r24, r16
-     4a2:	1c d3       	rcall	.+1592   	; 0xadc <_ZN5Drive8SetSpeedEi>
-     4a4:	d9 cf       	rjmp	.-78     	; 0x458 <_ZN11Application8MainMenuEv+0x152>
-     4a6:	84 e0       	ldi	r24, 0x04	; 4
-     4a8:	b8 12       	cpse	r11, r24
-     4aa:	1e c0       	rjmp	.+60     	; 0x4e8 <__stack+0x89>
-     4ac:	41 e0       	ldi	r20, 0x01	; 1
-     4ae:	60 e4       	ldi	r22, 0x40	; 64
-     4b0:	8a 2d       	mov	r24, r10
-     4b2:	dc dd       	rcall	.-1096   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     4b4:	88 23       	and	r24, r24
-     4b6:	21 f0       	breq	.+8      	; 0x4c0 <__stack+0x61>
-     4b8:	6b a5       	ldd	r22, Y+43	; 0x2b
-     4ba:	61 50       	subi	r22, 0x01	; 1
-     4bc:	c7 01       	movw	r24, r14
-     4be:	65 d5       	rcall	.+2762   	; 0xf8a <_ZN7Shutter14SetFramesCountEh>
-     4c0:	42 e0       	ldi	r20, 0x02	; 2
-     4c2:	60 e4       	ldi	r22, 0x40	; 64
-     4c4:	8a a1       	ldd	r24, Y+34	; 0x22
-     4c6:	d2 dd       	rcall	.-1116   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     4c8:	88 23       	and	r24, r24
-     4ca:	21 f0       	breq	.+8      	; 0x4d4 <__stack+0x75>
-     4cc:	6b a5       	ldd	r22, Y+43	; 0x2b
-     4ce:	6f 5f       	subi	r22, 0xFF	; 255
-     4d0:	c7 01       	movw	r24, r14
-     4d2:	5b d5       	rcall	.+2742   	; 0xf8a <_ZN7Shutter14SetFramesCountEh>
-     4d4:	43 e0       	ldi	r20, 0x03	; 3
-     4d6:	60 e8       	ldi	r22, 0x80	; 128
-     4d8:	8a a1       	ldd	r24, Y+34	; 0x22
-     4da:	c8 dd       	rcall	.-1136   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     4dc:	88 23       	and	r24, r24
-     4de:	09 f4       	brne	.+2      	; 0x4e2 <__stack+0x83>
-     4e0:	1f cf       	rjmp	.-450    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     4e2:	bb 24       	eor	r11, r11
-     4e4:	b3 94       	inc	r11
-     4e6:	1c cf       	rjmp	.-456    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     4e8:	85 e0       	ldi	r24, 0x05	; 5
-     4ea:	b8 12       	cpse	r11, r24
-     4ec:	19 c0       	rjmp	.+50     	; 0x520 <__stack+0xc1>
-     4ee:	41 e0       	ldi	r20, 0x01	; 1
-     4f0:	60 e4       	ldi	r22, 0x40	; 64
-     4f2:	8a 2d       	mov	r24, r10
-     4f4:	bb dd       	rcall	.-1162   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     4f6:	88 23       	and	r24, r24
-     4f8:	31 f0       	breq	.+12     	; 0x506 <__stack+0xa7>
-     4fa:	69 a5       	ldd	r22, Y+41	; 0x29
-     4fc:	61 50       	subi	r22, 0x01	; 1
-     4fe:	88 a5       	ldd	r24, Y+40	; 0x28
-     500:	68 1b       	sub	r22, r24
-     502:	c7 01       	movw	r24, r14
-     504:	11 d5       	rcall	.+2594   	; 0xf28 <_ZN7Shutter14SetShutterTimeEh>
-     506:	42 e0       	ldi	r20, 0x02	; 2
-     508:	60 e4       	ldi	r22, 0x40	; 64
-     50a:	8a a1       	ldd	r24, Y+34	; 0x22
-     50c:	af dd       	rcall	.-1186   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     50e:	88 23       	and	r24, r24
-     510:	09 f3       	breq	.-62     	; 0x4d4 <__stack+0x75>
-     512:	69 a5       	ldd	r22, Y+41	; 0x29
-     514:	6f 5f       	subi	r22, 0xFF	; 255
-     516:	88 a5       	ldd	r24, Y+40	; 0x28
-     518:	68 1b       	sub	r22, r24
-     51a:	c7 01       	movw	r24, r14
-     51c:	05 d5       	rcall	.+2570   	; 0xf28 <_ZN7Shutter14SetShutterTimeEh>
-     51e:	da cf       	rjmp	.-76     	; 0x4d4 <__stack+0x75>
-     520:	86 e0       	ldi	r24, 0x06	; 6
-     522:	b8 12       	cpse	r11, r24
-     524:	fd ce       	rjmp	.-518    	; 0x320 <_ZN11Application8MainMenuEv+0x1a>
-     526:	41 e0       	ldi	r20, 0x01	; 1
-     528:	60 e4       	ldi	r22, 0x40	; 64
-     52a:	8a 2d       	mov	r24, r10
-     52c:	9f dd       	rcall	.-1218   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     52e:	88 23       	and	r24, r24
-     530:	21 f0       	breq	.+8      	; 0x53a <__stack+0xdb>
-     532:	68 a5       	ldd	r22, Y+40	; 0x28
-     534:	61 50       	subi	r22, 0x01	; 1
-     536:	c7 01       	movw	r24, r14
-     538:	0d d5       	rcall	.+2586   	; 0xf54 <_ZN7Shutter12SetPauseTimeEh>
-     53a:	42 e0       	ldi	r20, 0x02	; 2
-     53c:	60 e4       	ldi	r22, 0x40	; 64
-     53e:	8a a1       	ldd	r24, Y+34	; 0x22
-     540:	95 dd       	rcall	.-1238   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
-     542:	88 23       	and	r24, r24
-     544:	39 f2       	breq	.-114    	; 0x4d4 <__stack+0x75>
-     546:	68 a5       	ldd	r22, Y+40	; 0x28
-     548:	6f 5f       	subi	r22, 0xFF	; 255
-     54a:	c7 01       	movw	r24, r14
-     54c:	03 d5       	rcall	.+2566   	; 0xf54 <_ZN7Shutter12SetPauseTimeEh>
-     54e:	c2 cf       	rjmp	.-124    	; 0x4d4 <__stack+0x75>
-     550:	61 e0       	ldi	r22, 0x01	; 1
-     552:	c8 01       	movw	r24, r16
-     554:	2b d3       	rcall	.+1622   	; 0xbac <_ZN5Drive7SetModeEh>
-     556:	22 cf       	rjmp	.-444    	; 0x39c <_ZN11Application8MainMenuEv+0x96>
+     3a6:	09 f4       	brne	.+2      	; 0x3aa <_ZN11Application8MainMenuEv+0xa8>
+     3a8:	ba cf       	rjmp	.-140    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     3aa:	11 e0       	ldi	r17, 0x01	; 1
+     3ac:	b8 cf       	rjmp	.-144    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     3ae:	13 e0       	ldi	r17, 0x03	; 3
+     3b0:	b6 cf       	rjmp	.-148    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     3b2:	15 e0       	ldi	r17, 0x05	; 5
+     3b4:	b4 cf       	rjmp	.-152    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     3b6:	16 e0       	ldi	r17, 0x06	; 6
+     3b8:	b2 cf       	rjmp	.-156    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     3ba:	41 e0       	ldi	r20, 0x01	; 1
+     3bc:	60 e1       	ldi	r22, 0x10	; 16
+     3be:	80 2f       	mov	r24, r16
+     3c0:	55 de       	rcall	.-854    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     3c2:	88 23       	and	r24, r24
+     3c4:	19 f0       	breq	.+6      	; 0x3cc <_ZN11Application8MainMenuEv+0xca>
+     3c6:	63 e0       	ldi	r22, 0x03	; 3
+     3c8:	c7 01       	movw	r24, r14
+     3ca:	f0 d3       	rcall	.+2016   	; 0xbac <_ZN5Drive7SetModeEh>
+     3cc:	42 e0       	ldi	r20, 0x02	; 2
+     3ce:	60 e1       	ldi	r22, 0x10	; 16
+     3d0:	8b a1       	ldd	r24, Y+35	; 0x23
+     3d2:	4c de       	rcall	.-872    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     3d4:	88 23       	and	r24, r24
+     3d6:	19 f0       	breq	.+6      	; 0x3de <_ZN11Application8MainMenuEv+0xdc>
+     3d8:	62 e0       	ldi	r22, 0x02	; 2
+     3da:	c7 01       	movw	r24, r14
+     3dc:	e7 d3       	rcall	.+1998   	; 0xbac <_ZN5Drive7SetModeEh>
+     3de:	0b a1       	ldd	r16, Y+35	; 0x23
+     3e0:	41 e0       	ldi	r20, 0x01	; 1
+     3e2:	60 e2       	ldi	r22, 0x20	; 32
+     3e4:	80 2f       	mov	r24, r16
+     3e6:	42 de       	rcall	.-892    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     3e8:	81 11       	cpse	r24, r1
+     3ea:	ac c0       	rjmp	.+344    	; 0x544 <__stack+0xe5>
+     3ec:	42 e0       	ldi	r20, 0x02	; 2
+     3ee:	60 e2       	ldi	r22, 0x20	; 32
+     3f0:	80 2f       	mov	r24, r16
+     3f2:	3c de       	rcall	.-904    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     3f4:	81 11       	cpse	r24, r1
+     3f6:	a6 c0       	rjmp	.+332    	; 0x544 <__stack+0xe5>
+     3f8:	43 e0       	ldi	r20, 0x03	; 3
+     3fa:	60 e8       	ldi	r22, 0x80	; 128
+     3fc:	8b a1       	ldd	r24, Y+35	; 0x23
+     3fe:	36 de       	rcall	.-916    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     400:	88 23       	and	r24, r24
+     402:	09 f4       	brne	.+2      	; 0x406 <_ZN11Application8MainMenuEv+0x104>
+     404:	8c cf       	rjmp	.-232    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     406:	12 e0       	ldi	r17, 0x02	; 2
+     408:	8a cf       	rjmp	.-236    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     40a:	41 e0       	ldi	r20, 0x01	; 1
+     40c:	60 e4       	ldi	r22, 0x40	; 64
+     40e:	80 2f       	mov	r24, r16
+     410:	2d de       	rcall	.-934    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     412:	88 23       	and	r24, r24
+     414:	51 f0       	breq	.+20     	; 0x42a <_ZN11Application8MainMenuEv+0x128>
+     416:	8d a5       	ldd	r24, Y+45	; 0x2d
+     418:	81 30       	cpi	r24, 0x01	; 1
+     41a:	21 f0       	breq	.+8      	; 0x424 <_ZN11Application8MainMenuEv+0x122>
+     41c:	82 30       	cpi	r24, 0x02	; 2
+     41e:	29 f4       	brne	.+10     	; 0x42a <_ZN11Application8MainMenuEv+0x128>
+     420:	61 e0       	ldi	r22, 0x01	; 1
+     422:	01 c0       	rjmp	.+2      	; 0x426 <_ZN11Application8MainMenuEv+0x124>
+     424:	60 e0       	ldi	r22, 0x00	; 0
+     426:	c6 01       	movw	r24, r12
+     428:	78 d5       	rcall	.+2800   	; 0xf1a <_ZN7Shutter9SetStatusEh>
+     42a:	42 e0       	ldi	r20, 0x02	; 2
+     42c:	60 e4       	ldi	r22, 0x40	; 64
+     42e:	8b a1       	ldd	r24, Y+35	; 0x23
+     430:	1d de       	rcall	.-966    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     432:	88 23       	and	r24, r24
+     434:	51 f0       	breq	.+20     	; 0x44a <_ZN11Application8MainMenuEv+0x148>
+     436:	8d a5       	ldd	r24, Y+45	; 0x2d
+     438:	88 23       	and	r24, r24
+     43a:	21 f0       	breq	.+8      	; 0x444 <_ZN11Application8MainMenuEv+0x142>
+     43c:	81 30       	cpi	r24, 0x01	; 1
+     43e:	29 f4       	brne	.+10     	; 0x44a <_ZN11Application8MainMenuEv+0x148>
+     440:	62 e0       	ldi	r22, 0x02	; 2
+     442:	01 c0       	rjmp	.+2      	; 0x446 <_ZN11Application8MainMenuEv+0x144>
+     444:	61 e0       	ldi	r22, 0x01	; 1
+     446:	c6 01       	movw	r24, r12
+     448:	68 d5       	rcall	.+2768   	; 0xf1a <_ZN7Shutter9SetStatusEh>
+     44a:	43 e0       	ldi	r20, 0x03	; 3
+     44c:	60 e8       	ldi	r22, 0x80	; 128
+     44e:	8b a1       	ldd	r24, Y+35	; 0x23
+     450:	0d de       	rcall	.-998    	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     452:	88 23       	and	r24, r24
+     454:	09 f4       	brne	.+2      	; 0x458 <_ZN11Application8MainMenuEv+0x156>
+     456:	63 cf       	rjmp	.-314    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     458:	60 e0       	ldi	r22, 0x00	; 0
+     45a:	c6 01       	movw	r24, r12
+     45c:	5e d5       	rcall	.+2748   	; 0xf1a <_ZN7Shutter9SetStatusEh>
+     45e:	14 e0       	ldi	r17, 0x04	; 4
+     460:	5e cf       	rjmp	.-324    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     462:	41 e0       	ldi	r20, 0x01	; 1
+     464:	60 e4       	ldi	r22, 0x40	; 64
+     466:	80 2f       	mov	r24, r16
+     468:	01 de       	rcall	.-1022   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     46a:	88 23       	and	r24, r24
+     46c:	31 f0       	breq	.+12     	; 0x47a <__stack+0x1b>
+     46e:	c7 01       	movw	r24, r14
+     470:	c9 d3       	rcall	.+1938   	; 0xc04 <_ZN5Drive14GetSpeedFactorEv>
+     472:	6f ef       	ldi	r22, 0xFF	; 255
+     474:	68 0f       	add	r22, r24
+     476:	c7 01       	movw	r24, r14
+     478:	4c d3       	rcall	.+1688   	; 0xb12 <_ZN5Drive14SetSpeedFactorEa>
+     47a:	42 e0       	ldi	r20, 0x02	; 2
+     47c:	60 e4       	ldi	r22, 0x40	; 64
+     47e:	8b a1       	ldd	r24, Y+35	; 0x23
+     480:	f5 dd       	rcall	.-1046   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     482:	88 23       	and	r24, r24
+     484:	31 f0       	breq	.+12     	; 0x492 <__stack+0x33>
+     486:	c7 01       	movw	r24, r14
+     488:	bd d3       	rcall	.+1914   	; 0xc04 <_ZN5Drive14GetSpeedFactorEv>
+     48a:	61 e0       	ldi	r22, 0x01	; 1
+     48c:	68 0f       	add	r22, r24
+     48e:	c7 01       	movw	r24, r14
+     490:	40 d3       	rcall	.+1664   	; 0xb12 <_ZN5Drive14SetSpeedFactorEa>
+     492:	43 e0       	ldi	r20, 0x03	; 3
+     494:	60 e8       	ldi	r22, 0x80	; 128
+     496:	8b a1       	ldd	r24, Y+35	; 0x23
+     498:	e9 dd       	rcall	.-1070   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     49a:	88 23       	and	r24, r24
+     49c:	09 f4       	brne	.+2      	; 0x4a0 <__stack+0x41>
+     49e:	3f cf       	rjmp	.-386    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     4a0:	10 e0       	ldi	r17, 0x00	; 0
+     4a2:	3d cf       	rjmp	.-390    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     4a4:	41 e0       	ldi	r20, 0x01	; 1
+     4a6:	60 e4       	ldi	r22, 0x40	; 64
+     4a8:	80 2f       	mov	r24, r16
+     4aa:	e0 dd       	rcall	.-1088   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     4ac:	88 23       	and	r24, r24
+     4ae:	39 f0       	breq	.+14     	; 0x4be <__stack+0x5f>
+     4b0:	c7 01       	movw	r24, r14
+     4b2:	94 d3       	rcall	.+1832   	; 0xbdc <_ZN5Drive8GetSpeedEv>
+     4b4:	bc 01       	movw	r22, r24
+     4b6:	61 50       	subi	r22, 0x01	; 1
+     4b8:	71 09       	sbc	r23, r1
+     4ba:	c7 01       	movw	r24, r14
+     4bc:	10 d3       	rcall	.+1568   	; 0xade <_ZN5Drive8SetSpeedEi>
+     4be:	42 e0       	ldi	r20, 0x02	; 2
+     4c0:	60 e4       	ldi	r22, 0x40	; 64
+     4c2:	8b a1       	ldd	r24, Y+35	; 0x23
+     4c4:	d3 dd       	rcall	.-1114   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     4c6:	88 23       	and	r24, r24
+     4c8:	21 f3       	breq	.-56     	; 0x492 <__stack+0x33>
+     4ca:	c7 01       	movw	r24, r14
+     4cc:	87 d3       	rcall	.+1806   	; 0xbdc <_ZN5Drive8GetSpeedEv>
+     4ce:	bc 01       	movw	r22, r24
+     4d0:	6f 5f       	subi	r22, 0xFF	; 255
+     4d2:	7f 4f       	sbci	r23, 0xFF	; 255
+     4d4:	c7 01       	movw	r24, r14
+     4d6:	03 d3       	rcall	.+1542   	; 0xade <_ZN5Drive8SetSpeedEi>
+     4d8:	dc cf       	rjmp	.-72     	; 0x492 <__stack+0x33>
+     4da:	15 30       	cpi	r17, 0x05	; 5
+     4dc:	d1 f4       	brne	.+52     	; 0x512 <__stack+0xb3>
+     4de:	41 e0       	ldi	r20, 0x01	; 1
+     4e0:	60 e4       	ldi	r22, 0x40	; 64
+     4e2:	80 2f       	mov	r24, r16
+     4e4:	c3 dd       	rcall	.-1146   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     4e6:	88 23       	and	r24, r24
+     4e8:	31 f0       	breq	.+12     	; 0x4f6 <__stack+0x97>
+     4ea:	6a a5       	ldd	r22, Y+42	; 0x2a
+     4ec:	61 50       	subi	r22, 0x01	; 1
+     4ee:	89 a5       	ldd	r24, Y+41	; 0x29
+     4f0:	68 1b       	sub	r22, r24
+     4f2:	c6 01       	movw	r24, r12
+     4f4:	20 d5       	rcall	.+2624   	; 0xf36 <_ZN7Shutter14SetShutterTimeEh>
+     4f6:	42 e0       	ldi	r20, 0x02	; 2
+     4f8:	60 e4       	ldi	r22, 0x40	; 64
+     4fa:	8b a1       	ldd	r24, Y+35	; 0x23
+     4fc:	b7 dd       	rcall	.-1170   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     4fe:	88 23       	and	r24, r24
+     500:	09 f4       	brne	.+2      	; 0x504 <__stack+0xa5>
+     502:	4c cf       	rjmp	.-360    	; 0x39c <_ZN11Application8MainMenuEv+0x9a>
+     504:	6a a5       	ldd	r22, Y+42	; 0x2a
+     506:	6f 5f       	subi	r22, 0xFF	; 255
+     508:	89 a5       	ldd	r24, Y+41	; 0x29
+     50a:	68 1b       	sub	r22, r24
+     50c:	c6 01       	movw	r24, r12
+     50e:	13 d5       	rcall	.+2598   	; 0xf36 <_ZN7Shutter14SetShutterTimeEh>
+     510:	45 cf       	rjmp	.-374    	; 0x39c <_ZN11Application8MainMenuEv+0x9a>
+     512:	16 30       	cpi	r17, 0x06	; 6
+     514:	09 f0       	breq	.+2      	; 0x518 <__stack+0xb9>
+     516:	03 cf       	rjmp	.-506    	; 0x31e <_ZN11Application8MainMenuEv+0x1c>
+     518:	41 e0       	ldi	r20, 0x01	; 1
+     51a:	60 e4       	ldi	r22, 0x40	; 64
+     51c:	80 2f       	mov	r24, r16
+     51e:	a6 dd       	rcall	.-1204   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     520:	88 23       	and	r24, r24
+     522:	21 f0       	breq	.+8      	; 0x52c <__stack+0xcd>
+     524:	69 a5       	ldd	r22, Y+41	; 0x29
+     526:	61 50       	subi	r22, 0x01	; 1
+     528:	c6 01       	movw	r24, r12
+     52a:	1c d5       	rcall	.+2616   	; 0xf64 <_ZN7Shutter12SetPauseTimeEh>
+     52c:	42 e0       	ldi	r20, 0x02	; 2
+     52e:	60 e4       	ldi	r22, 0x40	; 64
+     530:	8b a1       	ldd	r24, Y+35	; 0x23
+     532:	9c dd       	rcall	.-1224   	; 0x6c <_ZN8Keyboard14CheckConditionEhh.isra.0>
+     534:	88 23       	and	r24, r24
+     536:	09 f4       	brne	.+2      	; 0x53a <__stack+0xdb>
+     538:	31 cf       	rjmp	.-414    	; 0x39c <_ZN11Application8MainMenuEv+0x9a>
+     53a:	69 a5       	ldd	r22, Y+41	; 0x29
+     53c:	6f 5f       	subi	r22, 0xFF	; 255
+     53e:	c6 01       	movw	r24, r12
+     540:	11 d5       	rcall	.+2594   	; 0xf64 <_ZN7Shutter12SetPauseTimeEh>
+     542:	2c cf       	rjmp	.-424    	; 0x39c <_ZN11Application8MainMenuEv+0x9a>
+     544:	61 e0       	ldi	r22, 0x01	; 1
+     546:	c7 01       	movw	r24, r14
+     548:	31 d3       	rcall	.+1634   	; 0xbac <_ZN5Drive7SetModeEh>
+     54a:	56 cf       	rjmp	.-340    	; 0x3f8 <_ZN11Application8MainMenuEv+0xf6>
 
-00000558 <_ZN11Application3RunEv>:
-     558:	d6 de       	rcall	.-596    	; 0x306 <_ZN11Application8MainMenuEv>
+0000054c <_ZN11Application3RunEv>:
+     54c:	da de       	rcall	.-588    	; 0x302 <_ZN11Application8MainMenuEv>
 
-0000055a <_ZN7BatteryC1Ev>:
-     55a:	24 ec       	ldi	r18, 0xC4	; 196
-     55c:	27 b9       	out	0x07, r18	; 7
-     55e:	27 e8       	ldi	r18, 0x87	; 135
-     560:	26 b9       	out	0x06, r18	; 6
-     562:	36 9a       	sbi	0x06, 6	; 6
-     564:	fc 01       	movw	r30, r24
-     566:	10 82       	st	Z, r1
-     568:	08 95       	ret
+0000054e <_ZN7BatteryC1Ev>:
+     54e:	24 ec       	ldi	r18, 0xC4	; 196
+     550:	27 b9       	out	0x07, r18	; 7
+     552:	27 e8       	ldi	r18, 0x87	; 135
+     554:	26 b9       	out	0x06, r18	; 6
+     556:	36 9a       	sbi	0x06, 6	; 6
+     558:	fc 01       	movw	r30, r24
+     55a:	10 82       	st	Z, r1
+     55c:	08 95       	ret
 
-0000056a <_ZN7Battery10getVoltageEv>:
-     56a:	fc 01       	movw	r30, r24
-     56c:	36 99       	sbic	0x06, 6	; 6
-     56e:	10 c0       	rjmp	.+32     	; 0x590 <_ZN7Battery10getVoltageEv+0x26>
-     570:	24 b1       	in	r18, 0x04	; 4
-     572:	35 b1       	in	r19, 0x05	; 5
-     574:	a1 e9       	ldi	r26, 0x91	; 145
-     576:	b0 e0       	ldi	r27, 0x00	; 0
-     578:	2d d5       	rcall	.+2650   	; 0xfd4 <__umulhisi3>
-     57a:	2a e0       	ldi	r18, 0x0A	; 10
-     57c:	96 95       	lsr	r25
-     57e:	87 95       	ror	r24
-     580:	77 95       	ror	r23
-     582:	67 95       	ror	r22
-     584:	2a 95       	dec	r18
-     586:	d1 f7       	brne	.-12     	; 0x57c <_ZN7Battery10getVoltageEv+0x12>
-     588:	60 83       	st	Z, r22
-     58a:	86 b1       	in	r24, 0x06	; 6
-     58c:	80 6c       	ori	r24, 0xC0	; 192
-     58e:	86 b9       	out	0x06, r24	; 6
-     590:	80 81       	ld	r24, Z
-     592:	08 95       	ret
+0000055e <_ZN7Battery10getVoltageEv>:
+     55e:	fc 01       	movw	r30, r24
+     560:	36 99       	sbic	0x06, 6	; 6
+     562:	12 c0       	rjmp	.+36     	; 0x588 <_ZN7Battery10getVoltageEv+0x2a>
+     564:	24 b1       	in	r18, 0x04	; 4
+     566:	35 b1       	in	r19, 0x05	; 5
+     568:	a1 e9       	ldi	r26, 0x91	; 145
+     56a:	b0 e0       	ldi	r27, 0x00	; 0
+     56c:	a2 d5       	rcall	.+2884   	; 0x10b2 <__umulhisi3>
+     56e:	dc 01       	movw	r26, r24
+     570:	cb 01       	movw	r24, r22
+     572:	2a e0       	ldi	r18, 0x0A	; 10
+     574:	b6 95       	lsr	r27
+     576:	a7 95       	ror	r26
+     578:	97 95       	ror	r25
+     57a:	87 95       	ror	r24
+     57c:	2a 95       	dec	r18
+     57e:	d1 f7       	brne	.-12     	; 0x574 <_ZN7Battery10getVoltageEv+0x16>
+     580:	80 83       	st	Z, r24
+     582:	96 b1       	in	r25, 0x06	; 6
+     584:	90 6c       	ori	r25, 0xC0	; 192
+     586:	96 b9       	out	0x06, r25	; 6
+     588:	80 81       	ld	r24, Z
+     58a:	08 95       	ret
 
-00000594 <_ZN7Display15IntervalHandlerEv>:
-     594:	fc 01       	movw	r30, r24
-     596:	85 b3       	in	r24, 0x15	; 21
-     598:	91 e0       	ldi	r25, 0x01	; 1
-     59a:	89 27       	eor	r24, r25
-     59c:	85 bb       	out	0x15, r24	; 21
+0000058c <_ZN7Display15IntervalHandlerEv>:
+     58c:	fc 01       	movw	r30, r24
+     58e:	95 b3       	in	r25, 0x15	; 21
+     590:	81 e0       	ldi	r24, 0x01	; 1
+     592:	89 27       	eor	r24, r25
+     594:	85 bb       	out	0x15, r24	; 21
+     596:	82 81       	ldd	r24, Z+2	; 0x02
+     598:	93 81       	ldd	r25, Z+3	; 0x03
+     59a:	89 2b       	or	r24, r25
+     59c:	39 f0       	breq	.+14     	; 0x5ac <_ZN7Display15IntervalHandlerEv+0x20>
      59e:	82 81       	ldd	r24, Z+2	; 0x02
      5a0:	93 81       	ldd	r25, Z+3	; 0x03
-     5a2:	89 2b       	or	r24, r25
-     5a4:	39 f0       	breq	.+14     	; 0x5b4 <_ZN7Display15IntervalHandlerEv+0x20>
-     5a6:	82 81       	ldd	r24, Z+2	; 0x02
-     5a8:	93 81       	ldd	r25, Z+3	; 0x03
-     5aa:	01 97       	sbiw	r24, 0x01	; 1
-     5ac:	93 83       	std	Z+3, r25	; 0x03
-     5ae:	82 83       	std	Z+2, r24	; 0x02
-     5b0:	94 9a       	sbi	0x12, 4	; 18
-     5b2:	08 95       	ret
-     5b4:	94 98       	cbi	0x12, 4	; 18
-     5b6:	08 95       	ret
+     5a2:	01 97       	sbiw	r24, 0x01	; 1
+     5a4:	93 83       	std	Z+3, r25	; 0x03
+     5a6:	82 83       	std	Z+2, r24	; 0x02
+     5a8:	94 9a       	sbi	0x12, 4	; 18
+     5aa:	08 95       	ret
+     5ac:	94 98       	cbi	0x12, 4	; 18
+     5ae:	08 95       	ret
 
-000005b8 <_ZN7Display11SendCommandEhh>:
-     5b8:	a9 98       	cbi	0x15, 1	; 21
-     5ba:	68 bb       	out	0x18, r22	; 24
-     5bc:	85 b3       	in	r24, 0x15	; 21
-     5be:	43 70       	andi	r20, 0x03	; 3
-     5c0:	94 e0       	ldi	r25, 0x04	; 4
-     5c2:	49 9f       	mul	r20, r25
-     5c4:	a0 01       	movw	r20, r0
-     5c6:	11 24       	eor	r1, r1
-     5c8:	84 2b       	or	r24, r20
-     5ca:	85 bb       	out	0x15, r24	; 21
-     5cc:	00 00       	nop
-     5ce:	00 00       	nop
-     5d0:	00 00       	nop
-     5d2:	85 b3       	in	r24, 0x15	; 21
-     5d4:	83 7f       	andi	r24, 0xF3	; 243
-     5d6:	85 bb       	out	0x15, r24	; 21
-     5d8:	08 95       	ret
+000005b0 <_ZN7Display11SendCommandEhh>:
+     5b0:	a9 98       	cbi	0x15, 1	; 21
+     5b2:	68 bb       	out	0x18, r22	; 24
+     5b4:	95 b3       	in	r25, 0x15	; 21
+     5b6:	84 2f       	mov	r24, r20
+     5b8:	83 70       	andi	r24, 0x03	; 3
+     5ba:	24 e0       	ldi	r18, 0x04	; 4
+     5bc:	82 9f       	mul	r24, r18
+     5be:	a0 01       	movw	r20, r0
+     5c0:	11 24       	eor	r1, r1
+     5c2:	49 2b       	or	r20, r25
+     5c4:	45 bb       	out	0x15, r20	; 21
+     5c6:	00 00       	nop
+     5c8:	00 00       	nop
+     5ca:	00 00       	nop
+     5cc:	85 b3       	in	r24, 0x15	; 21
+     5ce:	83 7f       	andi	r24, 0xF3	; 243
+     5d0:	85 bb       	out	0x15, r24	; 21
+     5d2:	08 95       	ret
 
-000005da <_ZN7Display8SendDataEhh>:
-     5da:	a9 9a       	sbi	0x15, 1	; 21
-     5dc:	68 bb       	out	0x18, r22	; 24
-     5de:	85 b3       	in	r24, 0x15	; 21
-     5e0:	43 70       	andi	r20, 0x03	; 3
-     5e2:	94 e0       	ldi	r25, 0x04	; 4
-     5e4:	49 9f       	mul	r20, r25
-     5e6:	a0 01       	movw	r20, r0
-     5e8:	11 24       	eor	r1, r1
-     5ea:	84 2b       	or	r24, r20
-     5ec:	85 bb       	out	0x15, r24	; 21
+000005d4 <_ZN7Display8SendDataEhh>:
+     5d4:	a9 9a       	sbi	0x15, 1	; 21
+     5d6:	68 bb       	out	0x18, r22	; 24
+     5d8:	95 b3       	in	r25, 0x15	; 21
+     5da:	84 2f       	mov	r24, r20
+     5dc:	83 70       	andi	r24, 0x03	; 3
+     5de:	24 e0       	ldi	r18, 0x04	; 4
+     5e0:	82 9f       	mul	r24, r18
+     5e2:	a0 01       	movw	r20, r0
+     5e4:	11 24       	eor	r1, r1
+     5e6:	49 2b       	or	r20, r25
+     5e8:	45 bb       	out	0x15, r20	; 21
+     5ea:	00 00       	nop
+     5ec:	00 00       	nop
      5ee:	00 00       	nop
-     5f0:	00 00       	nop
-     5f2:	00 00       	nop
-     5f4:	85 b3       	in	r24, 0x15	; 21
-     5f6:	83 7f       	andi	r24, 0xF3	; 243
-     5f8:	85 bb       	out	0x15, r24	; 21
-     5fa:	08 95       	ret
+     5f0:	85 b3       	in	r24, 0x15	; 21
+     5f2:	83 7f       	andi	r24, 0xF3	; 243
+     5f4:	85 bb       	out	0x15, r24	; 21
+     5f6:	08 95       	ret
 
-000005fc <_ZN7Display9PutColumnEhhhh>:
-     5fc:	cf 92       	push	r12
-     5fe:	df 92       	push	r13
-     600:	ff 92       	push	r15
-     602:	0f 93       	push	r16
-     604:	1f 93       	push	r17
-     606:	cf 93       	push	r28
-     608:	df 93       	push	r29
-     60a:	00 d0       	rcall	.+0      	; 0x60c <_ZN7Display9PutColumnEhhhh+0x10>
-     60c:	cd b7       	in	r28, 0x3d	; 61
-     60e:	de b7       	in	r29, 0x3e	; 62
-     610:	6c 01       	movw	r12, r24
-     612:	16 2f       	mov	r17, r22
-     614:	f0 2e       	mov	r15, r16
-     616:	6a 37       	cpi	r22, 0x7A	; 122
-     618:	90 f5       	brcc	.+100    	; 0x67e <_ZN7Display9PutColumnEhhhh+0x82>
-     61a:	44 30       	cpi	r20, 0x04	; 4
-     61c:	80 f5       	brcc	.+96     	; 0x67e <_ZN7Display9PutColumnEhhhh+0x82>
-     61e:	6d 33       	cpi	r22, 0x3D	; 61
-     620:	20 f4       	brcc	.+8      	; 0x62a <_ZN7Display9PutColumnEhhhh+0x2e>
-     622:	34 2f       	mov	r19, r20
-     624:	30 61       	ori	r19, 0x10	; 16
-     626:	01 e0       	ldi	r16, 0x01	; 1
-     628:	04 c0       	rjmp	.+8      	; 0x632 <_ZN7Display9PutColumnEhhhh+0x36>
-     62a:	1d 53       	subi	r17, 0x3D	; 61
-     62c:	34 2f       	mov	r19, r20
-     62e:	30 62       	ori	r19, 0x20	; 32
-     630:	02 e0       	ldi	r16, 0x02	; 2
-     632:	f6 01       	movw	r30, r12
-     634:	84 81       	ldd	r24, Z+4	; 0x04
-     636:	18 13       	cpse	r17, r24
-     638:	03 c0       	rjmp	.+6      	; 0x640 <_ZN7Display9PutColumnEhhhh+0x44>
-     63a:	85 81       	ldd	r24, Z+5	; 0x05
-     63c:	38 17       	cp	r19, r24
-     63e:	89 f0       	breq	.+34     	; 0x662 <_ZN7Display9PutColumnEhhhh+0x66>
-     640:	63 2f       	mov	r22, r19
-     642:	6f 70       	andi	r22, 0x0F	; 15
-     644:	68 54       	subi	r22, 0x48	; 72
-     646:	40 2f       	mov	r20, r16
-     648:	c6 01       	movw	r24, r12
-     64a:	2a 83       	std	Y+2, r18	; 0x02
-     64c:	39 83       	std	Y+1, r19	; 0x01
-     64e:	b4 df       	rcall	.-152    	; 0x5b8 <_ZN7Display11SendCommandEhh>
-     650:	40 2f       	mov	r20, r16
-     652:	61 2f       	mov	r22, r17
-     654:	c6 01       	movw	r24, r12
-     656:	b0 df       	rcall	.-160    	; 0x5b8 <_ZN7Display11SendCommandEhh>
+000005f8 <_ZN7Display9PutColumnEhhhh>:
+     5f8:	cf 92       	push	r12
+     5fa:	df 92       	push	r13
+     5fc:	ff 92       	push	r15
+     5fe:	0f 93       	push	r16
+     600:	1f 93       	push	r17
+     602:	cf 93       	push	r28
+     604:	df 93       	push	r29
+     606:	00 d0       	rcall	.+0      	; 0x608 <_ZN7Display9PutColumnEhhhh+0x10>
+     608:	cd b7       	in	r28, 0x3d	; 61
+     60a:	de b7       	in	r29, 0x3e	; 62
+     60c:	6c 01       	movw	r12, r24
+     60e:	36 2f       	mov	r19, r22
+     610:	f0 2e       	mov	r15, r16
+     612:	6a 37       	cpi	r22, 0x7A	; 122
+     614:	98 f5       	brcc	.+102    	; 0x67c <_ZN7Display9PutColumnEhhhh+0x84>
+     616:	44 30       	cpi	r20, 0x04	; 4
+     618:	88 f5       	brcc	.+98     	; 0x67c <_ZN7Display9PutColumnEhhhh+0x84>
+     61a:	6d 33       	cpi	r22, 0x3D	; 61
+     61c:	20 f4       	brcc	.+8      	; 0x626 <_ZN7Display9PutColumnEhhhh+0x2e>
+     61e:	14 2f       	mov	r17, r20
+     620:	10 61       	ori	r17, 0x10	; 16
+     622:	01 e0       	ldi	r16, 0x01	; 1
+     624:	04 c0       	rjmp	.+8      	; 0x62e <_ZN7Display9PutColumnEhhhh+0x36>
+     626:	3d 53       	subi	r19, 0x3D	; 61
+     628:	14 2f       	mov	r17, r20
+     62a:	10 62       	ori	r17, 0x20	; 32
+     62c:	02 e0       	ldi	r16, 0x02	; 2
+     62e:	f6 01       	movw	r30, r12
+     630:	84 81       	ldd	r24, Z+4	; 0x04
+     632:	38 13       	cpse	r19, r24
+     634:	03 c0       	rjmp	.+6      	; 0x63c <_ZN7Display9PutColumnEhhhh+0x44>
+     636:	85 81       	ldd	r24, Z+5	; 0x05
+     638:	18 17       	cp	r17, r24
+     63a:	91 f0       	breq	.+36     	; 0x660 <_ZN7Display9PutColumnEhhhh+0x68>
+     63c:	61 2f       	mov	r22, r17
+     63e:	6f 70       	andi	r22, 0x0F	; 15
+     640:	68 54       	subi	r22, 0x48	; 72
+     642:	40 2f       	mov	r20, r16
+     644:	c6 01       	movw	r24, r12
+     646:	2a 83       	std	Y+2, r18	; 0x02
+     648:	39 83       	std	Y+1, r19	; 0x01
+     64a:	b2 df       	rcall	.-156    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     64c:	40 2f       	mov	r20, r16
+     64e:	39 81       	ldd	r19, Y+1	; 0x01
+     650:	63 2f       	mov	r22, r19
+     652:	c6 01       	movw	r24, r12
+     654:	ad df       	rcall	.-166    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     656:	39 81       	ldd	r19, Y+1	; 0x01
      658:	f6 01       	movw	r30, r12
-     65a:	14 83       	std	Z+4, r17	; 0x04
-     65c:	39 81       	ldd	r19, Y+1	; 0x01
-     65e:	35 83       	std	Z+5, r19	; 0x05
-     660:	2a 81       	ldd	r18, Y+2	; 0x02
-     662:	ff 20       	and	r15, r15
-     664:	21 f0       	breq	.+8      	; 0x66e <_ZN7Display9PutColumnEhhhh+0x72>
-     666:	62 2f       	mov	r22, r18
-     668:	60 95       	com	r22
-     66a:	40 2f       	mov	r20, r16
-     66c:	02 c0       	rjmp	.+4      	; 0x672 <_ZN7Display9PutColumnEhhhh+0x76>
-     66e:	40 2f       	mov	r20, r16
-     670:	62 2f       	mov	r22, r18
-     672:	c6 01       	movw	r24, r12
-     674:	b2 df       	rcall	.-156    	; 0x5da <_ZN7Display8SendDataEhh>
-     676:	f6 01       	movw	r30, r12
-     678:	84 81       	ldd	r24, Z+4	; 0x04
-     67a:	8f 5f       	subi	r24, 0xFF	; 255
-     67c:	84 83       	std	Z+4, r24	; 0x04
+     65a:	34 83       	std	Z+4, r19	; 0x04
+     65c:	15 83       	std	Z+5, r17	; 0x05
+     65e:	2a 81       	ldd	r18, Y+2	; 0x02
+     660:	ff 20       	and	r15, r15
+     662:	21 f0       	breq	.+8      	; 0x66c <_ZN7Display9PutColumnEhhhh+0x74>
+     664:	62 2f       	mov	r22, r18
+     666:	60 95       	com	r22
+     668:	40 2f       	mov	r20, r16
+     66a:	02 c0       	rjmp	.+4      	; 0x670 <_ZN7Display9PutColumnEhhhh+0x78>
+     66c:	40 2f       	mov	r20, r16
+     66e:	62 2f       	mov	r22, r18
+     670:	c6 01       	movw	r24, r12
+     672:	b0 df       	rcall	.-160    	; 0x5d4 <_ZN7Display8SendDataEhh>
+     674:	f6 01       	movw	r30, r12
+     676:	84 81       	ldd	r24, Z+4	; 0x04
+     678:	8f 5f       	subi	r24, 0xFF	; 255
+     67a:	84 83       	std	Z+4, r24	; 0x04
+     67c:	0f 90       	pop	r0
      67e:	0f 90       	pop	r0
-     680:	0f 90       	pop	r0
-     682:	df 91       	pop	r29
-     684:	cf 91       	pop	r28
-     686:	1f 91       	pop	r17
-     688:	0f 91       	pop	r16
-     68a:	ff 90       	pop	r15
-     68c:	df 90       	pop	r13
-     68e:	cf 90       	pop	r12
-     690:	08 95       	ret
+     680:	df 91       	pop	r29
+     682:	cf 91       	pop	r28
+     684:	1f 91       	pop	r17
+     686:	0f 91       	pop	r16
+     688:	ff 90       	pop	r15
+     68a:	df 90       	pop	r13
+     68c:	cf 90       	pop	r12
+     68e:	08 95       	ret
 
-00000692 <_ZN7Display11ClearScreenEv>:
-     692:	0f 93       	push	r16
-     694:	1f 93       	push	r17
-     696:	cf 93       	push	r28
-     698:	df 93       	push	r29
-     69a:	ec 01       	movw	r28, r24
-     69c:	18 eb       	ldi	r17, 0xB8	; 184
-     69e:	43 e0       	ldi	r20, 0x03	; 3
-     6a0:	61 2f       	mov	r22, r17
-     6a2:	ce 01       	movw	r24, r28
-     6a4:	89 df       	rcall	.-238    	; 0x5b8 <_ZN7Display11SendCommandEhh>
-     6a6:	43 e0       	ldi	r20, 0x03	; 3
-     6a8:	60 e0       	ldi	r22, 0x00	; 0
-     6aa:	ce 01       	movw	r24, r28
-     6ac:	85 df       	rcall	.-246    	; 0x5b8 <_ZN7Display11SendCommandEhh>
-     6ae:	0d e3       	ldi	r16, 0x3D	; 61
-     6b0:	43 e0       	ldi	r20, 0x03	; 3
-     6b2:	60 e0       	ldi	r22, 0x00	; 0
-     6b4:	ce 01       	movw	r24, r28
-     6b6:	91 df       	rcall	.-222    	; 0x5da <_ZN7Display8SendDataEhh>
-     6b8:	01 50       	subi	r16, 0x01	; 1
-     6ba:	d1 f7       	brne	.-12     	; 0x6b0 <_ZN7Display11ClearScreenEv+0x1e>
-     6bc:	1f 5f       	subi	r17, 0xFF	; 255
-     6be:	1c 3b       	cpi	r17, 0xBC	; 188
-     6c0:	71 f7       	brne	.-36     	; 0x69e <_ZN7Display11ClearScreenEv+0xc>
-     6c2:	1c 82       	std	Y+4, r1	; 0x04
-     6c4:	1d 82       	std	Y+5, r1	; 0x05
-     6c6:	43 e0       	ldi	r20, 0x03	; 3
-     6c8:	68 eb       	ldi	r22, 0xB8	; 184
-     6ca:	ce 01       	movw	r24, r28
-     6cc:	75 df       	rcall	.-278    	; 0x5b8 <_ZN7Display11SendCommandEhh>
-     6ce:	43 e0       	ldi	r20, 0x03	; 3
-     6d0:	60 e0       	ldi	r22, 0x00	; 0
-     6d2:	ce 01       	movw	r24, r28
-     6d4:	df 91       	pop	r29
-     6d6:	cf 91       	pop	r28
-     6d8:	1f 91       	pop	r17
-     6da:	0f 91       	pop	r16
-     6dc:	6d cf       	rjmp	.-294    	; 0x5b8 <_ZN7Display11SendCommandEhh>
+00000690 <_ZN7Display11ClearScreenEv>:
+     690:	0f 93       	push	r16
+     692:	1f 93       	push	r17
+     694:	cf 93       	push	r28
+     696:	df 93       	push	r29
+     698:	ec 01       	movw	r28, r24
+     69a:	18 eb       	ldi	r17, 0xB8	; 184
+     69c:	43 e0       	ldi	r20, 0x03	; 3
+     69e:	61 2f       	mov	r22, r17
+     6a0:	ce 01       	movw	r24, r28
+     6a2:	86 df       	rcall	.-244    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     6a4:	43 e0       	ldi	r20, 0x03	; 3
+     6a6:	60 e0       	ldi	r22, 0x00	; 0
+     6a8:	ce 01       	movw	r24, r28
+     6aa:	82 df       	rcall	.-252    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     6ac:	0d e3       	ldi	r16, 0x3D	; 61
+     6ae:	43 e0       	ldi	r20, 0x03	; 3
+     6b0:	60 e0       	ldi	r22, 0x00	; 0
+     6b2:	ce 01       	movw	r24, r28
+     6b4:	8f df       	rcall	.-226    	; 0x5d4 <_ZN7Display8SendDataEhh>
+     6b6:	01 50       	subi	r16, 0x01	; 1
+     6b8:	d1 f7       	brne	.-12     	; 0x6ae <_ZN7Display11ClearScreenEv+0x1e>
+     6ba:	1f 5f       	subi	r17, 0xFF	; 255
+     6bc:	1c 3b       	cpi	r17, 0xBC	; 188
+     6be:	71 f7       	brne	.-36     	; 0x69c <_ZN7Display11ClearScreenEv+0xc>
+     6c0:	1c 82       	std	Y+4, r1	; 0x04
+     6c2:	1d 82       	std	Y+5, r1	; 0x05
+     6c4:	43 e0       	ldi	r20, 0x03	; 3
+     6c6:	68 eb       	ldi	r22, 0xB8	; 184
+     6c8:	ce 01       	movw	r24, r28
+     6ca:	72 df       	rcall	.-284    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     6cc:	43 e0       	ldi	r20, 0x03	; 3
+     6ce:	60 e0       	ldi	r22, 0x00	; 0
+     6d0:	ce 01       	movw	r24, r28
+     6d2:	df 91       	pop	r29
+     6d4:	cf 91       	pop	r28
+     6d6:	1f 91       	pop	r17
+     6d8:	0f 91       	pop	r16
+     6da:	6a cf       	rjmp	.-300    	; 0x5b0 <_ZN7Display11SendCommandEhh>
 
-000006de <_ZN7Display12InitHardwareEv>:
-     6de:	cf 93       	push	r28
-     6e0:	df 93       	push	r29
-     6e2:	ec 01       	movw	r28, r24
-     6e4:	8f ef       	ldi	r24, 0xFF	; 255
-     6e6:	87 bb       	out	0x17, r24	; 23
-     6e8:	88 bb       	out	0x18, r24	; 24
-     6ea:	84 b3       	in	r24, 0x14	; 20
-     6ec:	8f 60       	ori	r24, 0x0F	; 15
-     6ee:	84 bb       	out	0x14, r24	; 20
-     6f0:	85 b3       	in	r24, 0x15	; 21
-     6f2:	80 7f       	andi	r24, 0xF0	; 240
-     6f4:	85 bb       	out	0x15, r24	; 21
-     6f6:	8c 9a       	sbi	0x11, 4	; 17
-     6f8:	94 9a       	sbi	0x12, 4	; 18
-     6fa:	2f e7       	ldi	r18, 0x7F	; 127
-     6fc:	88 e3       	ldi	r24, 0x38	; 56
-     6fe:	91 e0       	ldi	r25, 0x01	; 1
-     700:	21 50       	subi	r18, 0x01	; 1
-     702:	80 40       	sbci	r24, 0x00	; 0
-     704:	90 40       	sbci	r25, 0x00	; 0
-     706:	e1 f7       	brne	.-8      	; 0x700 <_ZN7Display12InitHardwareEv+0x22>
-     708:	00 c0       	rjmp	.+0      	; 0x70a <_ZN7Display12InitHardwareEv+0x2c>
-     70a:	00 00       	nop
-     70c:	43 e0       	ldi	r20, 0x03	; 3
-     70e:	6f ea       	ldi	r22, 0xAF	; 175
-     710:	ce 01       	movw	r24, r28
-     712:	52 df       	rcall	.-348    	; 0x5b8 <_ZN7Display11SendCommandEhh>
-     714:	43 e0       	ldi	r20, 0x03	; 3
-     716:	60 ea       	ldi	r22, 0xA0	; 160
-     718:	ce 01       	movw	r24, r28
-     71a:	4e df       	rcall	.-356    	; 0x5b8 <_ZN7Display11SendCommandEhh>
-     71c:	ce 01       	movw	r24, r28
-     71e:	b9 df       	rcall	.-142    	; 0x692 <_ZN7Display11ClearScreenEv>
-     720:	80 e4       	ldi	r24, 0x40	; 64
-     722:	9f e1       	ldi	r25, 0x1F	; 31
-     724:	9b 83       	std	Y+3, r25	; 0x03
-     726:	8a 83       	std	Y+2, r24	; 0x02
-     728:	df 91       	pop	r29
-     72a:	cf 91       	pop	r28
-     72c:	08 95       	ret
+000006dc <_ZN7Display12InitHardwareEv>:
+     6dc:	cf 93       	push	r28
+     6de:	df 93       	push	r29
+     6e0:	ec 01       	movw	r28, r24
+     6e2:	8f ef       	ldi	r24, 0xFF	; 255
+     6e4:	87 bb       	out	0x17, r24	; 23
+     6e6:	88 bb       	out	0x18, r24	; 24
+     6e8:	84 b3       	in	r24, 0x14	; 20
+     6ea:	8f 60       	ori	r24, 0x0F	; 15
+     6ec:	84 bb       	out	0x14, r24	; 20
+     6ee:	85 b3       	in	r24, 0x15	; 21
+     6f0:	80 7f       	andi	r24, 0xF0	; 240
+     6f2:	85 bb       	out	0x15, r24	; 21
+     6f4:	8c 9a       	sbi	0x11, 4	; 17
+     6f6:	94 9a       	sbi	0x12, 4	; 18
+     6f8:	2f e7       	ldi	r18, 0x7F	; 127
+     6fa:	88 e3       	ldi	r24, 0x38	; 56
+     6fc:	91 e0       	ldi	r25, 0x01	; 1
+     6fe:	21 50       	subi	r18, 0x01	; 1
+     700:	80 40       	sbci	r24, 0x00	; 0
+     702:	90 40       	sbci	r25, 0x00	; 0
+     704:	e1 f7       	brne	.-8      	; 0x6fe <_ZN7Display12InitHardwareEv+0x22>
+     706:	00 c0       	rjmp	.+0      	; 0x708 <_ZN7Display12InitHardwareEv+0x2c>
+     708:	00 00       	nop
+     70a:	43 e0       	ldi	r20, 0x03	; 3
+     70c:	6f ea       	ldi	r22, 0xAF	; 175
+     70e:	ce 01       	movw	r24, r28
+     710:	4f df       	rcall	.-354    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     712:	43 e0       	ldi	r20, 0x03	; 3
+     714:	60 ea       	ldi	r22, 0xA0	; 160
+     716:	ce 01       	movw	r24, r28
+     718:	4b df       	rcall	.-362    	; 0x5b0 <_ZN7Display11SendCommandEhh>
+     71a:	ce 01       	movw	r24, r28
+     71c:	b9 df       	rcall	.-142    	; 0x690 <_ZN7Display11ClearScreenEv>
+     71e:	80 e4       	ldi	r24, 0x40	; 64
+     720:	9c e9       	ldi	r25, 0x9C	; 156
+     722:	9b 83       	std	Y+3, r25	; 0x03
+     724:	8a 83       	std	Y+2, r24	; 0x02
+     726:	df 91       	pop	r29
+     728:	cf 91       	pop	r28
+     72a:	08 95       	ret
 
-0000072e <_ZN7DisplayC1EP8Interval>:
-     72e:	cf 93       	push	r28
-     730:	df 93       	push	r29
-     732:	ec 01       	movw	r28, r24
-     734:	cb 01       	movw	r24, r22
-     736:	24 e6       	ldi	r18, 0x64	; 100
-     738:	30 e0       	ldi	r19, 0x00	; 0
-     73a:	39 83       	std	Y+1, r19	; 0x01
-     73c:	28 83       	st	Y, r18
-     73e:	1b 82       	std	Y+3, r1	; 0x03
-     740:	1a 82       	std	Y+2, r1	; 0x02
-     742:	40 ea       	ldi	r20, 0xA0	; 160
-     744:	5f e0       	ldi	r21, 0x0F	; 15
-     746:	be 01       	movw	r22, r28
-     748:	e7 d2       	rcall	.+1486   	; 0xd18 <_ZN8Interval11addListenerEP16IntervalListenerj>
-     74a:	ce 01       	movw	r24, r28
-     74c:	df 91       	pop	r29
-     74e:	cf 91       	pop	r28
-     750:	c6 cf       	rjmp	.-116    	; 0x6de <_ZN7Display12InitHardwareEv>
+0000072c <_ZN7DisplayC1EP8Interval>:
+     72c:	cf 93       	push	r28
+     72e:	df 93       	push	r29
+     730:	ec 01       	movw	r28, r24
+     732:	cb 01       	movw	r24, r22
+     734:	24 e6       	ldi	r18, 0x64	; 100
+     736:	30 e0       	ldi	r19, 0x00	; 0
+     738:	39 83       	std	Y+1, r19	; 0x01
+     73a:	28 83       	st	Y, r18
+     73c:	1b 82       	std	Y+3, r1	; 0x03
+     73e:	1a 82       	std	Y+2, r1	; 0x02
+     740:	40 ea       	ldi	r20, 0xA0	; 160
+     742:	5f e0       	ldi	r21, 0x0F	; 15
+     744:	be 01       	movw	r22, r28
+     746:	ec d2       	rcall	.+1496   	; 0xd20 <_ZN8Interval11addListenerEP16IntervalListenerj>
+     748:	ce 01       	movw	r24, r28
+     74a:	df 91       	pop	r29
+     74c:	cf 91       	pop	r28
+     74e:	c6 cf       	rjmp	.-116    	; 0x6dc <_ZN7Display12InitHardwareEv>
 
-00000752 <_ZN7Display7PutCharEhhhh>:
-     752:	5f 92       	push	r5
-     754:	6f 92       	push	r6
-     756:	7f 92       	push	r7
-     758:	8f 92       	push	r8
-     75a:	9f 92       	push	r9
-     75c:	af 92       	push	r10
-     75e:	bf 92       	push	r11
-     760:	cf 92       	push	r12
-     762:	df 92       	push	r13
-     764:	ef 92       	push	r14
-     766:	ff 92       	push	r15
-     768:	0f 93       	push	r16
-     76a:	1f 93       	push	r17
-     76c:	cf 93       	push	r28
-     76e:	df 93       	push	r29
-     770:	ec 01       	movw	r28, r24
-     772:	66 2e       	mov	r6, r22
-     774:	84 2e       	mov	r8, r20
-     776:	a2 2e       	mov	r10, r18
-     778:	10 2f       	mov	r17, r16
-     77a:	76 2e       	mov	r7, r22
-     77c:	77 0c       	add	r7, r7
-     77e:	77 0c       	add	r7, r7
-     780:	77 0c       	add	r7, r7
-     782:	92 e0       	ldi	r25, 0x02	; 2
-     784:	99 2e       	mov	r9, r25
-     786:	97 0c       	add	r9, r7
-     788:	88 0c       	add	r8, r8
-     78a:	61 11       	cpse	r22, r1
-     78c:	06 c0       	rjmp	.+12     	; 0x79a <_ZN7Display7PutCharEhhhh+0x48>
-     78e:	20 e0       	ldi	r18, 0x00	; 0
-     790:	48 2d       	mov	r20, r8
-     792:	61 e0       	ldi	r22, 0x01	; 1
-     794:	67 0d       	add	r22, r7
-     796:	ce 01       	movw	r24, r28
-     798:	31 df       	rcall	.-414    	; 0x5fc <_ZN7Display9PutColumnEhhhh>
-     79a:	8e e0       	ldi	r24, 0x0E	; 14
-     79c:	a8 9e       	mul	r10, r24
-     79e:	60 01       	movw	r12, r0
-     7a0:	11 24       	eor	r1, r1
-     7a2:	c6 01       	movw	r24, r12
-     7a4:	8a 59       	subi	r24, 0x9A	; 154
-     7a6:	9f 4f       	sbci	r25, 0xFF	; 255
-     7a8:	6c 01       	movw	r12, r24
-     7aa:	e1 2c       	mov	r14, r1
-     7ac:	f1 2c       	mov	r15, r1
-     7ae:	b1 2c       	mov	r11, r1
-     7b0:	f6 01       	movw	r30, r12
-     7b2:	ee 0d       	add	r30, r14
-     7b4:	ff 1d       	adc	r31, r15
-     7b6:	69 2d       	mov	r22, r9
-     7b8:	6e 0d       	add	r22, r14
-     7ba:	01 2f       	mov	r16, r17
-     7bc:	20 81       	ld	r18, Z
-     7be:	48 2d       	mov	r20, r8
-     7c0:	ce 01       	movw	r24, r28
-     7c2:	1c df       	rcall	.-456    	; 0x5fc <_ZN7Display9PutColumnEhhhh>
-     7c4:	9f ef       	ldi	r25, 0xFF	; 255
-     7c6:	e9 1a       	sub	r14, r25
-     7c8:	f9 0a       	sbc	r15, r25
-     7ca:	87 e0       	ldi	r24, 0x07	; 7
-     7cc:	e8 16       	cp	r14, r24
-     7ce:	f1 04       	cpc	r15, r1
-     7d0:	79 f7       	brne	.-34     	; 0x7b0 <_ZN7Display7PutCharEhhhh+0x5e>
-     7d2:	89 e0       	ldi	r24, 0x09	; 9
-     7d4:	58 2e       	mov	r5, r24
-     7d6:	57 0c       	add	r5, r7
-     7d8:	20 e0       	ldi	r18, 0x00	; 0
-     7da:	48 2d       	mov	r20, r8
-     7dc:	65 2d       	mov	r22, r5
-     7de:	ce 01       	movw	r24, r28
-     7e0:	0d df       	rcall	.-486    	; 0x5fc <_ZN7Display9PutColumnEhhhh>
-     7e2:	83 94       	inc	r8
-     7e4:	61 10       	cpse	r6, r1
-     7e6:	06 c0       	rjmp	.+12     	; 0x7f4 <_ZN7Display7PutCharEhhhh+0xa2>
-     7e8:	61 e0       	ldi	r22, 0x01	; 1
-     7ea:	67 0d       	add	r22, r7
-     7ec:	20 e0       	ldi	r18, 0x00	; 0
-     7ee:	48 2d       	mov	r20, r8
-     7f0:	ce 01       	movw	r24, r28
-     7f2:	04 df       	rcall	.-504    	; 0x5fc <_ZN7Display9PutColumnEhhhh>
-     7f4:	8e e0       	ldi	r24, 0x0E	; 14
-     7f6:	8a 9d       	mul	r24, r10
-     7f8:	60 01       	movw	r12, r0
-     7fa:	8b 9d       	mul	r24, r11
-     7fc:	d0 0c       	add	r13, r0
-     7fe:	11 24       	eor	r1, r1
-     800:	c6 01       	movw	r24, r12
-     802:	8a 59       	subi	r24, 0x9A	; 154
-     804:	9f 4f       	sbci	r25, 0xFF	; 255
-     806:	6c 01       	movw	r12, r24
-     808:	e1 2c       	mov	r14, r1
-     80a:	f1 2c       	mov	r15, r1
-     80c:	f6 01       	movw	r30, r12
-     80e:	ee 0d       	add	r30, r14
-     810:	ff 1d       	adc	r31, r15
-     812:	69 2d       	mov	r22, r9
-     814:	6e 0d       	add	r22, r14
-     816:	01 2f       	mov	r16, r17
-     818:	27 81       	ldd	r18, Z+7	; 0x07
-     81a:	48 2d       	mov	r20, r8
-     81c:	ce 01       	movw	r24, r28
-     81e:	ee de       	rcall	.-548    	; 0x5fc <_ZN7Display9PutColumnEhhhh>
-     820:	9f ef       	ldi	r25, 0xFF	; 255
-     822:	e9 1a       	sub	r14, r25
-     824:	f9 0a       	sbc	r15, r25
-     826:	87 e0       	ldi	r24, 0x07	; 7
-     828:	e8 16       	cp	r14, r24
-     82a:	f1 04       	cpc	r15, r1
-     82c:	79 f7       	brne	.-34     	; 0x80c <_ZN7Display7PutCharEhhhh+0xba>
-     82e:	20 e0       	ldi	r18, 0x00	; 0
-     830:	48 2d       	mov	r20, r8
-     832:	65 2d       	mov	r22, r5
-     834:	ce 01       	movw	r24, r28
-     836:	e2 de       	rcall	.-572    	; 0x5fc <_ZN7Display9PutColumnEhhhh>
-     838:	df 91       	pop	r29
-     83a:	cf 91       	pop	r28
-     83c:	1f 91       	pop	r17
-     83e:	0f 91       	pop	r16
-     840:	ff 90       	pop	r15
-     842:	ef 90       	pop	r14
-     844:	df 90       	pop	r13
-     846:	cf 90       	pop	r12
-     848:	bf 90       	pop	r11
-     84a:	af 90       	pop	r10
-     84c:	9f 90       	pop	r9
-     84e:	8f 90       	pop	r8
-     850:	7f 90       	pop	r7
-     852:	6f 90       	pop	r6
-     854:	5f 90       	pop	r5
-     856:	08 95       	ret
+00000750 <_ZN7Display7PutCharEhhhh>:
+     750:	5f 92       	push	r5
+     752:	6f 92       	push	r6
+     754:	7f 92       	push	r7
+     756:	8f 92       	push	r8
+     758:	9f 92       	push	r9
+     75a:	af 92       	push	r10
+     75c:	bf 92       	push	r11
+     75e:	cf 92       	push	r12
+     760:	df 92       	push	r13
+     762:	ef 92       	push	r14
+     764:	ff 92       	push	r15
+     766:	0f 93       	push	r16
+     768:	1f 93       	push	r17
+     76a:	cf 93       	push	r28
+     76c:	df 93       	push	r29
+     76e:	7c 01       	movw	r14, r24
+     770:	56 2e       	mov	r5, r22
+     772:	a2 2e       	mov	r10, r18
+     774:	d0 2f       	mov	r29, r16
+     776:	16 2f       	mov	r17, r22
+     778:	11 0f       	add	r17, r17
+     77a:	11 0f       	add	r17, r17
+     77c:	11 0f       	add	r17, r17
+     77e:	92 e0       	ldi	r25, 0x02	; 2
+     780:	99 2e       	mov	r9, r25
+     782:	91 0e       	add	r9, r17
+     784:	c4 2f       	mov	r28, r20
+     786:	cc 0f       	add	r28, r28
+     788:	61 11       	cpse	r22, r1
+     78a:	06 c0       	rjmp	.+12     	; 0x798 <_ZN7Display7PutCharEhhhh+0x48>
+     78c:	20 e0       	ldi	r18, 0x00	; 0
+     78e:	4c 2f       	mov	r20, r28
+     790:	61 e0       	ldi	r22, 0x01	; 1
+     792:	61 0f       	add	r22, r17
+     794:	c7 01       	movw	r24, r14
+     796:	30 df       	rcall	.-416    	; 0x5f8 <_ZN7Display9PutColumnEhhhh>
+     798:	8e e0       	ldi	r24, 0x0E	; 14
+     79a:	a8 9e       	mul	r10, r24
+     79c:	30 01       	movw	r6, r0
+     79e:	11 24       	eor	r1, r1
+     7a0:	c1 2c       	mov	r12, r1
+     7a2:	d1 2c       	mov	r13, r1
+     7a4:	b1 2c       	mov	r11, r1
+     7a6:	f6 01       	movw	r30, r12
+     7a8:	e6 0d       	add	r30, r6
+     7aa:	f7 1d       	adc	r31, r7
+     7ac:	ea 59       	subi	r30, 0x9A	; 154
+     7ae:	ff 4f       	sbci	r31, 0xFF	; 255
+     7b0:	69 2d       	mov	r22, r9
+     7b2:	6c 0d       	add	r22, r12
+     7b4:	0d 2f       	mov	r16, r29
+     7b6:	20 81       	ld	r18, Z
+     7b8:	4c 2f       	mov	r20, r28
+     7ba:	c7 01       	movw	r24, r14
+     7bc:	1d df       	rcall	.-454    	; 0x5f8 <_ZN7Display9PutColumnEhhhh>
+     7be:	8f ef       	ldi	r24, 0xFF	; 255
+     7c0:	c8 1a       	sub	r12, r24
+     7c2:	d8 0a       	sbc	r13, r24
+     7c4:	87 e0       	ldi	r24, 0x07	; 7
+     7c6:	c8 16       	cp	r12, r24
+     7c8:	d1 04       	cpc	r13, r1
+     7ca:	69 f7       	brne	.-38     	; 0x7a6 <_ZN7Display7PutCharEhhhh+0x56>
+     7cc:	89 e0       	ldi	r24, 0x09	; 9
+     7ce:	88 2e       	mov	r8, r24
+     7d0:	81 0e       	add	r8, r17
+     7d2:	20 e0       	ldi	r18, 0x00	; 0
+     7d4:	4c 2f       	mov	r20, r28
+     7d6:	68 2d       	mov	r22, r8
+     7d8:	c7 01       	movw	r24, r14
+     7da:	0e df       	rcall	.-484    	; 0x5f8 <_ZN7Display9PutColumnEhhhh>
+     7dc:	cf 5f       	subi	r28, 0xFF	; 255
+     7de:	51 10       	cpse	r5, r1
+     7e0:	06 c0       	rjmp	.+12     	; 0x7ee <_ZN7Display7PutCharEhhhh+0x9e>
+     7e2:	61 e0       	ldi	r22, 0x01	; 1
+     7e4:	61 0f       	add	r22, r17
+     7e6:	20 e0       	ldi	r18, 0x00	; 0
+     7e8:	4c 2f       	mov	r20, r28
+     7ea:	c7 01       	movw	r24, r14
+     7ec:	05 df       	rcall	.-502    	; 0x5f8 <_ZN7Display9PutColumnEhhhh>
+     7ee:	8e e0       	ldi	r24, 0x0E	; 14
+     7f0:	8a 9d       	mul	r24, r10
+     7f2:	30 01       	movw	r6, r0
+     7f4:	8b 9d       	mul	r24, r11
+     7f6:	70 0c       	add	r7, r0
+     7f8:	11 24       	eor	r1, r1
+     7fa:	c1 2c       	mov	r12, r1
+     7fc:	d1 2c       	mov	r13, r1
+     7fe:	f6 01       	movw	r30, r12
+     800:	e6 0d       	add	r30, r6
+     802:	f7 1d       	adc	r31, r7
+     804:	ea 59       	subi	r30, 0x9A	; 154
+     806:	ff 4f       	sbci	r31, 0xFF	; 255
+     808:	69 2d       	mov	r22, r9
+     80a:	6c 0d       	add	r22, r12
+     80c:	0d 2f       	mov	r16, r29
+     80e:	27 81       	ldd	r18, Z+7	; 0x07
+     810:	4c 2f       	mov	r20, r28
+     812:	c7 01       	movw	r24, r14
+     814:	f1 de       	rcall	.-542    	; 0x5f8 <_ZN7Display9PutColumnEhhhh>
+     816:	8f ef       	ldi	r24, 0xFF	; 255
+     818:	c8 1a       	sub	r12, r24
+     81a:	d8 0a       	sbc	r13, r24
+     81c:	87 e0       	ldi	r24, 0x07	; 7
+     81e:	c8 16       	cp	r12, r24
+     820:	d1 04       	cpc	r13, r1
+     822:	69 f7       	brne	.-38     	; 0x7fe <_ZN7Display7PutCharEhhhh+0xae>
+     824:	20 e0       	ldi	r18, 0x00	; 0
+     826:	4c 2f       	mov	r20, r28
+     828:	68 2d       	mov	r22, r8
+     82a:	c7 01       	movw	r24, r14
+     82c:	e5 de       	rcall	.-566    	; 0x5f8 <_ZN7Display9PutColumnEhhhh>
+     82e:	df 91       	pop	r29
+     830:	cf 91       	pop	r28
+     832:	1f 91       	pop	r17
+     834:	0f 91       	pop	r16
+     836:	ff 90       	pop	r15
+     838:	ef 90       	pop	r14
+     83a:	df 90       	pop	r13
+     83c:	cf 90       	pop	r12
+     83e:	bf 90       	pop	r11
+     840:	af 90       	pop	r10
+     842:	9f 90       	pop	r9
+     844:	8f 90       	pop	r8
+     846:	7f 90       	pop	r7
+     848:	6f 90       	pop	r6
+     84a:	5f 90       	pop	r5
+     84c:	08 95       	ret
 
-00000858 <_ZN7Display9PutNumberEhhhih>:
-     858:	4f 92       	push	r4
-     85a:	5f 92       	push	r5
-     85c:	7f 92       	push	r7
-     85e:	8f 92       	push	r8
-     860:	9f 92       	push	r9
-     862:	af 92       	push	r10
-     864:	bf 92       	push	r11
-     866:	cf 92       	push	r12
-     868:	df 92       	push	r13
-     86a:	ef 92       	push	r14
-     86c:	ff 92       	push	r15
-     86e:	0f 93       	push	r16
-     870:	1f 93       	push	r17
-     872:	cf 93       	push	r28
-     874:	df 93       	push	r29
-     876:	1f 92       	push	r1
-     878:	cd b7       	in	r28, 0x3d	; 61
-     87a:	de b7       	in	r29, 0x3e	; 62
-     87c:	6c 01       	movw	r12, r24
-     87e:	84 2e       	mov	r8, r20
-     880:	f2 2e       	mov	r15, r18
-     882:	28 01       	movw	r4, r16
-     884:	17 ff       	sbrs	r17, 7
-     886:	0a c0       	rjmp	.+20     	; 0x89c <_ZN7Display9PutNumberEhhhih+0x44>
-     888:	11 e0       	ldi	r17, 0x01	; 1
-     88a:	16 0f       	add	r17, r22
-     88c:	0e 2d       	mov	r16, r14
-     88e:	2b e1       	ldi	r18, 0x1B	; 27
-     890:	60 df       	rcall	.-320    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     892:	fa 94       	dec	r15
-     894:	51 94       	neg	r5
-     896:	41 94       	neg	r4
-     898:	51 08       	sbc	r5, r1
-     89a:	61 2f       	mov	r22, r17
-     89c:	16 2f       	mov	r17, r22
-     89e:	1f 0d       	add	r17, r15
-     8a0:	11 50       	subi	r17, 0x01	; 1
-     8a2:	91 2c       	mov	r9, r1
-     8a4:	2a e0       	ldi	r18, 0x0A	; 10
-     8a6:	a2 2e       	mov	r10, r18
-     8a8:	b1 2c       	mov	r11, r1
-     8aa:	9f 14       	cp	r9, r15
-     8ac:	e9 f0       	breq	.+58     	; 0x8e8 <_ZN7Display9PutNumberEhhhih+0x90>
-     8ae:	99 20       	and	r9, r9
-     8b0:	19 f0       	breq	.+6      	; 0x8b8 <_ZN7Display9PutNumberEhhhih+0x60>
-     8b2:	41 14       	cp	r4, r1
-     8b4:	51 04       	cpc	r5, r1
-     8b6:	79 f0       	breq	.+30     	; 0x8d6 <_ZN7Display9PutNumberEhhhih+0x7e>
-     8b8:	c2 01       	movw	r24, r4
-     8ba:	b5 01       	movw	r22, r10
-     8bc:	ab d3       	rcall	.+1878   	; 0x1014 <__divmodhi4>
-     8be:	76 2e       	mov	r7, r22
-     8c0:	0e 2d       	mov	r16, r14
-     8c2:	28 2f       	mov	r18, r24
-     8c4:	48 2d       	mov	r20, r8
-     8c6:	61 2f       	mov	r22, r17
-     8c8:	c6 01       	movw	r24, r12
-     8ca:	79 83       	std	Y+1, r23	; 0x01
-     8cc:	42 df       	rcall	.-380    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     8ce:	47 2c       	mov	r4, r7
-     8d0:	79 81       	ldd	r23, Y+1	; 0x01
-     8d2:	57 2e       	mov	r5, r23
-     8d4:	06 c0       	rjmp	.+12     	; 0x8e2 <_ZN7Display9PutNumberEhhhih+0x8a>
-     8d6:	0e 2d       	mov	r16, r14
-     8d8:	20 e1       	ldi	r18, 0x10	; 16
-     8da:	48 2d       	mov	r20, r8
-     8dc:	61 2f       	mov	r22, r17
-     8de:	c6 01       	movw	r24, r12
-     8e0:	38 df       	rcall	.-400    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     8e2:	93 94       	inc	r9
-     8e4:	11 50       	subi	r17, 0x01	; 1
-     8e6:	e1 cf       	rjmp	.-62     	; 0x8aa <_ZN7Display9PutNumberEhhhih+0x52>
-     8e8:	0f 90       	pop	r0
-     8ea:	df 91       	pop	r29
-     8ec:	cf 91       	pop	r28
-     8ee:	1f 91       	pop	r17
-     8f0:	0f 91       	pop	r16
-     8f2:	ff 90       	pop	r15
-     8f4:	ef 90       	pop	r14
-     8f6:	df 90       	pop	r13
-     8f8:	cf 90       	pop	r12
-     8fa:	bf 90       	pop	r11
-     8fc:	af 90       	pop	r10
-     8fe:	9f 90       	pop	r9
-     900:	8f 90       	pop	r8
-     902:	7f 90       	pop	r7
-     904:	5f 90       	pop	r5
-     906:	4f 90       	pop	r4
-     908:	08 95       	ret
+0000084e <_ZN7Display9PutNumberEhhhih>:
+     84e:	5f 92       	push	r5
+     850:	6f 92       	push	r6
+     852:	7f 92       	push	r7
+     854:	8f 92       	push	r8
+     856:	9f 92       	push	r9
+     858:	af 92       	push	r10
+     85a:	bf 92       	push	r11
+     85c:	cf 92       	push	r12
+     85e:	df 92       	push	r13
+     860:	ef 92       	push	r14
+     862:	ff 92       	push	r15
+     864:	0f 93       	push	r16
+     866:	1f 93       	push	r17
+     868:	cf 93       	push	r28
+     86a:	df 93       	push	r29
+     86c:	1f 92       	push	r1
+     86e:	cd b7       	in	r28, 0x3d	; 61
+     870:	de b7       	in	r29, 0x3e	; 62
+     872:	5c 01       	movw	r10, r24
+     874:	f4 2e       	mov	r15, r20
+     876:	52 2e       	mov	r5, r18
+     878:	68 01       	movw	r12, r16
+     87a:	17 ff       	sbrs	r17, 7
+     87c:	0a c0       	rjmp	.+20     	; 0x892 <_ZN7Display9PutNumberEhhhih+0x44>
+     87e:	11 e0       	ldi	r17, 0x01	; 1
+     880:	16 0f       	add	r17, r22
+     882:	0e 2d       	mov	r16, r14
+     884:	2b e1       	ldi	r18, 0x1B	; 27
+     886:	64 df       	rcall	.-312    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     888:	5a 94       	dec	r5
+     88a:	d1 94       	neg	r13
+     88c:	c1 94       	neg	r12
+     88e:	d1 08       	sbc	r13, r1
+     890:	61 2f       	mov	r22, r17
+     892:	65 0d       	add	r22, r5
+     894:	66 24       	eor	r6, r6
+     896:	6a 94       	dec	r6
+     898:	66 0e       	add	r6, r22
+     89a:	10 e0       	ldi	r17, 0x00	; 0
+     89c:	8a e0       	ldi	r24, 0x0A	; 10
+     89e:	88 2e       	mov	r8, r24
+     8a0:	91 2c       	mov	r9, r1
+     8a2:	15 15       	cp	r17, r5
+     8a4:	e9 f0       	breq	.+58     	; 0x8e0 <_ZN7Display9PutNumberEhhhih+0x92>
+     8a6:	11 23       	and	r17, r17
+     8a8:	19 f0       	breq	.+6      	; 0x8b0 <_ZN7Display9PutNumberEhhhih+0x62>
+     8aa:	c1 14       	cp	r12, r1
+     8ac:	d1 04       	cpc	r13, r1
+     8ae:	79 f0       	breq	.+30     	; 0x8ce <_ZN7Display9PutNumberEhhhih+0x80>
+     8b0:	c6 01       	movw	r24, r12
+     8b2:	b4 01       	movw	r22, r8
+     8b4:	ad d3       	rcall	.+1882   	; 0x1010 <__divmodhi4>
+     8b6:	76 2e       	mov	r7, r22
+     8b8:	0e 2d       	mov	r16, r14
+     8ba:	28 2f       	mov	r18, r24
+     8bc:	4f 2d       	mov	r20, r15
+     8be:	66 2d       	mov	r22, r6
+     8c0:	c5 01       	movw	r24, r10
+     8c2:	79 83       	std	Y+1, r23	; 0x01
+     8c4:	45 df       	rcall	.-374    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     8c6:	c7 2c       	mov	r12, r7
+     8c8:	79 81       	ldd	r23, Y+1	; 0x01
+     8ca:	d7 2e       	mov	r13, r23
+     8cc:	06 c0       	rjmp	.+12     	; 0x8da <_ZN7Display9PutNumberEhhhih+0x8c>
+     8ce:	0e 2d       	mov	r16, r14
+     8d0:	20 e1       	ldi	r18, 0x10	; 16
+     8d2:	4f 2d       	mov	r20, r15
+     8d4:	66 2d       	mov	r22, r6
+     8d6:	c5 01       	movw	r24, r10
+     8d8:	3b df       	rcall	.-394    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     8da:	1f 5f       	subi	r17, 0xFF	; 255
+     8dc:	6a 94       	dec	r6
+     8de:	e1 cf       	rjmp	.-62     	; 0x8a2 <_ZN7Display9PutNumberEhhhih+0x54>
+     8e0:	0f 90       	pop	r0
+     8e2:	df 91       	pop	r29
+     8e4:	cf 91       	pop	r28
+     8e6:	1f 91       	pop	r17
+     8e8:	0f 91       	pop	r16
+     8ea:	ff 90       	pop	r15
+     8ec:	ef 90       	pop	r14
+     8ee:	df 90       	pop	r13
+     8f0:	cf 90       	pop	r12
+     8f2:	bf 90       	pop	r11
+     8f4:	af 90       	pop	r10
+     8f6:	9f 90       	pop	r9
+     8f8:	8f 90       	pop	r8
+     8fa:	7f 90       	pop	r7
+     8fc:	6f 90       	pop	r6
+     8fe:	5f 90       	pop	r5
+     900:	08 95       	ret
 
-0000090a <_ZN7Display14PutPointNumberEhhhih>:
-     90a:	4f 92       	push	r4
-     90c:	5f 92       	push	r5
-     90e:	6f 92       	push	r6
-     910:	7f 92       	push	r7
-     912:	8f 92       	push	r8
-     914:	9f 92       	push	r9
-     916:	af 92       	push	r10
-     918:	bf 92       	push	r11
-     91a:	cf 92       	push	r12
-     91c:	df 92       	push	r13
-     91e:	ef 92       	push	r14
-     920:	ff 92       	push	r15
-     922:	0f 93       	push	r16
-     924:	1f 93       	push	r17
-     926:	cf 93       	push	r28
-     928:	df 93       	push	r29
-     92a:	1f 92       	push	r1
-     92c:	cd b7       	in	r28, 0x3d	; 61
-     92e:	de b7       	in	r29, 0x3e	; 62
-     930:	6c 01       	movw	r12, r24
-     932:	f4 2e       	mov	r15, r20
-     934:	92 2e       	mov	r9, r18
-     936:	28 01       	movw	r4, r16
-     938:	17 ff       	sbrs	r17, 7
-     93a:	0a c0       	rjmp	.+20     	; 0x950 <_ZN7Display14PutPointNumberEhhhih+0x46>
-     93c:	11 e0       	ldi	r17, 0x01	; 1
-     93e:	16 0f       	add	r17, r22
-     940:	0e 2d       	mov	r16, r14
-     942:	2b e1       	ldi	r18, 0x1B	; 27
-     944:	06 df       	rcall	.-500    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     946:	9a 94       	dec	r9
-     948:	51 94       	neg	r5
-     94a:	41 94       	neg	r4
-     94c:	51 08       	sbc	r5, r1
-     94e:	61 2f       	mov	r22, r17
-     950:	21 e0       	ldi	r18, 0x01	; 1
-     952:	81 e0       	ldi	r24, 0x01	; 1
-     954:	90 e0       	ldi	r25, 0x00	; 0
-     956:	3a e0       	ldi	r19, 0x0A	; 10
-     958:	29 15       	cp	r18, r9
-     95a:	40 f4       	brcc	.+16     	; 0x96c <_ZN7Display14PutPointNumberEhhhih+0x62>
-     95c:	ac 01       	movw	r20, r24
-     95e:	34 9f       	mul	r19, r20
-     960:	c0 01       	movw	r24, r0
-     962:	35 9f       	mul	r19, r21
-     964:	90 0d       	add	r25, r0
-     966:	11 24       	eor	r1, r1
-     968:	2f 5f       	subi	r18, 0xFF	; 255
-     96a:	f6 cf       	rjmp	.-20     	; 0x958 <_ZN7Display14PutPointNumberEhhhih+0x4e>
-     96c:	89 2c       	mov	r8, r9
-     96e:	86 0e       	add	r8, r22
-     970:	48 16       	cp	r4, r24
-     972:	59 06       	cpc	r5, r25
-     974:	7c f5       	brge	.+94     	; 0x9d4 <_ZN7Display14PutPointNumberEhhhih+0xca>
-     976:	78 2c       	mov	r7, r8
-     978:	9a 94       	dec	r9
-     97a:	81 2c       	mov	r8, r1
-     97c:	4a e0       	ldi	r20, 0x0A	; 10
-     97e:	a4 2e       	mov	r10, r20
-     980:	b1 2c       	mov	r11, r1
-     982:	89 14       	cp	r8, r9
-     984:	08 f0       	brcs	.+2      	; 0x988 <_ZN7Display14PutPointNumberEhhhih+0x7e>
-     986:	4a c0       	rjmp	.+148    	; 0xa1c <_ZN7Display14PutPointNumberEhhhih+0x112>
-     988:	1f ef       	ldi	r17, 0xFF	; 255
-     98a:	17 0d       	add	r17, r7
-     98c:	51 e0       	ldi	r21, 0x01	; 1
-     98e:	58 15       	cp	r21, r8
-     990:	18 f4       	brcc	.+6      	; 0x998 <_ZN7Display14PutPointNumberEhhhih+0x8e>
-     992:	41 14       	cp	r4, r1
-     994:	51 04       	cpc	r5, r1
-     996:	a9 f0       	breq	.+42     	; 0x9c2 <_ZN7Display14PutPointNumberEhhhih+0xb8>
-     998:	c2 01       	movw	r24, r4
-     99a:	b5 01       	movw	r22, r10
-     99c:	3b d3       	rcall	.+1654   	; 0x1014 <__divmodhi4>
-     99e:	66 2e       	mov	r6, r22
-     9a0:	0e 2d       	mov	r16, r14
-     9a2:	28 2f       	mov	r18, r24
-     9a4:	4f 2d       	mov	r20, r15
-     9a6:	61 2f       	mov	r22, r17
-     9a8:	c6 01       	movw	r24, r12
-     9aa:	79 83       	std	Y+1, r23	; 0x01
-     9ac:	d2 de       	rcall	.-604    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     9ae:	46 2c       	mov	r4, r6
-     9b0:	79 81       	ldd	r23, Y+1	; 0x01
-     9b2:	57 2e       	mov	r5, r23
-     9b4:	81 10       	cpse	r8, r1
-     9b6:	0b c0       	rjmp	.+22     	; 0x9ce <_ZN7Display14PutPointNumberEhhhih+0xc4>
-     9b8:	1e ef       	ldi	r17, 0xFE	; 254
-     9ba:	17 0d       	add	r17, r7
-     9bc:	0e 2d       	mov	r16, r14
-     9be:	21 e1       	ldi	r18, 0x11	; 17
-     9c0:	02 c0       	rjmp	.+4      	; 0x9c6 <_ZN7Display14PutPointNumberEhhhih+0xbc>
-     9c2:	0e 2d       	mov	r16, r14
-     9c4:	20 e1       	ldi	r18, 0x10	; 16
-     9c6:	4f 2d       	mov	r20, r15
-     9c8:	61 2f       	mov	r22, r17
-     9ca:	c6 01       	movw	r24, r12
-     9cc:	c2 de       	rcall	.-636    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     9ce:	83 94       	inc	r8
-     9d0:	71 2e       	mov	r7, r17
-     9d2:	d7 cf       	rjmp	.-82     	; 0x982 <_ZN7Display14PutPointNumberEhhhih+0x78>
-     9d4:	8a 94       	dec	r8
+00000902 <_ZN7Display14PutPointNumberEhhhih>:
+     902:	4f 92       	push	r4
+     904:	5f 92       	push	r5
+     906:	6f 92       	push	r6
+     908:	7f 92       	push	r7
+     90a:	8f 92       	push	r8
+     90c:	9f 92       	push	r9
+     90e:	af 92       	push	r10
+     910:	bf 92       	push	r11
+     912:	cf 92       	push	r12
+     914:	df 92       	push	r13
+     916:	ef 92       	push	r14
+     918:	ff 92       	push	r15
+     91a:	0f 93       	push	r16
+     91c:	1f 93       	push	r17
+     91e:	cf 93       	push	r28
+     920:	df 93       	push	r29
+     922:	1f 92       	push	r1
+     924:	cd b7       	in	r28, 0x3d	; 61
+     926:	de b7       	in	r29, 0x3e	; 62
+     928:	5c 01       	movw	r10, r24
+     92a:	f4 2e       	mov	r15, r20
+     92c:	52 2e       	mov	r5, r18
+     92e:	68 01       	movw	r12, r16
+     930:	17 ff       	sbrs	r17, 7
+     932:	0a c0       	rjmp	.+20     	; 0x948 <_ZN7Display14PutPointNumberEhhhih+0x46>
+     934:	11 e0       	ldi	r17, 0x01	; 1
+     936:	16 0f       	add	r17, r22
+     938:	0e 2d       	mov	r16, r14
+     93a:	2b e1       	ldi	r18, 0x1B	; 27
+     93c:	09 df       	rcall	.-494    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     93e:	5a 94       	dec	r5
+     940:	d1 94       	neg	r13
+     942:	c1 94       	neg	r12
+     944:	d1 08       	sbc	r13, r1
+     946:	61 2f       	mov	r22, r17
+     948:	21 e0       	ldi	r18, 0x01	; 1
+     94a:	81 e0       	ldi	r24, 0x01	; 1
+     94c:	90 e0       	ldi	r25, 0x00	; 0
+     94e:	3a e0       	ldi	r19, 0x0A	; 10
+     950:	25 15       	cp	r18, r5
+     952:	40 f4       	brcc	.+16     	; 0x964 <_ZN7Display14PutPointNumberEhhhih+0x62>
+     954:	ac 01       	movw	r20, r24
+     956:	34 9f       	mul	r19, r20
+     958:	c0 01       	movw	r24, r0
+     95a:	35 9f       	mul	r19, r21
+     95c:	90 0d       	add	r25, r0
+     95e:	11 24       	eor	r1, r1
+     960:	2f 5f       	subi	r18, 0xFF	; 255
+     962:	f6 cf       	rjmp	.-20     	; 0x950 <_ZN7Display14PutPointNumberEhhhih+0x4e>
+     964:	65 0d       	add	r22, r5
+     966:	c8 16       	cp	r12, r24
+     968:	d9 06       	cpc	r13, r25
+     96a:	94 f5       	brge	.+100    	; 0x9d0 <_ZN7Display14PutPointNumberEhhhih+0xce>
+     96c:	46 2e       	mov	r4, r22
+     96e:	77 24       	eor	r7, r7
+     970:	7a 94       	dec	r7
+     972:	75 0c       	add	r7, r5
+     974:	10 e0       	ldi	r17, 0x00	; 0
+     976:	2a e0       	ldi	r18, 0x0A	; 10
+     978:	82 2e       	mov	r8, r18
+     97a:	91 2c       	mov	r9, r1
+     97c:	17 15       	cp	r17, r7
+     97e:	08 f0       	brcs	.+2      	; 0x982 <_ZN7Display14PutPointNumberEhhhih+0x80>
+     980:	4d c0       	rjmp	.+154    	; 0xa1c <_ZN7Display14PutPointNumberEhhhih+0x11a>
+     982:	55 24       	eor	r5, r5
+     984:	5a 94       	dec	r5
+     986:	54 0c       	add	r5, r4
+     988:	12 30       	cpi	r17, 0x02	; 2
+     98a:	18 f0       	brcs	.+6      	; 0x992 <_ZN7Display14PutPointNumberEhhhih+0x90>
+     98c:	c1 14       	cp	r12, r1
+     98e:	d1 04       	cpc	r13, r1
+     990:	b1 f0       	breq	.+44     	; 0x9be <_ZN7Display14PutPointNumberEhhhih+0xbc>
+     992:	c6 01       	movw	r24, r12
+     994:	b4 01       	movw	r22, r8
+     996:	3c d3       	rcall	.+1656   	; 0x1010 <__divmodhi4>
+     998:	66 2e       	mov	r6, r22
+     99a:	0e 2d       	mov	r16, r14
+     99c:	28 2f       	mov	r18, r24
+     99e:	4f 2d       	mov	r20, r15
+     9a0:	65 2d       	mov	r22, r5
+     9a2:	c5 01       	movw	r24, r10
+     9a4:	79 83       	std	Y+1, r23	; 0x01
+     9a6:	d4 de       	rcall	.-600    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     9a8:	c6 2c       	mov	r12, r6
+     9aa:	79 81       	ldd	r23, Y+1	; 0x01
+     9ac:	d7 2e       	mov	r13, r23
+     9ae:	11 11       	cpse	r17, r1
+     9b0:	0c c0       	rjmp	.+24     	; 0x9ca <_ZN7Display14PutPointNumberEhhhih+0xc8>
+     9b2:	9e ef       	ldi	r25, 0xFE	; 254
+     9b4:	59 2e       	mov	r5, r25
+     9b6:	54 0c       	add	r5, r4
+     9b8:	0e 2d       	mov	r16, r14
+     9ba:	21 e1       	ldi	r18, 0x11	; 17
+     9bc:	02 c0       	rjmp	.+4      	; 0x9c2 <_ZN7Display14PutPointNumberEhhhih+0xc0>
+     9be:	0e 2d       	mov	r16, r14
+     9c0:	20 e1       	ldi	r18, 0x10	; 16
+     9c2:	4f 2d       	mov	r20, r15
+     9c4:	65 2d       	mov	r22, r5
+     9c6:	c5 01       	movw	r24, r10
+     9c8:	c3 de       	rcall	.-634    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     9ca:	1f 5f       	subi	r17, 0xFF	; 255
+     9cc:	45 2c       	mov	r4, r5
+     9ce:	d6 cf       	rjmp	.-84     	; 0x97c <_ZN7Display14PutPointNumberEhhhih+0x7a>
+     9d0:	66 24       	eor	r6, r6
+     9d2:	6a 94       	dec	r6
+     9d4:	66 0e       	add	r6, r22
      9d6:	10 e0       	ldi	r17, 0x00	; 0
-     9d8:	3a e0       	ldi	r19, 0x0A	; 10
-     9da:	a3 2e       	mov	r10, r19
-     9dc:	b1 2c       	mov	r11, r1
-     9de:	19 15       	cp	r17, r9
-     9e0:	e9 f0       	breq	.+58     	; 0xa1c <_ZN7Display14PutPointNumberEhhhih+0x112>
+     9d8:	8a e0       	ldi	r24, 0x0A	; 10
+     9da:	88 2e       	mov	r8, r24
+     9dc:	91 2c       	mov	r9, r1
+     9de:	15 15       	cp	r17, r5
+     9e0:	e9 f0       	breq	.+58     	; 0xa1c <_ZN7Display14PutPointNumberEhhhih+0x11a>
      9e2:	11 23       	and	r17, r17
-     9e4:	19 f0       	breq	.+6      	; 0x9ec <_ZN7Display14PutPointNumberEhhhih+0xe2>
-     9e6:	41 14       	cp	r4, r1
-     9e8:	51 04       	cpc	r5, r1
-     9ea:	79 f0       	breq	.+30     	; 0xa0a <_ZN7Display14PutPointNumberEhhhih+0x100>
-     9ec:	c2 01       	movw	r24, r4
-     9ee:	b5 01       	movw	r22, r10
-     9f0:	11 d3       	rcall	.+1570   	; 0x1014 <__divmodhi4>
+     9e4:	19 f0       	breq	.+6      	; 0x9ec <_ZN7Display14PutPointNumberEhhhih+0xea>
+     9e6:	c1 14       	cp	r12, r1
+     9e8:	d1 04       	cpc	r13, r1
+     9ea:	79 f0       	breq	.+30     	; 0xa0a <_ZN7Display14PutPointNumberEhhhih+0x108>
+     9ec:	c6 01       	movw	r24, r12
+     9ee:	b4 01       	movw	r22, r8
+     9f0:	0f d3       	rcall	.+1566   	; 0x1010 <__divmodhi4>
      9f2:	76 2e       	mov	r7, r22
      9f4:	0e 2d       	mov	r16, r14
      9f6:	28 2f       	mov	r18, r24
      9f8:	4f 2d       	mov	r20, r15
-     9fa:	68 2d       	mov	r22, r8
-     9fc:	c6 01       	movw	r24, r12
+     9fa:	66 2d       	mov	r22, r6
+     9fc:	c5 01       	movw	r24, r10
      9fe:	79 83       	std	Y+1, r23	; 0x01
-     a00:	a8 de       	rcall	.-688    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     a02:	47 2c       	mov	r4, r7
+     a00:	a7 de       	rcall	.-690    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     a02:	c7 2c       	mov	r12, r7
      a04:	79 81       	ldd	r23, Y+1	; 0x01
-     a06:	57 2e       	mov	r5, r23
-     a08:	06 c0       	rjmp	.+12     	; 0xa16 <_ZN7Display14PutPointNumberEhhhih+0x10c>
+     a06:	d7 2e       	mov	r13, r23
+     a08:	06 c0       	rjmp	.+12     	; 0xa16 <_ZN7Display14PutPointNumberEhhhih+0x114>
      a0a:	0e 2d       	mov	r16, r14
      a0c:	20 e1       	ldi	r18, 0x10	; 16
      a0e:	4f 2d       	mov	r20, r15
-     a10:	68 2d       	mov	r22, r8
-     a12:	c6 01       	movw	r24, r12
-     a14:	9e de       	rcall	.-708    	; 0x752 <_ZN7Display7PutCharEhhhh>
+     a10:	66 2d       	mov	r22, r6
+     a12:	c5 01       	movw	r24, r10
+     a14:	9d de       	rcall	.-710    	; 0x750 <_ZN7Display7PutCharEhhhh>
      a16:	1f 5f       	subi	r17, 0xFF	; 255
-     a18:	8a 94       	dec	r8
-     a1a:	e1 cf       	rjmp	.-62     	; 0x9de <_ZN7Display14PutPointNumberEhhhih+0xd4>
+     a18:	6a 94       	dec	r6
+     a1a:	e1 cf       	rjmp	.-62     	; 0x9de <_ZN7Display14PutPointNumberEhhhih+0xdc>
      a1c:	0f 90       	pop	r0
      a1e:	df 91       	pop	r29
      a20:	cf 91       	pop	r28
@@ -1393,26 +1391,26 @@ AstroTool.elf:     формат файла elf32-avr
      a4e:	1f 93       	push	r17
      a50:	cf 93       	push	r28
      a52:	df 93       	push	r29
-     a54:	6c 01       	movw	r12, r24
-     a56:	b6 2e       	mov	r11, r22
-     a58:	a4 2e       	mov	r10, r20
-     a5a:	f2 2e       	mov	r15, r18
-     a5c:	e8 01       	movw	r28, r16
-     a5e:	f6 0e       	add	r15, r22
-     a60:	fb 14       	cp	r15, r11
+     a54:	5c 01       	movw	r10, r24
+     a56:	d6 2f       	mov	r29, r22
+     a58:	f4 2e       	mov	r15, r20
+     a5a:	68 01       	movw	r12, r16
+     a5c:	c6 2f       	mov	r28, r22
+     a5e:	c2 0f       	add	r28, r18
+     a60:	cd 17       	cp	r28, r29
      a62:	71 f0       	breq	.+28     	; 0xa80 <_ZN7Display12PutHexNumberEhhhjh+0x40>
-     a64:	fa 94       	dec	r15
-     a66:	2c 2f       	mov	r18, r28
+     a64:	c1 50       	subi	r28, 0x01	; 1
+     a66:	2c 2d       	mov	r18, r12
      a68:	2f 70       	andi	r18, 0x0F	; 15
      a6a:	0e 2d       	mov	r16, r14
-     a6c:	4a 2d       	mov	r20, r10
-     a6e:	6f 2d       	mov	r22, r15
-     a70:	c6 01       	movw	r24, r12
-     a72:	6f de       	rcall	.-802    	; 0x752 <_ZN7Display7PutCharEhhhh>
-     a74:	54 e0       	ldi	r21, 0x04	; 4
-     a76:	d6 95       	lsr	r29
-     a78:	c7 95       	ror	r28
-     a7a:	5a 95       	dec	r21
+     a6c:	4f 2d       	mov	r20, r15
+     a6e:	6c 2f       	mov	r22, r28
+     a70:	c5 01       	movw	r24, r10
+     a72:	6e de       	rcall	.-804    	; 0x750 <_ZN7Display7PutCharEhhhh>
+     a74:	84 e0       	ldi	r24, 0x04	; 4
+     a76:	d6 94       	lsr	r13
+     a78:	c7 94       	ror	r12
+     a7a:	8a 95       	dec	r24
      a7c:	e1 f7       	brne	.-8      	; 0xa76 <_ZN7Display12PutHexNumberEhhhjh+0x36>
      a7e:	f0 cf       	rjmp	.-32     	; 0xa60 <_ZN7Display12PutHexNumberEhhhjh+0x20>
      a80:	df 91       	pop	r29
@@ -1429,7 +1427,7 @@ AstroTool.elf:     формат файла elf32-avr
 
 00000a96 <_ZN7Display6WakeUpEv>:
      a96:	20 e4       	ldi	r18, 0x40	; 64
-     a98:	3f e1       	ldi	r19, 0x1F	; 31
+     a98:	3c e9       	ldi	r19, 0x9C	; 156
      a9a:	fc 01       	movw	r30, r24
      a9c:	33 83       	std	Z+3, r19	; 0x03
      a9e:	22 83       	std	Z+2, r18	; 0x02
@@ -1443,7 +1441,7 @@ AstroTool.elf:     формат файла elf32-avr
      aaa:	8c bd       	out	0x2c, r24	; 44
      aac:	82 81       	ldd	r24, Z+2	; 0x02
      aae:	88 23       	and	r24, r24
-     ab0:	a1 f0       	breq	.+40     	; 0xada <_ZN5Drive16InterruptHandlerEv+0x38>
+     ab0:	a9 f0       	breq	.+42     	; 0xadc <_ZN5Drive16InterruptHandlerEv+0x3a>
      ab2:	90 81       	ld	r25, Z
      ab4:	81 81       	ldd	r24, Z+1	; 0x01
      ab6:	99 23       	and	r25, r25
@@ -1452,87 +1450,87 @@ AstroTool.elf:     формат файла elf32-avr
      abc:	01 c0       	rjmp	.+2      	; 0xac0 <_ZN5Drive16InterruptHandlerEv+0x1e>
      abe:	81 50       	subi	r24, 0x01	; 1
      ac0:	81 83       	std	Z+1, r24	; 0x01
-     ac2:	91 81       	ldd	r25, Z+1	; 0x01
-     ac4:	93 70       	andi	r25, 0x03	; 3
-     ac6:	91 83       	std	Z+1, r25	; 0x01
-     ac8:	82 b3       	in	r24, 0x12	; 18
-     aca:	e9 2f       	mov	r30, r25
+     ac2:	81 81       	ldd	r24, Z+1	; 0x01
+     ac4:	83 70       	andi	r24, 0x03	; 3
+     ac6:	81 83       	std	Z+1, r24	; 0x01
+     ac8:	92 b3       	in	r25, 0x12	; 18
+     aca:	e8 2f       	mov	r30, r24
      acc:	f0 e0       	ldi	r31, 0x00	; 0
      ace:	e2 51       	subi	r30, 0x12	; 18
      ad0:	fe 4f       	sbci	r31, 0xFE	; 254
-     ad2:	80 7f       	andi	r24, 0xF0	; 240
-     ad4:	90 81       	ld	r25, Z
-     ad6:	89 2b       	or	r24, r25
-     ad8:	82 bb       	out	0x12, r24	; 18
-     ada:	08 95       	ret
+     ad2:	89 2f       	mov	r24, r25
+     ad4:	80 7f       	andi	r24, 0xF0	; 240
+     ad6:	90 81       	ld	r25, Z
+     ad8:	89 2b       	or	r24, r25
+     ada:	82 bb       	out	0x12, r24	; 18
+     adc:	08 95       	ret
 
-00000adc <_ZN5Drive8SetSpeedEi>:
-     adc:	fc 01       	movw	r30, r24
-     ade:	76 83       	std	Z+6, r23	; 0x06
-     ae0:	65 83       	std	Z+5, r22	; 0x05
-     ae2:	77 ff       	sbrs	r23, 7
-     ae4:	05 c0       	rjmp	.+10     	; 0xaf0 <_ZN5Drive8SetSpeedEi+0x14>
-     ae6:	10 82       	st	Z, r1
-     ae8:	71 95       	neg	r23
-     aea:	61 95       	neg	r22
-     aec:	71 09       	sbc	r23, r1
-     aee:	02 c0       	rjmp	.+4      	; 0xaf4 <_ZN5Drive8SetSpeedEi+0x18>
-     af0:	81 e0       	ldi	r24, 0x01	; 1
-     af2:	80 83       	st	Z, r24
-     af4:	61 37       	cpi	r22, 0x71	; 113
-     af6:	82 e0       	ldi	r24, 0x02	; 2
-     af8:	78 07       	cpc	r23, r24
-     afa:	14 f4       	brge	.+4      	; 0xb00 <_ZN5Drive8SetSpeedEi+0x24>
-     afc:	61 e7       	ldi	r22, 0x71	; 113
-     afe:	72 e0       	ldi	r23, 0x02	; 2
-     b00:	71 95       	neg	r23
-     b02:	61 95       	neg	r22
-     b04:	71 09       	sbc	r23, r1
-     b06:	74 83       	std	Z+4, r23	; 0x04
-     b08:	63 83       	std	Z+3, r22	; 0x03
-     b0a:	81 e0       	ldi	r24, 0x01	; 1
-     b0c:	82 83       	std	Z+2, r24	; 0x02
-     b0e:	08 95       	ret
+00000ade <_ZN5Drive8SetSpeedEi>:
+     ade:	fc 01       	movw	r30, r24
+     ae0:	76 83       	std	Z+6, r23	; 0x06
+     ae2:	65 83       	std	Z+5, r22	; 0x05
+     ae4:	77 ff       	sbrs	r23, 7
+     ae6:	05 c0       	rjmp	.+10     	; 0xaf2 <_ZN5Drive8SetSpeedEi+0x14>
+     ae8:	10 82       	st	Z, r1
+     aea:	71 95       	neg	r23
+     aec:	61 95       	neg	r22
+     aee:	71 09       	sbc	r23, r1
+     af0:	02 c0       	rjmp	.+4      	; 0xaf6 <_ZN5Drive8SetSpeedEi+0x18>
+     af2:	81 e0       	ldi	r24, 0x01	; 1
+     af4:	80 83       	st	Z, r24
+     af6:	61 37       	cpi	r22, 0x71	; 113
+     af8:	82 e0       	ldi	r24, 0x02	; 2
+     afa:	78 07       	cpc	r23, r24
+     afc:	14 f4       	brge	.+4      	; 0xb02 <_ZN5Drive8SetSpeedEi+0x24>
+     afe:	61 e7       	ldi	r22, 0x71	; 113
+     b00:	72 e0       	ldi	r23, 0x02	; 2
+     b02:	71 95       	neg	r23
+     b04:	61 95       	neg	r22
+     b06:	71 09       	sbc	r23, r1
+     b08:	74 83       	std	Z+4, r23	; 0x04
+     b0a:	63 83       	std	Z+3, r22	; 0x03
+     b0c:	81 e0       	ldi	r24, 0x01	; 1
+     b0e:	82 83       	std	Z+2, r24	; 0x02
+     b10:	08 95       	ret
 
-00000b10 <_ZN5Drive14SetSpeedFactorEa>:
-     b10:	cf 93       	push	r28
-     b12:	df 93       	push	r29
-     b14:	ec 01       	movw	r28, r24
-     b16:	61 11       	cpse	r22, r1
-     b18:	04 c0       	rjmp	.+8      	; 0xb22 <_ZN5Drive14SetSpeedFactorEa+0x12>
-     b1a:	1a 82       	std	Y+2, r1	; 0x02
-     b1c:	df 91       	pop	r29
-     b1e:	cf 91       	pop	r28
-     b20:	08 95       	ret
-     b22:	26 2f       	mov	r18, r22
-     b24:	33 27       	eor	r19, r19
-     b26:	27 fd       	sbrc	r18, 7
-     b28:	30 95       	com	r19
-     b2a:	43 2f       	mov	r20, r19
-     b2c:	53 2f       	mov	r21, r19
+00000b12 <_ZN5Drive14SetSpeedFactorEa>:
+     b12:	cf 93       	push	r28
+     b14:	df 93       	push	r29
+     b16:	ec 01       	movw	r28, r24
+     b18:	61 11       	cpse	r22, r1
+     b1a:	04 c0       	rjmp	.+8      	; 0xb24 <_ZN5Drive14SetSpeedFactorEa+0x12>
+     b1c:	1a 82       	std	Y+2, r1	; 0x02
+     b1e:	df 91       	pop	r29
+     b20:	cf 91       	pop	r28
+     b22:	08 95       	ret
+     b24:	26 2f       	mov	r18, r22
+     b26:	66 0f       	add	r22, r22
+     b28:	33 0b       	sbc	r19, r19
+     b2a:	44 0b       	sbc	r20, r20
+     b2c:	55 0b       	sbc	r21, r21
      b2e:	64 ec       	ldi	r22, 0xC4	; 196
      b30:	74 ea       	ldi	r23, 0xA4	; 164
      b32:	80 e0       	ldi	r24, 0x00	; 0
      b34:	90 e0       	ldi	r25, 0x00	; 0
-     b36:	a3 d2       	rcall	.+1350   	; 0x107e <__divmodsi4>
+     b36:	a1 d2       	rcall	.+1346   	; 0x107a <__divmodsi4>
      b38:	21 15       	cp	r18, r1
      b3a:	80 e8       	ldi	r24, 0x80	; 128
      b3c:	38 07       	cpc	r19, r24
      b3e:	41 05       	cpc	r20, r1
      b40:	51 05       	cpc	r21, r1
-     b42:	64 f4       	brge	.+24     	; 0xb5c <_ZN5Drive14SetSpeedFactorEa+0x4c>
+     b42:	64 f4       	brge	.+24     	; 0xb5c <_ZN5Drive14SetSpeedFactorEa+0x4a>
      b44:	21 15       	cp	r18, r1
      b46:	80 e8       	ldi	r24, 0x80	; 128
      b48:	38 07       	cpc	r19, r24
      b4a:	8f ef       	ldi	r24, 0xFF	; 255
      b4c:	48 07       	cpc	r20, r24
      b4e:	58 07       	cpc	r21, r24
-     b50:	4c f4       	brge	.+18     	; 0xb64 <_ZN5Drive14SetSpeedFactorEa+0x54>
+     b50:	4c f4       	brge	.+18     	; 0xb64 <_ZN5Drive14SetSpeedFactorEa+0x52>
      b52:	20 e0       	ldi	r18, 0x00	; 0
      b54:	30 e8       	ldi	r19, 0x80	; 128
      b56:	4f ef       	ldi	r20, 0xFF	; 255
      b58:	5f ef       	ldi	r21, 0xFF	; 255
-     b5a:	04 c0       	rjmp	.+8      	; 0xb64 <_ZN5Drive14SetSpeedFactorEa+0x54>
+     b5a:	04 c0       	rjmp	.+8      	; 0xb64 <_ZN5Drive14SetSpeedFactorEa+0x52>
      b5c:	2f ef       	ldi	r18, 0xFF	; 255
      b5e:	3f e7       	ldi	r19, 0x7F	; 127
      b60:	40 e0       	ldi	r20, 0x00	; 0
@@ -1541,7 +1539,7 @@ AstroTool.elf:     формат файла elf32-avr
      b66:	ce 01       	movw	r24, r28
      b68:	df 91       	pop	r29
      b6a:	cf 91       	pop	r28
-     b6c:	b7 cf       	rjmp	.-146    	; 0xadc <_ZN5Drive8SetSpeedEi>
+     b6c:	b8 cf       	rjmp	.-144    	; 0xade <_ZN5Drive8SetSpeedEi>
 
 00000b6e <_ZN5DriveC1Ev>:
      b6e:	cf 93       	push	r28
@@ -1552,7 +1550,7 @@ AstroTool.elf:     формат файла elf32-avr
      b7c:	19 82       	std	Y+1, r1	; 0x01
      b7e:	6a e7       	ldi	r22, 0x7A	; 122
      b80:	70 e1       	ldi	r23, 0x10	; 16
-     b82:	ac df       	rcall	.-168    	; 0xadc <_ZN5Drive8SetSpeedEi>
+     b82:	ad df       	rcall	.-166    	; 0xade <_ZN5Drive8SetSpeedEi>
      b84:	81 b3       	in	r24, 0x11	; 17
      b86:	8f 60       	ori	r24, 0x0F	; 15
      b88:	81 bb       	out	0x11, r24	; 17
@@ -1584,7 +1582,7 @@ AstroTool.elf:     формат файла elf32-avr
      bb8:	19 f4       	brne	.+6      	; 0xbc0 <_ZN5Drive7SetModeEh+0x14>
      bba:	65 81       	ldd	r22, Z+5	; 0x05
      bbc:	76 81       	ldd	r23, Z+6	; 0x06
-     bbe:	8e cf       	rjmp	.-228    	; 0xadc <_ZN5Drive8SetSpeedEi>
+     bbe:	8f cf       	rjmp	.-226    	; 0xade <_ZN5Drive8SetSpeedEi>
      bc0:	62 30       	cpi	r22, 0x02	; 2
      bc2:	19 f4       	brne	.+6      	; 0xbca <_ZN5Drive7SetModeEh+0x1e>
      bc4:	81 e0       	ldi	r24, 0x01	; 1
@@ -1602,123 +1600,123 @@ AstroTool.elf:     формат файла elf32-avr
 
 00000bdc <_ZN5Drive8GetSpeedEv>:
      bdc:	fc 01       	movw	r30, r24
-     bde:	22 81       	ldd	r18, Z+2	; 0x02
-     be0:	21 30       	cpi	r18, 0x01	; 1
+     bde:	92 81       	ldd	r25, Z+2	; 0x02
+     be0:	91 30       	cpi	r25, 0x01	; 1
      be2:	19 f4       	brne	.+6      	; 0xbea <_ZN5Drive8GetSpeedEv+0xe>
      be4:	85 81       	ldd	r24, Z+5	; 0x05
      be6:	96 81       	ldd	r25, Z+6	; 0x06
      be8:	08 95       	ret
-     bea:	22 30       	cpi	r18, 0x02	; 2
+     bea:	92 30       	cpi	r25, 0x02	; 2
      bec:	29 f0       	breq	.+10     	; 0xbf8 <_ZN5Drive8GetSpeedEv+0x1c>
-     bee:	23 30       	cpi	r18, 0x03	; 3
-     bf0:	31 f4       	brne	.+12     	; 0xbfe <_ZN5Drive8GetSpeedEv+0x22>
-     bf2:	8f e8       	ldi	r24, 0x8F	; 143
-     bf4:	9d ef       	ldi	r25, 0xFD	; 253
+     bee:	93 30       	cpi	r25, 0x03	; 3
+     bf0:	31 f0       	breq	.+12     	; 0xbfe <_ZN5Drive8GetSpeedEv+0x22>
+     bf2:	80 e0       	ldi	r24, 0x00	; 0
+     bf4:	90 e0       	ldi	r25, 0x00	; 0
      bf6:	08 95       	ret
      bf8:	81 e7       	ldi	r24, 0x71	; 113
      bfa:	92 e0       	ldi	r25, 0x02	; 2
      bfc:	08 95       	ret
-     bfe:	80 e0       	ldi	r24, 0x00	; 0
-     c00:	90 e0       	ldi	r25, 0x00	; 0
+     bfe:	8f e8       	ldi	r24, 0x8F	; 143
+     c00:	9d ef       	ldi	r25, 0xFD	; 253
      c02:	08 95       	ret
 
 00000c04 <_ZN5Drive14GetSpeedFactorEv>:
      c04:	eb df       	rcall	.-42     	; 0xbdc <_ZN5Drive8GetSpeedEv>
      c06:	9c 01       	movw	r18, r24
-     c08:	44 27       	eor	r20, r20
-     c0a:	37 fd       	sbrc	r19, 7
-     c0c:	40 95       	com	r20
-     c0e:	54 2f       	mov	r21, r20
-     c10:	64 ec       	ldi	r22, 0xC4	; 196
-     c12:	74 ea       	ldi	r23, 0xA4	; 164
-     c14:	80 e0       	ldi	r24, 0x00	; 0
-     c16:	90 e0       	ldi	r25, 0x00	; 0
-     c18:	32 d2       	rcall	.+1124   	; 0x107e <__divmodsi4>
-     c1a:	20 38       	cpi	r18, 0x80	; 128
-     c1c:	31 05       	cpc	r19, r1
-     c1e:	41 05       	cpc	r20, r1
-     c20:	51 05       	cpc	r21, r1
-     c22:	5c f4       	brge	.+22     	; 0xc3a <_ZN5Drive14GetSpeedFactorEv+0x36>
-     c24:	20 38       	cpi	r18, 0x80	; 128
-     c26:	8f ef       	ldi	r24, 0xFF	; 255
-     c28:	38 07       	cpc	r19, r24
-     c2a:	48 07       	cpc	r20, r24
-     c2c:	58 07       	cpc	r21, r24
-     c2e:	4c f4       	brge	.+18     	; 0xc42 <_ZN5Drive14GetSpeedFactorEv+0x3e>
-     c30:	20 e8       	ldi	r18, 0x80	; 128
-     c32:	3f ef       	ldi	r19, 0xFF	; 255
-     c34:	4f ef       	ldi	r20, 0xFF	; 255
-     c36:	5f ef       	ldi	r21, 0xFF	; 255
-     c38:	04 c0       	rjmp	.+8      	; 0xc42 <_ZN5Drive14GetSpeedFactorEv+0x3e>
-     c3a:	2f e7       	ldi	r18, 0x7F	; 127
-     c3c:	30 e0       	ldi	r19, 0x00	; 0
-     c3e:	40 e0       	ldi	r20, 0x00	; 0
-     c40:	50 e0       	ldi	r21, 0x00	; 0
-     c42:	82 2f       	mov	r24, r18
-     c44:	08 95       	ret
+     c08:	99 0f       	add	r25, r25
+     c0a:	44 0b       	sbc	r20, r20
+     c0c:	55 0b       	sbc	r21, r21
+     c0e:	64 ec       	ldi	r22, 0xC4	; 196
+     c10:	74 ea       	ldi	r23, 0xA4	; 164
+     c12:	80 e0       	ldi	r24, 0x00	; 0
+     c14:	90 e0       	ldi	r25, 0x00	; 0
+     c16:	31 d2       	rcall	.+1122   	; 0x107a <__divmodsi4>
+     c18:	20 38       	cpi	r18, 0x80	; 128
+     c1a:	31 05       	cpc	r19, r1
+     c1c:	41 05       	cpc	r20, r1
+     c1e:	51 05       	cpc	r21, r1
+     c20:	5c f4       	brge	.+22     	; 0xc38 <_ZN5Drive14GetSpeedFactorEv+0x34>
+     c22:	20 38       	cpi	r18, 0x80	; 128
+     c24:	8f ef       	ldi	r24, 0xFF	; 255
+     c26:	38 07       	cpc	r19, r24
+     c28:	48 07       	cpc	r20, r24
+     c2a:	58 07       	cpc	r21, r24
+     c2c:	4c f4       	brge	.+18     	; 0xc40 <_ZN5Drive14GetSpeedFactorEv+0x3c>
+     c2e:	20 e8       	ldi	r18, 0x80	; 128
+     c30:	3f ef       	ldi	r19, 0xFF	; 255
+     c32:	4f ef       	ldi	r20, 0xFF	; 255
+     c34:	5f ef       	ldi	r21, 0xFF	; 255
+     c36:	04 c0       	rjmp	.+8      	; 0xc40 <_ZN5Drive14GetSpeedFactorEv+0x3c>
+     c38:	2f e7       	ldi	r18, 0x7F	; 127
+     c3a:	30 e0       	ldi	r19, 0x00	; 0
+     c3c:	40 e0       	ldi	r20, 0x00	; 0
+     c3e:	50 e0       	ldi	r21, 0x00	; 0
+     c40:	82 2f       	mov	r24, r18
+     c42:	08 95       	ret
 
-00000c46 <__vector_8>:
-     c46:	1f 92       	push	r1
-     c48:	0f 92       	push	r0
-     c4a:	0f b6       	in	r0, 0x3f	; 63
-     c4c:	0f 92       	push	r0
-     c4e:	11 24       	eor	r1, r1
-     c50:	2f 93       	push	r18
-     c52:	3f 93       	push	r19
-     c54:	4f 93       	push	r20
-     c56:	5f 93       	push	r21
-     c58:	6f 93       	push	r22
-     c5a:	7f 93       	push	r23
-     c5c:	8f 93       	push	r24
-     c5e:	9f 93       	push	r25
-     c60:	af 93       	push	r26
-     c62:	bf 93       	push	r27
-     c64:	ef 93       	push	r30
-     c66:	ff 93       	push	r31
-     c68:	80 91 f8 01 	lds	r24, 0x01F8
-     c6c:	90 91 f9 01 	lds	r25, 0x01F9
-     c70:	18 df       	rcall	.-464    	; 0xaa2 <_ZN5Drive16InterruptHandlerEv>
-     c72:	ff 91       	pop	r31
-     c74:	ef 91       	pop	r30
-     c76:	bf 91       	pop	r27
-     c78:	af 91       	pop	r26
-     c7a:	9f 91       	pop	r25
-     c7c:	8f 91       	pop	r24
-     c7e:	7f 91       	pop	r23
-     c80:	6f 91       	pop	r22
-     c82:	5f 91       	pop	r21
-     c84:	4f 91       	pop	r20
-     c86:	3f 91       	pop	r19
-     c88:	2f 91       	pop	r18
-     c8a:	0f 90       	pop	r0
-     c8c:	0f be       	out	0x3f, r0	; 63
-     c8e:	0f 90       	pop	r0
-     c90:	1f 90       	pop	r1
-     c92:	18 95       	reti
+00000c44 <__vector_8>:
+     c44:	1f 92       	push	r1
+     c46:	0f 92       	push	r0
+     c48:	0f b6       	in	r0, 0x3f	; 63
+     c4a:	0f 92       	push	r0
+     c4c:	11 24       	eor	r1, r1
+     c4e:	2f 93       	push	r18
+     c50:	3f 93       	push	r19
+     c52:	4f 93       	push	r20
+     c54:	5f 93       	push	r21
+     c56:	6f 93       	push	r22
+     c58:	7f 93       	push	r23
+     c5a:	8f 93       	push	r24
+     c5c:	9f 93       	push	r25
+     c5e:	af 93       	push	r26
+     c60:	bf 93       	push	r27
+     c62:	ef 93       	push	r30
+     c64:	ff 93       	push	r31
+     c66:	80 91 f8 01 	lds	r24, 0x01F8
+     c6a:	90 91 f9 01 	lds	r25, 0x01F9
+     c6e:	19 df       	rcall	.-462    	; 0xaa2 <_ZN5Drive16InterruptHandlerEv>
+     c70:	ff 91       	pop	r31
+     c72:	ef 91       	pop	r30
+     c74:	bf 91       	pop	r27
+     c76:	af 91       	pop	r26
+     c78:	9f 91       	pop	r25
+     c7a:	8f 91       	pop	r24
+     c7c:	7f 91       	pop	r23
+     c7e:	6f 91       	pop	r22
+     c80:	5f 91       	pop	r21
+     c82:	4f 91       	pop	r20
+     c84:	3f 91       	pop	r19
+     c86:	2f 91       	pop	r18
+     c88:	0f 90       	pop	r0
+     c8a:	0f be       	out	0x3f, r0	; 63
+     c8c:	0f 90       	pop	r0
+     c8e:	1f 90       	pop	r1
+     c90:	18 95       	reti
 
-00000c94 <_ZN8IntervalC1Ev>:
-     c94:	fc 01       	movw	r30, r24
-     c96:	90 93 fb 01 	sts	0x01FB, r25
-     c9a:	80 93 fa 01 	sts	0x01FA, r24
-     c9e:	13 8a       	std	Z+19, r1	; 0x13
-     ca0:	12 8a       	std	Z+18, r1	; 0x12
-     ca2:	15 86       	std	Z+13, r1	; 0x0d
-     ca4:	14 86       	std	Z+12, r1	; 0x0c
-     ca6:	17 86       	std	Z+15, r1	; 0x0f
-     ca8:	16 86       	std	Z+14, r1	; 0x0e
-     caa:	11 8a       	std	Z+17, r1	; 0x11
-     cac:	10 8a       	std	Z+16, r1	; 0x10
-     cae:	84 e0       	ldi	r24, 0x04	; 4
-     cb0:	85 bd       	out	0x25, r24	; 37
-     cb2:	81 ee       	ldi	r24, 0xE1	; 225
-     cb4:	84 bd       	out	0x24, r24	; 36
-     cb6:	89 b7       	in	r24, 0x39	; 57
-     cb8:	80 64       	ori	r24, 0x40	; 64
-     cba:	89 bf       	out	0x39, r24	; 57
-     cbc:	78 94       	sei
-     cbe:	08 95       	ret
+00000c92 <_ZN8IntervalC1Ev>:
+     c92:	fc 01       	movw	r30, r24
+     c94:	90 93 fb 01 	sts	0x01FB, r25
+     c98:	80 93 fa 01 	sts	0x01FA, r24
+     c9c:	13 8a       	std	Z+19, r1	; 0x13
+     c9e:	12 8a       	std	Z+18, r1	; 0x12
+     ca0:	15 86       	std	Z+13, r1	; 0x0d
+     ca2:	14 86       	std	Z+12, r1	; 0x0c
+     ca4:	17 86       	std	Z+15, r1	; 0x0f
+     ca6:	16 86       	std	Z+14, r1	; 0x0e
+     ca8:	11 8a       	std	Z+17, r1	; 0x11
+     caa:	10 8a       	std	Z+16, r1	; 0x10
+     cac:	84 e0       	ldi	r24, 0x04	; 4
+     cae:	85 bd       	out	0x25, r24	; 37
+     cb0:	81 ee       	ldi	r24, 0xE1	; 225
+     cb2:	84 bd       	out	0x24, r24	; 36
+     cb4:	89 b7       	in	r24, 0x39	; 57
+     cb6:	80 64       	ori	r24, 0x40	; 64
+     cb8:	89 bf       	out	0x39, r24	; 57
+     cba:	78 94       	sei
+     cbc:	08 95       	ret
 
-00000cc0 <_ZN8Interval16InterruptHandlerEv>:
+00000cbe <_ZN8Interval16InterruptHandlerEv>:
+     cbe:	0f 93       	push	r16
      cc0:	1f 93       	push	r17
      cc2:	cf 93       	push	r28
      cc4:	df 93       	push	r29
@@ -1730,559 +1728,569 @@ AstroTool.elf:     формат файла elf32-avr
      cd0:	8a 8b       	std	Y+18, r24	; 0x12
      cd2:	81 ee       	ldi	r24, 0xE1	; 225
      cd4:	84 bd       	out	0x24, r24	; 36
-     cd6:	13 e0       	ldi	r17, 0x03	; 3
-     cd8:	2c 85       	ldd	r18, Y+12	; 0x0c
-     cda:	3d 85       	ldd	r19, Y+13	; 0x0d
-     cdc:	21 15       	cp	r18, r1
-     cde:	31 05       	cpc	r19, r1
-     ce0:	99 f0       	breq	.+38     	; 0xd08 <_ZN8Interval16InterruptHandlerEv+0x48>
-     ce2:	8e 81       	ldd	r24, Y+6	; 0x06
-     ce4:	9f 81       	ldd	r25, Y+7	; 0x07
-     ce6:	01 96       	adiw	r24, 0x01	; 1
-     ce8:	9f 83       	std	Y+7, r25	; 0x07
-     cea:	8e 83       	std	Y+6, r24	; 0x06
+     cd6:	8e 01       	movw	r16, r28
+     cd8:	0a 5f       	subi	r16, 0xFA	; 250
+     cda:	1f 4f       	sbci	r17, 0xFF	; 255
+     cdc:	2c 85       	ldd	r18, Y+12	; 0x0c
+     cde:	3d 85       	ldd	r19, Y+13	; 0x0d
+     ce0:	21 15       	cp	r18, r1
+     ce2:	31 05       	cpc	r19, r1
+     ce4:	a1 f0       	breq	.+40     	; 0xd0e <_ZN8Interval16InterruptHandlerEv+0x50>
+     ce6:	8e 81       	ldd	r24, Y+6	; 0x06
+     ce8:	9f 81       	ldd	r25, Y+7	; 0x07
+     cea:	01 96       	adiw	r24, 0x01	; 1
      cec:	82 17       	cp	r24, r18
      cee:	93 07       	cpc	r25, r19
-     cf0:	58 f0       	brcs	.+22     	; 0xd08 <_ZN8Interval16InterruptHandlerEv+0x48>
-     cf2:	1f 82       	std	Y+7, r1	; 0x07
-     cf4:	1e 82       	std	Y+6, r1	; 0x06
-     cf6:	88 81       	ld	r24, Y
-     cf8:	99 81       	ldd	r25, Y+1	; 0x01
-     cfa:	dc 01       	movw	r26, r24
-     cfc:	ed 91       	ld	r30, X+
-     cfe:	fc 91       	ld	r31, X
-     d00:	01 90       	ld	r0, Z+
-     d02:	f0 81       	ld	r31, Z
-     d04:	e0 2d       	mov	r30, r0
-     d06:	09 95       	icall
-     d08:	11 50       	subi	r17, 0x01	; 1
-     d0a:	22 96       	adiw	r28, 0x02	; 2
-     d0c:	11 11       	cpse	r17, r1
-     d0e:	e4 cf       	rjmp	.-56     	; 0xcd8 <_ZN8Interval16InterruptHandlerEv+0x18>
-     d10:	df 91       	pop	r29
-     d12:	cf 91       	pop	r28
-     d14:	1f 91       	pop	r17
-     d16:	08 95       	ret
+     cf0:	18 f4       	brcc	.+6      	; 0xcf8 <_ZN8Interval16InterruptHandlerEv+0x3a>
+     cf2:	9f 83       	std	Y+7, r25	; 0x07
+     cf4:	8e 83       	std	Y+6, r24	; 0x06
+     cf6:	0b c0       	rjmp	.+22     	; 0xd0e <_ZN8Interval16InterruptHandlerEv+0x50>
+     cf8:	1f 82       	std	Y+7, r1	; 0x07
+     cfa:	1e 82       	std	Y+6, r1	; 0x06
+     cfc:	88 81       	ld	r24, Y
+     cfe:	99 81       	ldd	r25, Y+1	; 0x01
+     d00:	dc 01       	movw	r26, r24
+     d02:	ed 91       	ld	r30, X+
+     d04:	fc 91       	ld	r31, X
+     d06:	01 90       	ld	r0, Z+
+     d08:	f0 81       	ld	r31, Z
+     d0a:	e0 2d       	mov	r30, r0
+     d0c:	09 95       	icall
+     d0e:	22 96       	adiw	r28, 0x02	; 2
+     d10:	c0 17       	cp	r28, r16
+     d12:	d1 07       	cpc	r29, r17
+     d14:	19 f7       	brne	.-58     	; 0xcdc <_ZN8Interval16InterruptHandlerEv+0x1e>
+     d16:	df 91       	pop	r29
+     d18:	cf 91       	pop	r28
+     d1a:	1f 91       	pop	r17
+     d1c:	0f 91       	pop	r16
+     d1e:	08 95       	ret
 
-00000d18 <_ZN8Interval11addListenerEP16IntervalListenerj>:
-     d18:	fc 01       	movw	r30, r24
-     d1a:	84 85       	ldd	r24, Z+12	; 0x0c
-     d1c:	95 85       	ldd	r25, Z+13	; 0x0d
-     d1e:	89 2b       	or	r24, r25
-     d20:	51 f0       	breq	.+20     	; 0xd36 <_ZN8Interval11addListenerEP16IntervalListenerj+0x1e>
-     d22:	86 85       	ldd	r24, Z+14	; 0x0e
-     d24:	97 85       	ldd	r25, Z+15	; 0x0f
+00000d20 <_ZN8Interval11addListenerEP16IntervalListenerj>:
+     d20:	fc 01       	movw	r30, r24
+     d22:	84 85       	ldd	r24, Z+12	; 0x0c
+     d24:	95 85       	ldd	r25, Z+13	; 0x0d
      d26:	89 2b       	or	r24, r25
-     d28:	41 f0       	breq	.+16     	; 0xd3a <_ZN8Interval11addListenerEP16IntervalListenerj+0x22>
-     d2a:	80 89       	ldd	r24, Z+16	; 0x10
-     d2c:	91 89       	ldd	r25, Z+17	; 0x11
+     d28:	51 f0       	breq	.+20     	; 0xd3e <_ZN8Interval11addListenerEP16IntervalListenerj+0x1e>
+     d2a:	86 85       	ldd	r24, Z+14	; 0x0e
+     d2c:	97 85       	ldd	r25, Z+15	; 0x0f
      d2e:	89 2b       	or	r24, r25
-     d30:	31 f4       	brne	.+12     	; 0xd3e <_ZN8Interval11addListenerEP16IntervalListenerj+0x26>
-     d32:	82 e0       	ldi	r24, 0x02	; 2
-     d34:	05 c0       	rjmp	.+10     	; 0xd40 <_ZN8Interval11addListenerEP16IntervalListenerj+0x28>
-     d36:	80 e0       	ldi	r24, 0x00	; 0
-     d38:	03 c0       	rjmp	.+6      	; 0xd40 <_ZN8Interval11addListenerEP16IntervalListenerj+0x28>
-     d3a:	81 e0       	ldi	r24, 0x01	; 1
-     d3c:	01 c0       	rjmp	.+2      	; 0xd40 <_ZN8Interval11addListenerEP16IntervalListenerj+0x28>
-     d3e:	83 e0       	ldi	r24, 0x03	; 3
-     d40:	e8 0f       	add	r30, r24
-     d42:	f1 1d       	adc	r31, r1
-     d44:	e8 0f       	add	r30, r24
-     d46:	f1 1d       	adc	r31, r1
-     d48:	17 82       	std	Z+7, r1	; 0x07
-     d4a:	16 82       	std	Z+6, r1	; 0x06
-     d4c:	71 83       	std	Z+1, r23	; 0x01
-     d4e:	60 83       	st	Z, r22
-     d50:	80 ea       	ldi	r24, 0xA0	; 160
-     d52:	9f e0       	ldi	r25, 0x0F	; 15
-     d54:	ba 01       	movw	r22, r20
-     d56:	4a d1       	rcall	.+660    	; 0xfec <__udivmodhi4>
-     d58:	61 15       	cp	r22, r1
-     d5a:	71 05       	cpc	r23, r1
-     d5c:	19 f0       	breq	.+6      	; 0xd64 <_ZN8Interval11addListenerEP16IntervalListenerj+0x4c>
-     d5e:	75 87       	std	Z+13, r23	; 0x0d
-     d60:	64 87       	std	Z+12, r22	; 0x0c
-     d62:	08 95       	ret
-     d64:	81 e0       	ldi	r24, 0x01	; 1
-     d66:	90 e0       	ldi	r25, 0x00	; 0
-     d68:	95 87       	std	Z+13, r25	; 0x0d
-     d6a:	84 87       	std	Z+12, r24	; 0x0c
-     d6c:	08 95       	ret
+     d30:	41 f0       	breq	.+16     	; 0xd42 <_ZN8Interval11addListenerEP16IntervalListenerj+0x22>
+     d32:	80 89       	ldd	r24, Z+16	; 0x10
+     d34:	91 89       	ldd	r25, Z+17	; 0x11
+     d36:	89 2b       	or	r24, r25
+     d38:	31 f4       	brne	.+12     	; 0xd46 <_ZN8Interval11addListenerEP16IntervalListenerj+0x26>
+     d3a:	82 e0       	ldi	r24, 0x02	; 2
+     d3c:	05 c0       	rjmp	.+10     	; 0xd48 <_ZN8Interval11addListenerEP16IntervalListenerj+0x28>
+     d3e:	80 e0       	ldi	r24, 0x00	; 0
+     d40:	03 c0       	rjmp	.+6      	; 0xd48 <_ZN8Interval11addListenerEP16IntervalListenerj+0x28>
+     d42:	81 e0       	ldi	r24, 0x01	; 1
+     d44:	01 c0       	rjmp	.+2      	; 0xd48 <_ZN8Interval11addListenerEP16IntervalListenerj+0x28>
+     d46:	83 e0       	ldi	r24, 0x03	; 3
+     d48:	e8 0f       	add	r30, r24
+     d4a:	f1 1d       	adc	r31, r1
+     d4c:	e8 0f       	add	r30, r24
+     d4e:	f1 1d       	adc	r31, r1
+     d50:	17 82       	std	Z+7, r1	; 0x07
+     d52:	16 82       	std	Z+6, r1	; 0x06
+     d54:	71 83       	std	Z+1, r23	; 0x01
+     d56:	60 83       	st	Z, r22
+     d58:	80 ea       	ldi	r24, 0xA0	; 160
+     d5a:	9f e0       	ldi	r25, 0x0F	; 15
+     d5c:	ba 01       	movw	r22, r20
+     d5e:	44 d1       	rcall	.+648    	; 0xfe8 <__udivmodhi4>
+     d60:	61 15       	cp	r22, r1
+     d62:	71 05       	cpc	r23, r1
+     d64:	19 f0       	breq	.+6      	; 0xd6c <_ZN8Interval11addListenerEP16IntervalListenerj+0x4c>
+     d66:	75 87       	std	Z+13, r23	; 0x0d
+     d68:	64 87       	std	Z+12, r22	; 0x0c
+     d6a:	08 95       	ret
+     d6c:	81 e0       	ldi	r24, 0x01	; 1
+     d6e:	90 e0       	ldi	r25, 0x00	; 0
+     d70:	95 87       	std	Z+13, r25	; 0x0d
+     d72:	84 87       	std	Z+12, r24	; 0x0c
+     d74:	08 95       	ret
 
-00000d6e <_ZN8Interval12getMsCounterEv>:
-     d6e:	fc 01       	movw	r30, r24
-     d70:	22 89       	ldd	r18, Z+18	; 0x12
-     d72:	33 89       	ldd	r19, Z+19	; 0x13
-     d74:	a8 ee       	ldi	r26, 0xE8	; 232
-     d76:	b3 e0       	ldi	r27, 0x03	; 3
-     d78:	2d d1       	rcall	.+602    	; 0xfd4 <__umulhisi3>
-     d7a:	20 ea       	ldi	r18, 0xA0	; 160
-     d7c:	3f e0       	ldi	r19, 0x0F	; 15
-     d7e:	40 e0       	ldi	r20, 0x00	; 0
-     d80:	50 e0       	ldi	r21, 0x00	; 0
-     d82:	5b d1       	rcall	.+694    	; 0x103a <__udivmodsi4>
-     d84:	c9 01       	movw	r24, r18
-     d86:	08 95       	ret
+00000d76 <_ZN8Interval12getMsCounterEv>:
+     d76:	fc 01       	movw	r30, r24
+     d78:	22 89       	ldd	r18, Z+18	; 0x12
+     d7a:	33 89       	ldd	r19, Z+19	; 0x13
+     d7c:	a8 ee       	ldi	r26, 0xE8	; 232
+     d7e:	b3 e0       	ldi	r27, 0x03	; 3
+     d80:	98 d1       	rcall	.+816    	; 0x10b2 <__umulhisi3>
+     d82:	20 ea       	ldi	r18, 0xA0	; 160
+     d84:	3f e0       	ldi	r19, 0x0F	; 15
+     d86:	40 e0       	ldi	r20, 0x00	; 0
+     d88:	50 e0       	ldi	r21, 0x00	; 0
+     d8a:	55 d1       	rcall	.+682    	; 0x1036 <__udivmodsi4>
+     d8c:	c9 01       	movw	r24, r18
+     d8e:	08 95       	ret
 
-00000d88 <__vector_4>:
-     d88:	1f 92       	push	r1
-     d8a:	0f 92       	push	r0
-     d8c:	0f b6       	in	r0, 0x3f	; 63
-     d8e:	0f 92       	push	r0
-     d90:	11 24       	eor	r1, r1
-     d92:	2f 93       	push	r18
-     d94:	3f 93       	push	r19
-     d96:	4f 93       	push	r20
-     d98:	5f 93       	push	r21
-     d9a:	6f 93       	push	r22
-     d9c:	7f 93       	push	r23
-     d9e:	8f 93       	push	r24
-     da0:	9f 93       	push	r25
-     da2:	af 93       	push	r26
-     da4:	bf 93       	push	r27
-     da6:	ef 93       	push	r30
-     da8:	ff 93       	push	r31
-     daa:	80 91 fa 01 	lds	r24, 0x01FA
-     dae:	90 91 fb 01 	lds	r25, 0x01FB
-     db2:	86 df       	rcall	.-244    	; 0xcc0 <_ZN8Interval16InterruptHandlerEv>
-     db4:	ff 91       	pop	r31
-     db6:	ef 91       	pop	r30
-     db8:	bf 91       	pop	r27
-     dba:	af 91       	pop	r26
-     dbc:	9f 91       	pop	r25
-     dbe:	8f 91       	pop	r24
-     dc0:	7f 91       	pop	r23
-     dc2:	6f 91       	pop	r22
-     dc4:	5f 91       	pop	r21
-     dc6:	4f 91       	pop	r20
-     dc8:	3f 91       	pop	r19
-     dca:	2f 91       	pop	r18
-     dcc:	0f 90       	pop	r0
-     dce:	0f be       	out	0x3f, r0	; 63
-     dd0:	0f 90       	pop	r0
-     dd2:	1f 90       	pop	r1
-     dd4:	18 95       	reti
+00000d90 <__vector_4>:
+     d90:	1f 92       	push	r1
+     d92:	0f 92       	push	r0
+     d94:	0f b6       	in	r0, 0x3f	; 63
+     d96:	0f 92       	push	r0
+     d98:	11 24       	eor	r1, r1
+     d9a:	2f 93       	push	r18
+     d9c:	3f 93       	push	r19
+     d9e:	4f 93       	push	r20
+     da0:	5f 93       	push	r21
+     da2:	6f 93       	push	r22
+     da4:	7f 93       	push	r23
+     da6:	8f 93       	push	r24
+     da8:	9f 93       	push	r25
+     daa:	af 93       	push	r26
+     dac:	bf 93       	push	r27
+     dae:	ef 93       	push	r30
+     db0:	ff 93       	push	r31
+     db2:	80 91 fa 01 	lds	r24, 0x01FA
+     db6:	90 91 fb 01 	lds	r25, 0x01FB
+     dba:	81 df       	rcall	.-254    	; 0xcbe <_ZN8Interval16InterruptHandlerEv>
+     dbc:	ff 91       	pop	r31
+     dbe:	ef 91       	pop	r30
+     dc0:	bf 91       	pop	r27
+     dc2:	af 91       	pop	r26
+     dc4:	9f 91       	pop	r25
+     dc6:	8f 91       	pop	r24
+     dc8:	7f 91       	pop	r23
+     dca:	6f 91       	pop	r22
+     dcc:	5f 91       	pop	r21
+     dce:	4f 91       	pop	r20
+     dd0:	3f 91       	pop	r19
+     dd2:	2f 91       	pop	r18
+     dd4:	0f 90       	pop	r0
+     dd6:	0f be       	out	0x3f, r0	; 63
+     dd8:	0f 90       	pop	r0
+     dda:	1f 90       	pop	r1
+     ddc:	18 95       	reti
 
-00000dd6 <_ZN8KeyboardC1EP8Interval>:
-     dd6:	fc 01       	movw	r30, r24
-     dd8:	71 83       	std	Z+1, r23	; 0x01
-     dda:	60 83       	st	Z, r22
-     ddc:	12 82       	std	Z+2, r1	; 0x02
-     dde:	13 82       	std	Z+3, r1	; 0x03
-     de0:	14 82       	std	Z+4, r1	; 0x04
-     de2:	16 82       	std	Z+6, r1	; 0x06
-     de4:	15 82       	std	Z+5, r1	; 0x05
-     de6:	17 82       	std	Z+7, r1	; 0x07
-     de8:	10 86       	std	Z+8, r1	; 0x08
-     dea:	a5 98       	cbi	0x14, 5	; 20
-     dec:	ad 9a       	sbi	0x15, 5	; 21
-     dee:	8f 98       	cbi	0x11, 7	; 17
-     df0:	97 9a       	sbi	0x12, 7	; 18
-     df2:	08 95       	ret
+00000dde <_ZN8KeyboardC1EP8Interval>:
+     dde:	fc 01       	movw	r30, r24
+     de0:	71 83       	std	Z+1, r23	; 0x01
+     de2:	60 83       	st	Z, r22
+     de4:	12 82       	std	Z+2, r1	; 0x02
+     de6:	13 82       	std	Z+3, r1	; 0x03
+     de8:	14 82       	std	Z+4, r1	; 0x04
+     dea:	15 82       	std	Z+5, r1	; 0x05
+     dec:	17 82       	std	Z+7, r1	; 0x07
+     dee:	16 82       	std	Z+6, r1	; 0x06
+     df0:	10 86       	std	Z+8, r1	; 0x08
+     df2:	11 86       	std	Z+9, r1	; 0x09
+     df4:	a5 98       	cbi	0x14, 5	; 20
+     df6:	ad 9a       	sbi	0x15, 5	; 21
+     df8:	8f 98       	cbi	0x11, 7	; 17
+     dfa:	97 9a       	sbi	0x12, 7	; 18
+     dfc:	08 95       	ret
 
-00000df4 <_ZN8Keyboard18GetDebouncedButtonEv>:
-     df4:	fc 01       	movw	r30, r24
-     df6:	83 b3       	in	r24, 0x13	; 19
-     df8:	85 fb       	bst	r24, 5
-     dfa:	88 27       	eor	r24, r24
-     dfc:	80 f9       	bld	r24, 0
-     dfe:	91 e0       	ldi	r25, 0x01	; 1
-     e00:	89 27       	eor	r24, r25
-     e02:	87 9b       	sbis	0x10, 7	; 16
-     e04:	82 60       	ori	r24, 0x02	; 2
-     e06:	93 81       	ldd	r25, Z+3	; 0x03
-     e08:	89 17       	cp	r24, r25
-     e0a:	41 f0       	breq	.+16     	; 0xe1c <_ZN8Keyboard18GetDebouncedButtonEv+0x28>
-     e0c:	22 81       	ldd	r18, Z+2	; 0x02
-     e0e:	20 32       	cpi	r18, 0x20	; 32
-     e10:	20 f4       	brcc	.+8      	; 0xe1a <_ZN8Keyboard18GetDebouncedButtonEv+0x26>
-     e12:	2f 5f       	subi	r18, 0xFF	; 255
-     e14:	22 83       	std	Z+2, r18	; 0x02
-     e16:	89 2f       	mov	r24, r25
-     e18:	08 95       	ret
-     e1a:	83 83       	std	Z+3, r24	; 0x03
-     e1c:	12 82       	std	Z+2, r1	; 0x02
-     e1e:	08 95       	ret
+00000dfe <_ZN8Keyboard18GetDebouncedButtonEv>:
+     dfe:	fc 01       	movw	r30, r24
+     e00:	83 b3       	in	r24, 0x13	; 19
+     e02:	85 fb       	bst	r24, 5
+     e04:	99 27       	eor	r25, r25
+     e06:	90 f9       	bld	r25, 0
+     e08:	81 e0       	ldi	r24, 0x01	; 1
+     e0a:	89 27       	eor	r24, r25
+     e0c:	87 9b       	sbis	0x10, 7	; 16
+     e0e:	82 60       	ori	r24, 0x02	; 2
+     e10:	93 81       	ldd	r25, Z+3	; 0x03
+     e12:	89 17       	cp	r24, r25
+     e14:	11 f0       	breq	.+4      	; 0xe1a <_ZN8Keyboard18GetDebouncedButtonEv+0x1c>
+     e16:	12 82       	std	Z+2, r1	; 0x02
+     e18:	07 c0       	rjmp	.+14     	; 0xe28 <_ZN8Keyboard18GetDebouncedButtonEv+0x2a>
+     e1a:	92 81       	ldd	r25, Z+2	; 0x02
+     e1c:	90 32       	cpi	r25, 0x20	; 32
+     e1e:	18 f4       	brcc	.+6      	; 0xe26 <_ZN8Keyboard18GetDebouncedButtonEv+0x28>
+     e20:	9f 5f       	subi	r25, 0xFF	; 255
+     e22:	92 83       	std	Z+2, r25	; 0x02
+     e24:	01 c0       	rjmp	.+2      	; 0xe28 <_ZN8Keyboard18GetDebouncedButtonEv+0x2a>
+     e26:	84 83       	std	Z+4, r24	; 0x04
+     e28:	83 83       	std	Z+3, r24	; 0x03
+     e2a:	84 81       	ldd	r24, Z+4	; 0x04
+     e2c:	08 95       	ret
 
-00000e20 <_ZN8Keyboard11UpdateEventEv>:
-     e20:	1f 93       	push	r17
-     e22:	cf 93       	push	r28
-     e24:	df 93       	push	r29
-     e26:	ec 01       	movw	r28, r24
-     e28:	e5 df       	rcall	.-54     	; 0xdf4 <_ZN8Keyboard18GetDebouncedButtonEv>
-     e2a:	18 2f       	mov	r17, r24
-     e2c:	8c 81       	ldd	r24, Y+4	; 0x04
-     e2e:	81 11       	cpse	r24, r1
-     e30:	0b c0       	rjmp	.+22     	; 0xe48 <_ZN8Keyboard11UpdateEventEv+0x28>
-     e32:	11 23       	and	r17, r17
-     e34:	41 f1       	breq	.+80     	; 0xe86 <_ZN8Keyboard11UpdateEventEv+0x66>
-     e36:	1f 82       	std	Y+7, r1	; 0x07
-     e38:	88 81       	ld	r24, Y
-     e3a:	99 81       	ldd	r25, Y+1	; 0x01
-     e3c:	98 df       	rcall	.-208    	; 0xd6e <_ZN8Interval12getMsCounterEv>
-     e3e:	9e 83       	std	Y+6, r25	; 0x06
-     e40:	8d 83       	std	Y+5, r24	; 0x05
-     e42:	81 2f       	mov	r24, r17
-     e44:	80 61       	ori	r24, 0x10	; 16
-     e46:	19 c0       	rjmp	.+50     	; 0xe7a <_ZN8Keyboard11UpdateEventEv+0x5a>
-     e48:	9f 81       	ldd	r25, Y+7	; 0x07
-     e4a:	11 11       	cpse	r17, r1
-     e4c:	04 c0       	rjmp	.+8      	; 0xe56 <_ZN8Keyboard11UpdateEventEv+0x36>
-     e4e:	91 11       	cpse	r25, r1
-     e50:	13 c0       	rjmp	.+38     	; 0xe78 <_ZN8Keyboard11UpdateEventEv+0x58>
-     e52:	80 66       	ori	r24, 0x60	; 96
-     e54:	12 c0       	rjmp	.+36     	; 0xe7a <_ZN8Keyboard11UpdateEventEv+0x5a>
-     e56:	91 11       	cpse	r25, r1
-     e58:	16 c0       	rjmp	.+44     	; 0xe86 <_ZN8Keyboard11UpdateEventEv+0x66>
-     e5a:	88 81       	ld	r24, Y
-     e5c:	99 81       	ldd	r25, Y+1	; 0x01
-     e5e:	87 df       	rcall	.-242    	; 0xd6e <_ZN8Interval12getMsCounterEv>
-     e60:	2d 81       	ldd	r18, Y+5	; 0x05
-     e62:	3e 81       	ldd	r19, Y+6	; 0x06
-     e64:	82 1b       	sub	r24, r18
-     e66:	93 0b       	sbc	r25, r19
-     e68:	89 3b       	cpi	r24, 0xB9	; 185
-     e6a:	9b 40       	sbci	r25, 0x0B	; 11
-     e6c:	60 f0       	brcs	.+24     	; 0xe86 <_ZN8Keyboard11UpdateEventEv+0x66>
-     e6e:	81 e0       	ldi	r24, 0x01	; 1
-     e70:	8f 83       	std	Y+7, r24	; 0x07
-     e72:	81 2f       	mov	r24, r17
-     e74:	80 68       	ori	r24, 0x80	; 128
-     e76:	01 c0       	rjmp	.+2      	; 0xe7a <_ZN8Keyboard11UpdateEventEv+0x5a>
-     e78:	80 62       	ori	r24, 0x20	; 32
-     e7a:	1c 83       	std	Y+4, r17	; 0x04
-     e7c:	88 87       	std	Y+8, r24	; 0x08
-     e7e:	df 91       	pop	r29
-     e80:	cf 91       	pop	r28
-     e82:	1f 91       	pop	r17
-     e84:	08 95       	ret
-     e86:	81 2f       	mov	r24, r17
-     e88:	f8 cf       	rjmp	.-16     	; 0xe7a <_ZN8Keyboard11UpdateEventEv+0x5a>
+00000e2e <_ZN8Keyboard11UpdateEventEv>:
+     e2e:	1f 93       	push	r17
+     e30:	cf 93       	push	r28
+     e32:	df 93       	push	r29
+     e34:	ec 01       	movw	r28, r24
+     e36:	e3 df       	rcall	.-58     	; 0xdfe <_ZN8Keyboard18GetDebouncedButtonEv>
+     e38:	18 2f       	mov	r17, r24
+     e3a:	8d 81       	ldd	r24, Y+5	; 0x05
+     e3c:	81 11       	cpse	r24, r1
+     e3e:	0b c0       	rjmp	.+22     	; 0xe56 <_ZN8Keyboard11UpdateEventEv+0x28>
+     e40:	11 23       	and	r17, r17
+     e42:	41 f1       	breq	.+80     	; 0xe94 <_ZN8Keyboard11UpdateEventEv+0x66>
+     e44:	18 86       	std	Y+8, r1	; 0x08
+     e46:	88 81       	ld	r24, Y
+     e48:	99 81       	ldd	r25, Y+1	; 0x01
+     e4a:	95 df       	rcall	.-214    	; 0xd76 <_ZN8Interval12getMsCounterEv>
+     e4c:	9f 83       	std	Y+7, r25	; 0x07
+     e4e:	8e 83       	std	Y+6, r24	; 0x06
+     e50:	81 2f       	mov	r24, r17
+     e52:	80 61       	ori	r24, 0x10	; 16
+     e54:	19 c0       	rjmp	.+50     	; 0xe88 <_ZN8Keyboard11UpdateEventEv+0x5a>
+     e56:	98 85       	ldd	r25, Y+8	; 0x08
+     e58:	11 11       	cpse	r17, r1
+     e5a:	04 c0       	rjmp	.+8      	; 0xe64 <_ZN8Keyboard11UpdateEventEv+0x36>
+     e5c:	91 11       	cpse	r25, r1
+     e5e:	13 c0       	rjmp	.+38     	; 0xe86 <_ZN8Keyboard11UpdateEventEv+0x58>
+     e60:	80 66       	ori	r24, 0x60	; 96
+     e62:	12 c0       	rjmp	.+36     	; 0xe88 <_ZN8Keyboard11UpdateEventEv+0x5a>
+     e64:	91 11       	cpse	r25, r1
+     e66:	16 c0       	rjmp	.+44     	; 0xe94 <_ZN8Keyboard11UpdateEventEv+0x66>
+     e68:	88 81       	ld	r24, Y
+     e6a:	99 81       	ldd	r25, Y+1	; 0x01
+     e6c:	84 df       	rcall	.-248    	; 0xd76 <_ZN8Interval12getMsCounterEv>
+     e6e:	2e 81       	ldd	r18, Y+6	; 0x06
+     e70:	3f 81       	ldd	r19, Y+7	; 0x07
+     e72:	82 1b       	sub	r24, r18
+     e74:	93 0b       	sbc	r25, r19
+     e76:	89 3b       	cpi	r24, 0xB9	; 185
+     e78:	9b 40       	sbci	r25, 0x0B	; 11
+     e7a:	60 f0       	brcs	.+24     	; 0xe94 <_ZN8Keyboard11UpdateEventEv+0x66>
+     e7c:	81 e0       	ldi	r24, 0x01	; 1
+     e7e:	88 87       	std	Y+8, r24	; 0x08
+     e80:	81 2f       	mov	r24, r17
+     e82:	80 68       	ori	r24, 0x80	; 128
+     e84:	01 c0       	rjmp	.+2      	; 0xe88 <_ZN8Keyboard11UpdateEventEv+0x5a>
+     e86:	80 62       	ori	r24, 0x20	; 32
+     e88:	1d 83       	std	Y+5, r17	; 0x05
+     e8a:	89 87       	std	Y+9, r24	; 0x09
+     e8c:	df 91       	pop	r29
+     e8e:	cf 91       	pop	r28
+     e90:	1f 91       	pop	r17
+     e92:	08 95       	ret
+     e94:	81 2f       	mov	r24, r17
+     e96:	f8 cf       	rjmp	.-16     	; 0xe88 <_ZN8Keyboard11UpdateEventEv+0x5a>
 
-00000e8a <_ZN7Shutter15IntervalHandlerEv>:
-     e8a:	fc 01       	movw	r30, r24
-     e8c:	90 85       	ldd	r25, Z+8	; 0x08
-     e8e:	99 23       	and	r25, r25
-     e90:	29 f0       	breq	.+10     	; 0xe9c <_ZN7Shutter15IntervalHandlerEv+0x12>
-     e92:	82 81       	ldd	r24, Z+2	; 0x02
-     e94:	91 30       	cpi	r25, 0x01	; 1
-     e96:	29 f4       	brne	.+10     	; 0xea2 <_ZN7Shutter15IntervalHandlerEv+0x18>
-     e98:	81 11       	cpse	r24, r1
-     e9a:	03 c0       	rjmp	.+6      	; 0xea2 <_ZN7Shutter15IntervalHandlerEv+0x18>
-     e9c:	95 98       	cbi	0x12, 5	; 18
-     e9e:	96 98       	cbi	0x12, 6	; 18
-     ea0:	08 95       	ret
-     ea2:	8f 5f       	subi	r24, 0xFF	; 255
-     ea4:	82 83       	std	Z+2, r24	; 0x02
-     ea6:	95 81       	ldd	r25, Z+5	; 0x05
-     ea8:	89 17       	cp	r24, r25
-     eaa:	40 f0       	brcs	.+16     	; 0xebc <_ZN7Shutter15IntervalHandlerEv+0x32>
-     eac:	12 82       	std	Z+2, r1	; 0x02
-     eae:	86 81       	ldd	r24, Z+6	; 0x06
+00000e98 <_ZN7Shutter15IntervalHandlerEv>:
+     e98:	fc 01       	movw	r30, r24
+     e9a:	90 85       	ldd	r25, Z+8	; 0x08
+     e9c:	99 23       	and	r25, r25
+     e9e:	29 f0       	breq	.+10     	; 0xeaa <_ZN7Shutter15IntervalHandlerEv+0x12>
+     ea0:	82 81       	ldd	r24, Z+2	; 0x02
+     ea2:	91 30       	cpi	r25, 0x01	; 1
+     ea4:	29 f4       	brne	.+10     	; 0xeb0 <_ZN7Shutter15IntervalHandlerEv+0x18>
+     ea6:	81 11       	cpse	r24, r1
+     ea8:	03 c0       	rjmp	.+6      	; 0xeb0 <_ZN7Shutter15IntervalHandlerEv+0x18>
+     eaa:	95 98       	cbi	0x12, 5	; 18
+     eac:	96 98       	cbi	0x12, 6	; 18
+     eae:	08 95       	ret
      eb0:	8f 5f       	subi	r24, 0xFF	; 255
-     eb2:	86 83       	std	Z+6, r24	; 0x06
-     eb4:	97 81       	ldd	r25, Z+7	; 0x07
+     eb2:	82 83       	std	Z+2, r24	; 0x02
+     eb4:	95 81       	ldd	r25, Z+5	; 0x05
      eb6:	89 17       	cp	r24, r25
-     eb8:	08 f0       	brcs	.+2      	; 0xebc <_ZN7Shutter15IntervalHandlerEv+0x32>
-     eba:	10 86       	std	Z+8, r1	; 0x08
-     ebc:	92 81       	ldd	r25, Z+2	; 0x02
-     ebe:	83 81       	ldd	r24, Z+3	; 0x03
-     ec0:	98 17       	cp	r25, r24
-     ec2:	10 f4       	brcc	.+4      	; 0xec8 <_ZN7Shutter15IntervalHandlerEv+0x3e>
-     ec4:	96 98       	cbi	0x12, 6	; 18
-     ec6:	01 c0       	rjmp	.+2      	; 0xeca <_ZN7Shutter15IntervalHandlerEv+0x40>
-     ec8:	96 9a       	sbi	0x12, 6	; 18
+     eb8:	40 f0       	brcs	.+16     	; 0xeca <_ZN7Shutter15IntervalHandlerEv+0x32>
+     eba:	12 82       	std	Z+2, r1	; 0x02
+     ebc:	86 81       	ldd	r24, Z+6	; 0x06
+     ebe:	8f 5f       	subi	r24, 0xFF	; 255
+     ec0:	86 83       	std	Z+6, r24	; 0x06
+     ec2:	97 81       	ldd	r25, Z+7	; 0x07
+     ec4:	89 17       	cp	r24, r25
+     ec6:	08 f0       	brcs	.+2      	; 0xeca <_ZN7Shutter15IntervalHandlerEv+0x32>
+     ec8:	10 86       	std	Z+8, r1	; 0x08
      eca:	92 81       	ldd	r25, Z+2	; 0x02
-     ecc:	84 81       	ldd	r24, Z+4	; 0x04
+     ecc:	83 81       	ldd	r24, Z+3	; 0x03
      ece:	98 17       	cp	r25, r24
-     ed0:	10 f4       	brcc	.+4      	; 0xed6 <_ZN7Shutter15IntervalHandlerEv+0x4c>
-     ed2:	95 98       	cbi	0x12, 5	; 18
-     ed4:	08 95       	ret
-     ed6:	95 9a       	sbi	0x12, 5	; 18
-     ed8:	08 95       	ret
+     ed0:	10 f4       	brcc	.+4      	; 0xed6 <_ZN7Shutter15IntervalHandlerEv+0x3e>
+     ed2:	96 98       	cbi	0x12, 6	; 18
+     ed4:	01 c0       	rjmp	.+2      	; 0xed8 <_ZN7Shutter15IntervalHandlerEv+0x40>
+     ed6:	96 9a       	sbi	0x12, 6	; 18
+     ed8:	92 81       	ldd	r25, Z+2	; 0x02
+     eda:	84 81       	ldd	r24, Z+4	; 0x04
+     edc:	98 17       	cp	r25, r24
+     ede:	10 f4       	brcc	.+4      	; 0xee4 <_ZN7Shutter15IntervalHandlerEv+0x4c>
+     ee0:	95 98       	cbi	0x12, 5	; 18
+     ee2:	08 95       	ret
+     ee4:	95 9a       	sbi	0x12, 5	; 18
+     ee6:	08 95       	ret
 
-00000eda <_ZN7ShutterC1EP8Interval>:
-     eda:	fc 01       	movw	r30, r24
-     edc:	cb 01       	movw	r24, r22
-     ede:	26 ef       	ldi	r18, 0xF6	; 246
-     ee0:	31 e0       	ldi	r19, 0x01	; 1
-     ee2:	31 83       	std	Z+1, r19	; 0x01
-     ee4:	20 83       	st	Z, r18
-     ee6:	95 98       	cbi	0x12, 5	; 18
-     ee8:	96 98       	cbi	0x12, 6	; 18
-     eea:	8d 9a       	sbi	0x11, 5	; 17
-     eec:	8e 9a       	sbi	0x11, 6	; 17
-     eee:	12 82       	std	Z+2, r1	; 0x02
-     ef0:	21 e0       	ldi	r18, 0x01	; 1
-     ef2:	23 83       	std	Z+3, r18	; 0x03
-     ef4:	22 e0       	ldi	r18, 0x02	; 2
-     ef6:	24 83       	std	Z+4, r18	; 0x04
-     ef8:	2c e0       	ldi	r18, 0x0C	; 12
-     efa:	25 83       	std	Z+5, r18	; 0x05
-     efc:	16 82       	std	Z+6, r1	; 0x06
-     efe:	24 e1       	ldi	r18, 0x14	; 20
-     f00:	27 83       	std	Z+7, r18	; 0x07
-     f02:	10 86       	std	Z+8, r1	; 0x08
-     f04:	41 e0       	ldi	r20, 0x01	; 1
-     f06:	50 e0       	ldi	r21, 0x00	; 0
-     f08:	bf 01       	movw	r22, r30
-     f0a:	06 cf       	rjmp	.-500    	; 0xd18 <_ZN8Interval11addListenerEP16IntervalListenerj>
+00000ee8 <_ZN7ShutterC1EP8Interval>:
+     ee8:	fc 01       	movw	r30, r24
+     eea:	cb 01       	movw	r24, r22
+     eec:	26 ef       	ldi	r18, 0xF6	; 246
+     eee:	31 e0       	ldi	r19, 0x01	; 1
+     ef0:	31 83       	std	Z+1, r19	; 0x01
+     ef2:	20 83       	st	Z, r18
+     ef4:	95 98       	cbi	0x12, 5	; 18
+     ef6:	96 98       	cbi	0x12, 6	; 18
+     ef8:	8d 9a       	sbi	0x11, 5	; 17
+     efa:	8e 9a       	sbi	0x11, 6	; 17
+     efc:	12 82       	std	Z+2, r1	; 0x02
+     efe:	21 e0       	ldi	r18, 0x01	; 1
+     f00:	23 83       	std	Z+3, r18	; 0x03
+     f02:	22 e0       	ldi	r18, 0x02	; 2
+     f04:	24 83       	std	Z+4, r18	; 0x04
+     f06:	2c e0       	ldi	r18, 0x0C	; 12
+     f08:	25 83       	std	Z+5, r18	; 0x05
+     f0a:	16 82       	std	Z+6, r1	; 0x06
+     f0c:	24 e1       	ldi	r18, 0x14	; 20
+     f0e:	27 83       	std	Z+7, r18	; 0x07
+     f10:	10 86       	std	Z+8, r1	; 0x08
+     f12:	41 e0       	ldi	r20, 0x01	; 1
+     f14:	50 e0       	ldi	r21, 0x00	; 0
+     f16:	bf 01       	movw	r22, r30
+     f18:	03 cf       	rjmp	.-506    	; 0xd20 <_ZN8Interval11addListenerEP16IntervalListenerj>
 
-00000f0c <_ZN7Shutter9SetStatusEh>:
-     f0c:	fc 01       	movw	r30, r24
-     f0e:	80 85       	ldd	r24, Z+8	; 0x08
-     f10:	81 11       	cpse	r24, r1
-     f12:	04 c0       	rjmp	.+8      	; 0xf1c <_ZN7Shutter9SetStatusEh+0x10>
-     f14:	66 23       	and	r22, r22
-     f16:	11 f0       	breq	.+4      	; 0xf1c <_ZN7Shutter9SetStatusEh+0x10>
-     f18:	16 82       	std	Z+6, r1	; 0x06
-     f1a:	12 82       	std	Z+2, r1	; 0x02
-     f1c:	60 87       	std	Z+8, r22	; 0x08
-     f1e:	61 11       	cpse	r22, r1
-     f20:	02 c0       	rjmp	.+4      	; 0xf26 <_ZN7Shutter9SetStatusEh+0x1a>
-     f22:	16 82       	std	Z+6, r1	; 0x06
-     f24:	12 82       	std	Z+2, r1	; 0x02
-     f26:	08 95       	ret
+00000f1a <_ZN7Shutter9SetStatusEh>:
+     f1a:	fc 01       	movw	r30, r24
+     f1c:	80 85       	ldd	r24, Z+8	; 0x08
+     f1e:	81 11       	cpse	r24, r1
+     f20:	04 c0       	rjmp	.+8      	; 0xf2a <_ZN7Shutter9SetStatusEh+0x10>
+     f22:	66 23       	and	r22, r22
+     f24:	11 f0       	breq	.+4      	; 0xf2a <_ZN7Shutter9SetStatusEh+0x10>
+     f26:	16 82       	std	Z+6, r1	; 0x06
+     f28:	12 82       	std	Z+2, r1	; 0x02
+     f2a:	60 87       	std	Z+8, r22	; 0x08
+     f2c:	61 11       	cpse	r22, r1
+     f2e:	02 c0       	rjmp	.+4      	; 0xf34 <_ZN7Shutter9SetStatusEh+0x1a>
+     f30:	16 82       	std	Z+6, r1	; 0x06
+     f32:	12 82       	std	Z+2, r1	; 0x02
+     f34:	08 95       	ret
 
-00000f28 <_ZN7Shutter14SetShutterTimeEh>:
-     f28:	1f 93       	push	r17
-     f2a:	cf 93       	push	r28
-     f2c:	df 93       	push	r29
-     f2e:	ec 01       	movw	r28, r24
-     f30:	16 2f       	mov	r17, r22
-     f32:	66 23       	and	r22, r22
-     f34:	21 f0       	breq	.+8      	; 0xf3e <_ZN7Shutter14SetShutterTimeEh+0x16>
-     f36:	64 36       	cpi	r22, 0x64	; 100
-     f38:	18 f0       	brcs	.+6      	; 0xf40 <_ZN7Shutter14SetShutterTimeEh+0x18>
-     f3a:	13 e6       	ldi	r17, 0x63	; 99
-     f3c:	01 c0       	rjmp	.+2      	; 0xf40 <_ZN7Shutter14SetShutterTimeEh+0x18>
-     f3e:	11 e0       	ldi	r17, 0x01	; 1
-     f40:	60 e0       	ldi	r22, 0x00	; 0
-     f42:	ce 01       	movw	r24, r28
-     f44:	e3 df       	rcall	.-58     	; 0xf0c <_ZN7Shutter9SetStatusEh>
-     f46:	8c 81       	ldd	r24, Y+4	; 0x04
-     f48:	81 0f       	add	r24, r17
-     f4a:	8d 83       	std	Y+5, r24	; 0x05
-     f4c:	df 91       	pop	r29
-     f4e:	cf 91       	pop	r28
-     f50:	1f 91       	pop	r17
-     f52:	08 95       	ret
+00000f36 <_ZN7Shutter14SetShutterTimeEh>:
+     f36:	0f 93       	push	r16
+     f38:	1f 93       	push	r17
+     f3a:	cf 93       	push	r28
+     f3c:	8c 01       	movw	r16, r24
+     f3e:	c6 2f       	mov	r28, r22
+     f40:	66 23       	and	r22, r22
+     f42:	21 f0       	breq	.+8      	; 0xf4c <_ZN7Shutter14SetShutterTimeEh+0x16>
+     f44:	64 36       	cpi	r22, 0x64	; 100
+     f46:	18 f0       	brcs	.+6      	; 0xf4e <_ZN7Shutter14SetShutterTimeEh+0x18>
+     f48:	c3 e6       	ldi	r28, 0x63	; 99
+     f4a:	01 c0       	rjmp	.+2      	; 0xf4e <_ZN7Shutter14SetShutterTimeEh+0x18>
+     f4c:	c1 e0       	ldi	r28, 0x01	; 1
+     f4e:	60 e0       	ldi	r22, 0x00	; 0
+     f50:	c8 01       	movw	r24, r16
+     f52:	e3 df       	rcall	.-58     	; 0xf1a <_ZN7Shutter9SetStatusEh>
+     f54:	f8 01       	movw	r30, r16
+     f56:	84 81       	ldd	r24, Z+4	; 0x04
+     f58:	c8 0f       	add	r28, r24
+     f5a:	c5 83       	std	Z+5, r28	; 0x05
+     f5c:	cf 91       	pop	r28
+     f5e:	1f 91       	pop	r17
+     f60:	0f 91       	pop	r16
+     f62:	08 95       	ret
 
-00000f54 <_ZN7Shutter12SetPauseTimeEh>:
-     f54:	1f 93       	push	r17
-     f56:	cf 93       	push	r28
-     f58:	df 93       	push	r29
-     f5a:	ec 01       	movw	r28, r24
-     f5c:	16 2f       	mov	r17, r22
-     f5e:	62 30       	cpi	r22, 0x02	; 2
-     f60:	20 f0       	brcs	.+8      	; 0xf6a <_ZN7Shutter12SetPauseTimeEh+0x16>
-     f62:	64 36       	cpi	r22, 0x64	; 100
-     f64:	18 f0       	brcs	.+6      	; 0xf6c <_ZN7Shutter12SetPauseTimeEh+0x18>
-     f66:	13 e6       	ldi	r17, 0x63	; 99
-     f68:	01 c0       	rjmp	.+2      	; 0xf6c <_ZN7Shutter12SetPauseTimeEh+0x18>
-     f6a:	12 e0       	ldi	r17, 0x02	; 2
-     f6c:	60 e0       	ldi	r22, 0x00	; 0
-     f6e:	ce 01       	movw	r24, r28
-     f70:	cd df       	rcall	.-102    	; 0xf0c <_ZN7Shutter9SetStatusEh>
-     f72:	8d 81       	ldd	r24, Y+5	; 0x05
-     f74:	9c 81       	ldd	r25, Y+4	; 0x04
-     f76:	89 1b       	sub	r24, r25
-     f78:	81 0f       	add	r24, r17
-     f7a:	8d 83       	std	Y+5, r24	; 0x05
-     f7c:	1c 83       	std	Y+4, r17	; 0x04
-     f7e:	11 50       	subi	r17, 0x01	; 1
-     f80:	1b 83       	std	Y+3, r17	; 0x03
-     f82:	df 91       	pop	r29
-     f84:	cf 91       	pop	r28
-     f86:	1f 91       	pop	r17
-     f88:	08 95       	ret
+00000f64 <_ZN7Shutter12SetPauseTimeEh>:
+     f64:	0f 93       	push	r16
+     f66:	1f 93       	push	r17
+     f68:	cf 93       	push	r28
+     f6a:	8c 01       	movw	r16, r24
+     f6c:	c6 2f       	mov	r28, r22
+     f6e:	62 30       	cpi	r22, 0x02	; 2
+     f70:	20 f0       	brcs	.+8      	; 0xf7a <_ZN7Shutter12SetPauseTimeEh+0x16>
+     f72:	64 36       	cpi	r22, 0x64	; 100
+     f74:	18 f0       	brcs	.+6      	; 0xf7c <_ZN7Shutter12SetPauseTimeEh+0x18>
+     f76:	c3 e6       	ldi	r28, 0x63	; 99
+     f78:	01 c0       	rjmp	.+2      	; 0xf7c <_ZN7Shutter12SetPauseTimeEh+0x18>
+     f7a:	c2 e0       	ldi	r28, 0x02	; 2
+     f7c:	60 e0       	ldi	r22, 0x00	; 0
+     f7e:	c8 01       	movw	r24, r16
+     f80:	cc df       	rcall	.-104    	; 0xf1a <_ZN7Shutter9SetStatusEh>
+     f82:	f8 01       	movw	r30, r16
+     f84:	85 81       	ldd	r24, Z+5	; 0x05
+     f86:	94 81       	ldd	r25, Z+4	; 0x04
+     f88:	89 1b       	sub	r24, r25
+     f8a:	8c 0f       	add	r24, r28
+     f8c:	85 83       	std	Z+5, r24	; 0x05
+     f8e:	c4 83       	std	Z+4, r28	; 0x04
+     f90:	c1 50       	subi	r28, 0x01	; 1
+     f92:	c3 83       	std	Z+3, r28	; 0x03
+     f94:	cf 91       	pop	r28
+     f96:	1f 91       	pop	r17
+     f98:	0f 91       	pop	r16
+     f9a:	08 95       	ret
 
-00000f8a <_ZN7Shutter14SetFramesCountEh>:
-     f8a:	1f 93       	push	r17
-     f8c:	cf 93       	push	r28
-     f8e:	df 93       	push	r29
-     f90:	ec 01       	movw	r28, r24
-     f92:	16 2f       	mov	r17, r22
-     f94:	66 23       	and	r22, r22
-     f96:	21 f0       	breq	.+8      	; 0xfa0 <_ZN7Shutter14SetFramesCountEh+0x16>
-     f98:	64 36       	cpi	r22, 0x64	; 100
-     f9a:	18 f0       	brcs	.+6      	; 0xfa2 <_ZN7Shutter14SetFramesCountEh+0x18>
-     f9c:	13 e6       	ldi	r17, 0x63	; 99
-     f9e:	01 c0       	rjmp	.+2      	; 0xfa2 <_ZN7Shutter14SetFramesCountEh+0x18>
-     fa0:	11 e0       	ldi	r17, 0x01	; 1
-     fa2:	60 e0       	ldi	r22, 0x00	; 0
-     fa4:	ce 01       	movw	r24, r28
-     fa6:	b2 df       	rcall	.-156    	; 0xf0c <_ZN7Shutter9SetStatusEh>
-     fa8:	1f 83       	std	Y+7, r17	; 0x07
-     faa:	df 91       	pop	r29
-     fac:	cf 91       	pop	r28
-     fae:	1f 91       	pop	r17
-     fb0:	08 95       	ret
+00000f9c <_ZN7Shutter14SetFramesCountEh>:
+     f9c:	0f 93       	push	r16
+     f9e:	1f 93       	push	r17
+     fa0:	cf 93       	push	r28
+     fa2:	8c 01       	movw	r16, r24
+     fa4:	c6 2f       	mov	r28, r22
+     fa6:	66 23       	and	r22, r22
+     fa8:	21 f0       	breq	.+8      	; 0xfb2 <_ZN7Shutter14SetFramesCountEh+0x16>
+     faa:	64 36       	cpi	r22, 0x64	; 100
+     fac:	18 f0       	brcs	.+6      	; 0xfb4 <_ZN7Shutter14SetFramesCountEh+0x18>
+     fae:	c3 e6       	ldi	r28, 0x63	; 99
+     fb0:	01 c0       	rjmp	.+2      	; 0xfb4 <_ZN7Shutter14SetFramesCountEh+0x18>
+     fb2:	c1 e0       	ldi	r28, 0x01	; 1
+     fb4:	60 e0       	ldi	r22, 0x00	; 0
+     fb6:	c8 01       	movw	r24, r16
+     fb8:	b0 df       	rcall	.-160    	; 0xf1a <_ZN7Shutter9SetStatusEh>
+     fba:	f8 01       	movw	r30, r16
+     fbc:	c7 83       	std	Z+7, r28	; 0x07
+     fbe:	cf 91       	pop	r28
+     fc0:	1f 91       	pop	r17
+     fc2:	0f 91       	pop	r16
+     fc4:	08 95       	ret
 
-00000fb2 <main>:
-     fb2:	cf 93       	push	r28
-     fb4:	df 93       	push	r29
-     fb6:	cd b7       	in	r28, 0x3d	; 61
-     fb8:	de b7       	in	r29, 0x3e	; 62
-     fba:	e4 97       	sbiw	r28, 0x34	; 52
-     fbc:	0f b6       	in	r0, 0x3f	; 63
-     fbe:	f8 94       	cli
-     fc0:	de bf       	out	0x3e, r29	; 62
-     fc2:	0f be       	out	0x3f, r0	; 63
-     fc4:	cd bf       	out	0x3d, r28	; 61
-     fc6:	ce 01       	movw	r24, r28
-     fc8:	01 96       	adiw	r24, 0x01	; 1
-     fca:	5c d8       	rcall	.-3912   	; 0x84 <_ZN11ApplicationC1Ev>
-     fcc:	ce 01       	movw	r24, r28
-     fce:	01 96       	adiw	r24, 0x01	; 1
-     fd0:	c3 da       	rcall	.-2682   	; 0x558 <_ZN11Application3RunEv>
-     fd2:	ff cf       	rjmp	.-2      	; 0xfd2 <main+0x20>
+00000fc6 <main>:
+     fc6:	cf 93       	push	r28
+     fc8:	df 93       	push	r29
+     fca:	cd b7       	in	r28, 0x3d	; 61
+     fcc:	de b7       	in	r29, 0x3e	; 62
+     fce:	e5 97       	sbiw	r28, 0x35	; 53
+     fd0:	0f b6       	in	r0, 0x3f	; 63
+     fd2:	f8 94       	cli
+     fd4:	de bf       	out	0x3e, r29	; 62
+     fd6:	0f be       	out	0x3f, r0	; 63
+     fd8:	cd bf       	out	0x3d, r28	; 61
+     fda:	ce 01       	movw	r24, r28
+     fdc:	01 96       	adiw	r24, 0x01	; 1
+     fde:	52 d8       	rcall	.-3932   	; 0x84 <_ZN11ApplicationC1Ev>
+     fe0:	ce 01       	movw	r24, r28
+     fe2:	01 96       	adiw	r24, 0x01	; 1
+     fe4:	b3 da       	rcall	.-2714   	; 0x54c <_ZN11Application3RunEv>
+     fe6:	ff cf       	rjmp	.-2      	; 0xfe6 <main+0x20>
 
-00000fd4 <__umulhisi3>:
-     fd4:	a2 9f       	mul	r26, r18
-     fd6:	b0 01       	movw	r22, r0
-     fd8:	b3 9f       	mul	r27, r19
-     fda:	c0 01       	movw	r24, r0
-     fdc:	a3 9f       	mul	r26, r19
-     fde:	01 d0       	rcall	.+2      	; 0xfe2 <__umulhisi3+0xe>
-     fe0:	b2 9f       	mul	r27, r18
-     fe2:	70 0d       	add	r23, r0
-     fe4:	81 1d       	adc	r24, r1
-     fe6:	11 24       	eor	r1, r1
-     fe8:	91 1d       	adc	r25, r1
-     fea:	08 95       	ret
+00000fe8 <__udivmodhi4>:
+     fe8:	aa 1b       	sub	r26, r26
+     fea:	bb 1b       	sub	r27, r27
+     fec:	51 e1       	ldi	r21, 0x11	; 17
+     fee:	07 c0       	rjmp	.+14     	; 0xffe <__udivmodhi4_ep>
 
-00000fec <__udivmodhi4>:
-     fec:	aa 1b       	sub	r26, r26
-     fee:	bb 1b       	sub	r27, r27
-     ff0:	51 e1       	ldi	r21, 0x11	; 17
-     ff2:	07 c0       	rjmp	.+14     	; 0x1002 <__udivmodhi4_ep>
+00000ff0 <__udivmodhi4_loop>:
+     ff0:	aa 1f       	adc	r26, r26
+     ff2:	bb 1f       	adc	r27, r27
+     ff4:	a6 17       	cp	r26, r22
+     ff6:	b7 07       	cpc	r27, r23
+     ff8:	10 f0       	brcs	.+4      	; 0xffe <__udivmodhi4_ep>
+     ffa:	a6 1b       	sub	r26, r22
+     ffc:	b7 0b       	sbc	r27, r23
 
-00000ff4 <__udivmodhi4_loop>:
-     ff4:	aa 1f       	adc	r26, r26
-     ff6:	bb 1f       	adc	r27, r27
-     ff8:	a6 17       	cp	r26, r22
-     ffa:	b7 07       	cpc	r27, r23
-     ffc:	10 f0       	brcs	.+4      	; 0x1002 <__udivmodhi4_ep>
-     ffe:	a6 1b       	sub	r26, r22
-    1000:	b7 0b       	sbc	r27, r23
+00000ffe <__udivmodhi4_ep>:
+     ffe:	88 1f       	adc	r24, r24
+    1000:	99 1f       	adc	r25, r25
+    1002:	5a 95       	dec	r21
+    1004:	a9 f7       	brne	.-22     	; 0xff0 <__udivmodhi4_loop>
+    1006:	80 95       	com	r24
+    1008:	90 95       	com	r25
+    100a:	bc 01       	movw	r22, r24
+    100c:	cd 01       	movw	r24, r26
+    100e:	08 95       	ret
 
-00001002 <__udivmodhi4_ep>:
-    1002:	88 1f       	adc	r24, r24
-    1004:	99 1f       	adc	r25, r25
-    1006:	5a 95       	dec	r21
-    1008:	a9 f7       	brne	.-22     	; 0xff4 <__udivmodhi4_loop>
-    100a:	80 95       	com	r24
-    100c:	90 95       	com	r25
-    100e:	bc 01       	movw	r22, r24
-    1010:	cd 01       	movw	r24, r26
-    1012:	08 95       	ret
+00001010 <__divmodhi4>:
+    1010:	97 fb       	bst	r25, 7
+    1012:	07 2e       	mov	r0, r23
+    1014:	16 f4       	brtc	.+4      	; 0x101a <__divmodhi4+0xa>
+    1016:	00 94       	com	r0
+    1018:	06 d0       	rcall	.+12     	; 0x1026 <__divmodhi4_neg1>
+    101a:	77 fd       	sbrc	r23, 7
+    101c:	08 d0       	rcall	.+16     	; 0x102e <__divmodhi4_neg2>
+    101e:	e4 df       	rcall	.-56     	; 0xfe8 <__udivmodhi4>
+    1020:	07 fc       	sbrc	r0, 7
+    1022:	05 d0       	rcall	.+10     	; 0x102e <__divmodhi4_neg2>
+    1024:	3e f4       	brtc	.+14     	; 0x1034 <__divmodhi4_exit>
 
-00001014 <__divmodhi4>:
-    1014:	97 fb       	bst	r25, 7
-    1016:	07 2e       	mov	r0, r23
-    1018:	16 f4       	brtc	.+4      	; 0x101e <__divmodhi4+0xa>
-    101a:	00 94       	com	r0
-    101c:	06 d0       	rcall	.+12     	; 0x102a <__divmodhi4_neg1>
-    101e:	77 fd       	sbrc	r23, 7
-    1020:	08 d0       	rcall	.+16     	; 0x1032 <__divmodhi4_neg2>
-    1022:	e4 df       	rcall	.-56     	; 0xfec <__udivmodhi4>
-    1024:	07 fc       	sbrc	r0, 7
-    1026:	05 d0       	rcall	.+10     	; 0x1032 <__divmodhi4_neg2>
-    1028:	3e f4       	brtc	.+14     	; 0x1038 <__divmodhi4_exit>
+00001026 <__divmodhi4_neg1>:
+    1026:	90 95       	com	r25
+    1028:	81 95       	neg	r24
+    102a:	9f 4f       	sbci	r25, 0xFF	; 255
+    102c:	08 95       	ret
 
-0000102a <__divmodhi4_neg1>:
-    102a:	90 95       	com	r25
-    102c:	81 95       	neg	r24
-    102e:	9f 4f       	sbci	r25, 0xFF	; 255
-    1030:	08 95       	ret
+0000102e <__divmodhi4_neg2>:
+    102e:	70 95       	com	r23
+    1030:	61 95       	neg	r22
+    1032:	7f 4f       	sbci	r23, 0xFF	; 255
 
-00001032 <__divmodhi4_neg2>:
-    1032:	70 95       	com	r23
-    1034:	61 95       	neg	r22
-    1036:	7f 4f       	sbci	r23, 0xFF	; 255
+00001034 <__divmodhi4_exit>:
+    1034:	08 95       	ret
 
-00001038 <__divmodhi4_exit>:
-    1038:	08 95       	ret
+00001036 <__udivmodsi4>:
+    1036:	a1 e2       	ldi	r26, 0x21	; 33
+    1038:	1a 2e       	mov	r1, r26
+    103a:	aa 1b       	sub	r26, r26
+    103c:	bb 1b       	sub	r27, r27
+    103e:	fd 01       	movw	r30, r26
+    1040:	0d c0       	rjmp	.+26     	; 0x105c <__udivmodsi4_ep>
 
-0000103a <__udivmodsi4>:
-    103a:	a1 e2       	ldi	r26, 0x21	; 33
-    103c:	1a 2e       	mov	r1, r26
-    103e:	aa 1b       	sub	r26, r26
-    1040:	bb 1b       	sub	r27, r27
-    1042:	fd 01       	movw	r30, r26
-    1044:	0d c0       	rjmp	.+26     	; 0x1060 <__udivmodsi4_ep>
+00001042 <__udivmodsi4_loop>:
+    1042:	aa 1f       	adc	r26, r26
+    1044:	bb 1f       	adc	r27, r27
+    1046:	ee 1f       	adc	r30, r30
+    1048:	ff 1f       	adc	r31, r31
+    104a:	a2 17       	cp	r26, r18
+    104c:	b3 07       	cpc	r27, r19
+    104e:	e4 07       	cpc	r30, r20
+    1050:	f5 07       	cpc	r31, r21
+    1052:	20 f0       	brcs	.+8      	; 0x105c <__udivmodsi4_ep>
+    1054:	a2 1b       	sub	r26, r18
+    1056:	b3 0b       	sbc	r27, r19
+    1058:	e4 0b       	sbc	r30, r20
+    105a:	f5 0b       	sbc	r31, r21
 
-00001046 <__udivmodsi4_loop>:
-    1046:	aa 1f       	adc	r26, r26
-    1048:	bb 1f       	adc	r27, r27
-    104a:	ee 1f       	adc	r30, r30
-    104c:	ff 1f       	adc	r31, r31
-    104e:	a2 17       	cp	r26, r18
-    1050:	b3 07       	cpc	r27, r19
-    1052:	e4 07       	cpc	r30, r20
-    1054:	f5 07       	cpc	r31, r21
-    1056:	20 f0       	brcs	.+8      	; 0x1060 <__udivmodsi4_ep>
-    1058:	a2 1b       	sub	r26, r18
-    105a:	b3 0b       	sbc	r27, r19
-    105c:	e4 0b       	sbc	r30, r20
-    105e:	f5 0b       	sbc	r31, r21
+0000105c <__udivmodsi4_ep>:
+    105c:	66 1f       	adc	r22, r22
+    105e:	77 1f       	adc	r23, r23
+    1060:	88 1f       	adc	r24, r24
+    1062:	99 1f       	adc	r25, r25
+    1064:	1a 94       	dec	r1
+    1066:	69 f7       	brne	.-38     	; 0x1042 <__udivmodsi4_loop>
+    1068:	60 95       	com	r22
+    106a:	70 95       	com	r23
+    106c:	80 95       	com	r24
+    106e:	90 95       	com	r25
+    1070:	9b 01       	movw	r18, r22
+    1072:	ac 01       	movw	r20, r24
+    1074:	bd 01       	movw	r22, r26
+    1076:	cf 01       	movw	r24, r30
+    1078:	08 95       	ret
 
-00001060 <__udivmodsi4_ep>:
-    1060:	66 1f       	adc	r22, r22
-    1062:	77 1f       	adc	r23, r23
-    1064:	88 1f       	adc	r24, r24
-    1066:	99 1f       	adc	r25, r25
-    1068:	1a 94       	dec	r1
-    106a:	69 f7       	brne	.-38     	; 0x1046 <__udivmodsi4_loop>
-    106c:	60 95       	com	r22
-    106e:	70 95       	com	r23
-    1070:	80 95       	com	r24
-    1072:	90 95       	com	r25
-    1074:	9b 01       	movw	r18, r22
-    1076:	ac 01       	movw	r20, r24
-    1078:	bd 01       	movw	r22, r26
-    107a:	cf 01       	movw	r24, r30
-    107c:	08 95       	ret
+0000107a <__divmodsi4>:
+    107a:	05 2e       	mov	r0, r21
+    107c:	97 fb       	bst	r25, 7
+    107e:	16 f4       	brtc	.+4      	; 0x1084 <__divmodsi4+0xa>
+    1080:	00 94       	com	r0
+    1082:	0f d0       	rcall	.+30     	; 0x10a2 <__negsi2>
+    1084:	57 fd       	sbrc	r21, 7
+    1086:	05 d0       	rcall	.+10     	; 0x1092 <__divmodsi4_neg2>
+    1088:	d6 df       	rcall	.-84     	; 0x1036 <__udivmodsi4>
+    108a:	07 fc       	sbrc	r0, 7
+    108c:	02 d0       	rcall	.+4      	; 0x1092 <__divmodsi4_neg2>
+    108e:	46 f4       	brtc	.+16     	; 0x10a0 <__divmodsi4_exit>
+    1090:	08 c0       	rjmp	.+16     	; 0x10a2 <__negsi2>
 
-0000107e <__divmodsi4>:
-    107e:	05 2e       	mov	r0, r21
-    1080:	97 fb       	bst	r25, 7
-    1082:	16 f4       	brtc	.+4      	; 0x1088 <__divmodsi4+0xa>
-    1084:	00 94       	com	r0
-    1086:	0f d0       	rcall	.+30     	; 0x10a6 <__negsi2>
-    1088:	57 fd       	sbrc	r21, 7
-    108a:	05 d0       	rcall	.+10     	; 0x1096 <__divmodsi4_neg2>
-    108c:	d6 df       	rcall	.-84     	; 0x103a <__udivmodsi4>
-    108e:	07 fc       	sbrc	r0, 7
-    1090:	02 d0       	rcall	.+4      	; 0x1096 <__divmodsi4_neg2>
-    1092:	46 f4       	brtc	.+16     	; 0x10a4 <__divmodsi4_exit>
-    1094:	08 c0       	rjmp	.+16     	; 0x10a6 <__negsi2>
+00001092 <__divmodsi4_neg2>:
+    1092:	50 95       	com	r21
+    1094:	40 95       	com	r20
+    1096:	30 95       	com	r19
+    1098:	21 95       	neg	r18
+    109a:	3f 4f       	sbci	r19, 0xFF	; 255
+    109c:	4f 4f       	sbci	r20, 0xFF	; 255
+    109e:	5f 4f       	sbci	r21, 0xFF	; 255
 
-00001096 <__divmodsi4_neg2>:
-    1096:	50 95       	com	r21
-    1098:	40 95       	com	r20
-    109a:	30 95       	com	r19
-    109c:	21 95       	neg	r18
-    109e:	3f 4f       	sbci	r19, 0xFF	; 255
-    10a0:	4f 4f       	sbci	r20, 0xFF	; 255
-    10a2:	5f 4f       	sbci	r21, 0xFF	; 255
+000010a0 <__divmodsi4_exit>:
+    10a0:	08 95       	ret
 
-000010a4 <__divmodsi4_exit>:
-    10a4:	08 95       	ret
+000010a2 <__negsi2>:
+    10a2:	90 95       	com	r25
+    10a4:	80 95       	com	r24
+    10a6:	70 95       	com	r23
+    10a8:	61 95       	neg	r22
+    10aa:	7f 4f       	sbci	r23, 0xFF	; 255
+    10ac:	8f 4f       	sbci	r24, 0xFF	; 255
+    10ae:	9f 4f       	sbci	r25, 0xFF	; 255
+    10b0:	08 95       	ret
 
-000010a6 <__negsi2>:
-    10a6:	90 95       	com	r25
-    10a8:	80 95       	com	r24
-    10aa:	70 95       	com	r23
-    10ac:	61 95       	neg	r22
-    10ae:	7f 4f       	sbci	r23, 0xFF	; 255
-    10b0:	8f 4f       	sbci	r24, 0xFF	; 255
-    10b2:	9f 4f       	sbci	r25, 0xFF	; 255
-    10b4:	08 95       	ret
+000010b2 <__umulhisi3>:
+    10b2:	a2 9f       	mul	r26, r18
+    10b4:	b0 01       	movw	r22, r0
+    10b6:	b3 9f       	mul	r27, r19
+    10b8:	c0 01       	movw	r24, r0
+    10ba:	a3 9f       	mul	r26, r19
+    10bc:	01 d0       	rcall	.+2      	; 0x10c0 <__umulhisi3+0xe>
+    10be:	b2 9f       	mul	r27, r18
+    10c0:	70 0d       	add	r23, r0
+    10c2:	81 1d       	adc	r24, r1
+    10c4:	11 24       	eor	r1, r1
+    10c6:	91 1d       	adc	r25, r1
+    10c8:	08 95       	ret
 
-000010b6 <_exit>:
-    10b6:	f8 94       	cli
+000010ca <_exit>:
+    10ca:	f8 94       	cli
 
-000010b8 <__stop_program>:
-    10b8:	ff cf       	rjmp	.-2      	; 0x10b8 <__stop_program>
+000010cc <__stop_program>:
+    10cc:	ff cf       	rjmp	.-2      	; 0x10cc <__stop_program>

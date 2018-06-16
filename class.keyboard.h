@@ -29,6 +29,7 @@ class Keyboard {
 		Interval * interval;
 		uint8_t bounceCounter;
 		uint8_t bounceOldButton;
+		uint8_t bounceState;
 		uint8_t currentButton;
 		uint16_t pressStartMs;
 		uint8_t longPressFlag;
